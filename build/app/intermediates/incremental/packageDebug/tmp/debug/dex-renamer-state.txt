@@ -1,4 +1,4 @@
-#Sat Oct 21 15:33:57 ICT 2023
+#Sat Oct 21 22:33:31 ICT 2023
 base.0=/Users/hiepphan/Documents/DoAn/vehicle-identification-management-system-client/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
