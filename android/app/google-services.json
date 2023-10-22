@@ -12,7 +12,12 @@
           "package_name": "com.example.vehicle_identification"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1073745768330-j943tqn96ciuol7fssa5ouuc8ot5h9pv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBNGCtGaHkJPjgn_jqBZMqY321AuwHab0c"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073745768330-j943tqn96ciuol7fssa5ouuc8ot5h9pv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1073745768330-71pofrn55i8ktdtou1s89i7fktsi4fc6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.vehicleIdentification"
+              }
+            }
+          ]
         }
       }
     }

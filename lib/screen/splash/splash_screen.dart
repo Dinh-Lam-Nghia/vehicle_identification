@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart' show defaultTargetPlatform, kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:vehicle_identification/screen/login/admin/admin_login_screen.dart';
-import 'package:vehicle_identification/screen/login/user/user_login_screen.dart';
+import 'package:vehicle_identification/screen/login/user/screen/user_login_screen.dart';
 import 'package:vehicle_identification/utils/app_color.dart';
 import 'package:vehicle_identification/utils/app_gif.dart';
 
@@ -60,13 +60,14 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
         body: SingleChildScrollView(
-      child: Center(
-        child: MyFadeIn(
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            const SizedBox(
-              height: 40,
+      child: MyFadeIn(
+        child: Center(
+          child: Column(children: [
+            SizedBox(
+              height: size.height * 0.25,
             ),
             AppText(
                 text: S.of(context).nameApp,
