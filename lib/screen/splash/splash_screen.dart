@@ -61,42 +61,41 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: MyFadeIn(
-          child: Stack(
-            fit: StackFit.expand,
-            children: [
-              Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                const SizedBox(
-                  height: 40,
-                ),
-                AppText(
-                    text: S.of(context).nameApp,
-                    color: AppColor.primary,
-                    fontSize: 40),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+        body: SingleChildScrollView(
+      child: Center(
+        child: MyFadeIn(
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            const SizedBox(
+              height: 40,
+            ),
+            AppText(
+                text: S.of(context).nameApp,
+                color: AppColor.primary,
+                fontSize: 40),
+            const SizedBox(
+              height: 20,
+            ),
+            const Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Stack(
                   children: [
-                    Stack(
-                      children: [
-                        AppLottie(assetGif: AppGif.fastFuriois),
-                        Positioned(
-                          top: 20,
-                          child: AppLottie(
-                            assetGif: AppGif.camCctv,
-                            height: 80,
-                          ),
-                        ),
-                      ],
+                    AppLottie(assetGif: AppGif.fastFuriois),
+                    Positioned(
+                      top: 20,
+                      child: AppLottie(
+                        assetGif: AppGif.camCctv,
+                        height: 80,
+                      ),
                     ),
                   ],
                 ),
-              ]),
-            ],
-          ),
-        ));
+              ],
+            ),
+          ]),
+        ),
+      ),
+    ));
   }
 }
