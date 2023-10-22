@@ -46,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void checkPlatform() {
     if (kIsWeb) {
-      // goToAdmin();
+      goToAdmin();
     } else if (defaultTargetPlatform == TargetPlatform.iOS ||
         defaultTargetPlatform == TargetPlatform.android) {
       goToUser();
