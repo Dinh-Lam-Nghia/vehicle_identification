@@ -830,3 +830,4 @@ Temporary Items
 # Used by previous versions of JEnv
 .jenv-version
 
+.flutter-plugins-dependencies
