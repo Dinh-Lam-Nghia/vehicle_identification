@@ -69,6 +69,36 @@ class S {
       args: [],
     );
   }
+
+  /// `LOGIN WITH GOOGLE`
+  String get loginWithGoogle {
+    return Intl.message(
+      'LOGIN WITH GOOGLE',
+      name: 'loginWithGoogle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CHOOSE ANOTHER ACCOUNT`
+  String get chooseAnotherAccount {
+    return Intl.message(
+      'CHOOSE ANOTHER ACCOUNT',
+      name: 'chooseAnotherAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CONTINUE WITH THIS ACCOUNT`
+  String get continueWithThisAccount {
+    return Intl.message(
+      'CONTINUE WITH THIS ACCOUNT',
+      name: 'continueWithThisAccount',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

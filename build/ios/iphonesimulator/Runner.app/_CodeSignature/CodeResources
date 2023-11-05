@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		wwCLyBygZTCGvb9AmPpOJ8ZGuIk=
+		44arDa1GR2VTY8OxFzZ402i6+XA=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		xY1O1stDibgPmnrTPn4TTjkTQe4=
+		N9H0J77BElGunCGAA5yMdG+GIOM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		tY4Ja8jhReKpGZtu+GjJWW7BuOw=
+		rKjjYH/gAisCvfy3n5c5dgdZxmk=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		VfFQRut2vYv+bhn4or2LHilRGKU=
+		9oLDDV6Jj5acNcYTiWZXeQKrKzM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -104,6 +104,26 @@
 		<data>
 		f4x6HH6fkIK231K3L8CwiCF76y0=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icon/icon.jpg</key>
+		<data>
+		YqBXiBlBedTTRxMbMz9ymF9lX/E=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icon/icons8-google-48.png</key>
+		<data>
+		V3EM2w107m6A2QY0k0SSDmdo150=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icon/logo-cc-2.png</key>
+		<data>
+		XDoIIiXzADLhR/LKjf8QVFIB6bA=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icon/logo-cc-new.png</key>
+		<data>
+		fAo6GepVGGdZpsahcutxspGGeR8=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icon/logo-cc.png</key>
+		<data>
+		ODGJQIscCvjur1hiZAKy2i9d71o=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/car-home.png</key>
 		<data>
 		ONv1B0sgpB7fLx89RvfOP7s6nMg=
@@ -126,7 +146,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		KMJTPUkPP9GhLv6zZBcEcnpNeGA=
+		dJ47ircXGWHYGxW4hw1ieKlq0dE=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -819,7 +839,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wm73m+ECVubsx3xTYBC4Ly4vkNjsrNmBfKfkQJFwteo=
+			aED/rGX0dPVzgPmtBxnluwyYeg/4OfoHcw5Ly7PReSw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -833,21 +853,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mxcIyyH3toRWkpgMzoIqH1n2CcbHjQvOmM98tsZVqn4=
+			1E8odGqVdYNOG4S7q8UiGGOM1Al5bFgEF39a+x2H/w0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			H/LsezHWNhLId6NUD62ycQSsv2XUAd5QgedxaSDrpms=
+			SGURYe3PiB+86eNUB0CJuiaof0m01Otrl74TLz/8H3A=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pvio4XBKVKgLA1uPpDjQdTvBGMAnsaySiFVVfI8ht38=
+			wvy+H8Dk0EEsau+2/KbmmSvkTVSuqnF2BxNuPTQe5/8=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -920,6 +940,41 @@
 			0Xnp2b3gEVEdgzA0UJDtgsdcjHlDKZGmbgsq9uK+jOo=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icon/icon.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QGGsBGIBGvg2uRk7TShl5aS8pRBfrfS9oad0VU6JJEQ=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icon/icons8-google-48.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			N9uQ0TG6EHxAB3OmO3GP/ANoKGvAQlgpxrgQ1ioUB34=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icon/logo-cc-2.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			MMKsRu35ObsqgJv04/d+UKq4dmOb32EcvNJpx4FWL+g=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icon/logo-cc-new.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			MflLRNb8lpikOphBmxFCFPNuJSM5Ui8ZcV5fyoyMzoI=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icon/logo-cc.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZXM511F2CH0ALdINOnI+Nv/ndpkRyOttlm/0coeJICM=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/car-home.png</key>
 		<dict>
 			<key>hash2</key>
@@ -959,7 +1014,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VU3PYyoEELIMMjgVn7qqCc28elSvwXNeriWvhSwoJc8=
+			J0xH4fGohbervSPkgSd1PYdhul66h/SgXc4z8Y1r/ss=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
