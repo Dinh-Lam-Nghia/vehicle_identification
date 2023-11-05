@@ -1,4 +1,7 @@
 {
     "nameApp": "Campus Car",
-    "test": "test"
+    "test": "test",
+    "loginWithGoogle": "ĐĂNG NHẬP VỚI GOOGLE",
+    "chooseAnotherAccount" : "CHỌN TÀI KHOẢN KHÁC",
+    "continueWithThisAccount" : "TIẾP TỤC VỚI TÀI KHOẢN NÀY"
 }
