@@ -3,5 +3,8 @@
     "test": "test",
     "loginWithGoogle": "LOGIN WITH GOOGLE",
     "chooseAnotherAccount": "CHOOSE ANOTHER ACCOUNT",
-    "continueWithThisAccount": "CONTINUE WITH THIS ACCOUNT"
-}
+    "continueWithThisAccount": "CONTINUE WITH THIS ACCOUNT",
+    "home": "Home",
+    "addVehicle": "Add Vehicle",
+    "setting": "Setting"
+   }

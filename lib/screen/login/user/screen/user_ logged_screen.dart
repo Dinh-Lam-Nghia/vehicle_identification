@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
+import 'package:vehicle_identification/screen/bottom_natigation.dart';
 import 'package:vehicle_identification/utils/app_color.dart';
 import 'package:vehicle_identification/widget/app_button.dart';
 import 'package:vehicle_identification/widget/app_text.dart';
 
-class UserLoginedScreen extends StatelessWidget {
-  const UserLoginedScreen({super.key, required this.user});
+class UserLoggedScreen extends StatelessWidget {
+  const UserLoggedScreen({super.key, required this.user});
   final User user;
   @override
   Widget build(BuildContext context) {
@@ -49,7 +50,12 @@ class UserLoginedScreen extends StatelessWidget {
             AppButton(
                 width: size.width * 0.8,
                 text: S.of(context).continueWithThisAccount,
-                onPressed: () {}),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => const BottomNavigation()));
+                }),
             const SizedBox(
               height: 20,
             ),

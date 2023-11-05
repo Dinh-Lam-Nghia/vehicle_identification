@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
 import 'package:vehicle_identification/screen/login/user/provider/user_login_provider.dart';
-import 'package:vehicle_identification/screen/login/user/screen/user_logined_screen.dart';
+import 'package:vehicle_identification/screen/login/user/screen/user_%20logged_screen.dart';
 import 'package:vehicle_identification/utils/app_color.dart';
 import 'package:vehicle_identification/utils/app_image.dart';
 import 'package:vehicle_identification/widget/app_text.dart';
 
 import 'package:vehicle_identification/widget/button/app_button_image.dart';
-
+ 
 class UserLoginScreen extends StatefulWidget {
   const UserLoginScreen({super.key});
 
@@ -31,7 +31,7 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (_) => UserLoginedScreen(
+                      builder: (_) => UserLoggedScreen(
                             user: provider.user!,
                           )));
             }
@@ -64,7 +64,7 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
             ),
           );
         });
-      },
+      }
     );
   }
 }
