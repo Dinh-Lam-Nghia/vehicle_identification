@@ -51,10 +51,12 @@ class UserLoggedScreen extends StatelessWidget {
                 width: size.width * 0.8,
                 text: S.of(context).continueWithThisAccount,
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => const BottomNavigation()));
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const BottomNavigation()),
+                    (Route<dynamic> route) => false,
+                  );
                 }),
             const SizedBox(
               height: 20,
