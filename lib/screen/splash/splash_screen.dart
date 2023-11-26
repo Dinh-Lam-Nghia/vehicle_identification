@@ -9,8 +9,6 @@ import 'package:vehicle_identification/utils/app_gif.dart';
 
 import 'package:vehicle_identification/widget/app_fade_in.dart';
 import 'package:vehicle_identification/widget/app_lottie.dart';
-import 'package:vehicle_identification/widget/app_text.dart';
-
 import '../../generated/l10n.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -69,10 +67,12 @@ class _SplashScreenState extends State<SplashScreen> {
             SizedBox(
               height: size.height * 0.25,
             ),
-            AppText(
-                text: S.of(context).nameApp,
-                color: AppColor.primary,
-                fontSize: 40),
+            Text(S.of(context).nameApp,
+                style: const TextStyle(
+                  color: AppColor.primary,
+                  fontSize: 40,
+                  fontFamily: 'CarterOne',
+                )),
             const SizedBox(
               height: 20,
             ),

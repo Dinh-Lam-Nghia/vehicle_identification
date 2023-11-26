@@ -23,15 +23,32 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addVehicle": MessageLookupByLibrary.simpleMessage("Thêm xe mới"),
+        "blackGray": MessageLookupByLibrary.simpleMessage("Đen xám"),
+        "car": MessageLookupByLibrary.simpleMessage("Xe ô tô"),
         "chooseAnotherAccount":
             MessageLookupByLibrary.simpleMessage("CHỌN TÀI KHOẢN KHÁC"),
+        "color": MessageLookupByLibrary.simpleMessage("Màu sắc"),
         "continueWithThisAccount":
             MessageLookupByLibrary.simpleMessage("TIẾP TỤC VỚI TÀI KHOẢN NÀY"),
+        "expires": MessageLookupByLibrary.simpleMessage("Ngày hết hạn"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
+        "language": MessageLookupByLibrary.simpleMessage("Việt Nam"),
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("ĐĂNG NHẬP VỚI GOOGLE"),
+        "model": MessageLookupByLibrary.simpleMessage("Hãng xe"),
+        "motorbike": MessageLookupByLibrary.simpleMessage("Xe máy"),
         "nameApp": MessageLookupByLibrary.simpleMessage("Campus Car"),
+        "onTapAddVehicle": MessageLookupByLibrary.simpleMessage(
+            "Nhấn vào đây để thêm thông tin xe!"),
+        "phone": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
+        "role": MessageLookupByLibrary.simpleMessage("Quyền"),
+        "roleSubDate":
+            MessageLookupByLibrary.simpleMessage("Đăng ký theo ngày"),
+        "roleSubMonth":
+            MessageLookupByLibrary.simpleMessage("Đăng ký theo tháng"),
         "setting": MessageLookupByLibrary.simpleMessage("Cài đặt"),
-        "test": MessageLookupByLibrary.simpleMessage("test")
+        "test": MessageLookupByLibrary.simpleMessage("test"),
+        "typeVehicle": MessageLookupByLibrary.simpleMessage("Loại xe"),
+        "vehicleInfor": MessageLookupByLibrary.simpleMessage("Thông tin xe")
       };
 }

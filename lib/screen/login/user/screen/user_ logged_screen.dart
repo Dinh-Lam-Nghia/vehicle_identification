@@ -7,7 +7,6 @@ import 'package:vehicle_identification/generated/l10n.dart';
 import 'package:vehicle_identification/screen/bottom_natigation.dart';
 import 'package:vehicle_identification/utils/app_color.dart';
 import 'package:vehicle_identification/widget/app_button.dart';
-import 'package:vehicle_identification/widget/app_text.dart';
 
 class UserLoggedScreen extends StatelessWidget {
   const UserLoggedScreen({super.key, required this.user});
@@ -22,10 +21,14 @@ class UserLoggedScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            AppText(
-                text: S.of(context).nameApp,
+            Text(
+              S.of(context).nameApp,
+              style: const TextStyle(
                 color: AppColor.primary,
-                fontSize: 40),
+                fontSize: 40,
+                fontFamily: 'CarterOne',
+              ),
+            ),
             const SizedBox(
               height: 100,
             ),
@@ -40,10 +43,10 @@ class UserLoggedScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 40),
-            AppText(
-                text: user.displayName ?? '',
-                color: AppColor.primary,
-                fontSize: 20),
+            Text(
+              user.displayName ?? '',
+              style: const TextStyle(color: AppColor.secondary, fontSize: 25),
+            ),
             const SizedBox(
               height: 100,
             ),

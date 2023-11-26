@@ -5,6 +5,20 @@
     "chooseAnotherAccount": "CHOOSE ANOTHER ACCOUNT",
     "continueWithThisAccount": "CONTINUE WITH THIS ACCOUNT",
     "home": "Home",
-    "addVehicle": "Add Vehicle",
-    "setting": "Setting"
-   }
+    "addVehicle": "Add vehicle",
+    "setting": "Setting",
+    "vehicleInfor": "Vehicle information",
+    "phone": "Phone",
+    "expires": "Expires",
+    "role": "Role",
+    "model": "Model",
+    "color": "Color",
+    "typeVehicle": "Type vehicle",
+    "blackGray": "Black gray",
+    "roleSubMonth": "Subscribe by month",
+    "roleSubDate": "Subscribe by date",
+    "language": "English",
+    "motorbike": "Motorbike",
+    "car": "Car",
+    "onTapAddVehicle": "Click here for more vehicle information!"
+}

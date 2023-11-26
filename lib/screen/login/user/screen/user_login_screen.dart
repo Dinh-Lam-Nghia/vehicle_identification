@@ -5,7 +5,6 @@ import 'package:vehicle_identification/screen/login/user/provider/user_login_pro
 import 'package:vehicle_identification/screen/login/user/screen/user_%20logged_screen.dart';
 import 'package:vehicle_identification/utils/app_color.dart';
 import 'package:vehicle_identification/utils/app_image.dart';
-import 'package:vehicle_identification/widget/app_text.dart';
 
 import 'package:vehicle_identification/widget/button/app_button_image.dart';
 
@@ -45,10 +44,14 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    AppText(
-                        text: S.of(context).nameApp,
+                    Text(
+                      S.of(context).nameApp,
+                      style: const TextStyle(
                         color: AppColor.primary,
-                        fontSize: 40),
+                        fontSize: 40,
+                        fontFamily: 'CarterOne',
+                      ),
+                    ),
                     const SizedBox(
                       height: 100,
                     ),

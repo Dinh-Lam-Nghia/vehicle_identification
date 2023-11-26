@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:vehicle_identification/generated/l10n.dart';
+import 'package:vehicle_identification/utils/app_provider.dart';
 
 class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
@@ -10,6 +13,14 @@ class SettingScreen extends StatefulWidget {
 class _SettingScreenState extends State<SettingScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+            onPressed: () {
+              context.read<AppProvider>().changeLocale();
+            },
+            child: Text(S.of(context).language)),
+      ),
+    );
   }
 }
