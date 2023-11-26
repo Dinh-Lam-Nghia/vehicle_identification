@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:vehicle_identification/utils/app_color.dart';
-import 'package:vehicle_identification/widget/app_text.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton(
@@ -22,10 +21,10 @@ class AppButton extends StatelessWidget {
         decoration: BoxDecoration(
             color: AppColor.primary, borderRadius: BorderRadius.circular(10)),
         alignment: Alignment.center,
-        child: AppText(
-          text: text,
-          color: AppColor.white,
-          fontSize: 18,
+        child: Text(
+          text,
+          style: const TextStyle(
+              color: AppColor.white, fontSize: 18, fontWeight: FontWeight.bold),
         ),
       ),
     );

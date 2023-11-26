@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
-import 'package:vehicle_identification/screen/add_car/add_car_screen.dart';
+import 'package:vehicle_identification/screen/add_vehicle/add_vehicle_screen.dart';
 import 'package:vehicle_identification/screen/home/home_screen.dart';
 import 'package:vehicle_identification/screen/setting/setting_screen.dart';
 import 'package:vehicle_identification/utils/app_color.dart';
@@ -14,6 +14,13 @@ class BottomNavigation extends StatefulWidget {
 
 class _BottomNavigationState extends State<BottomNavigation> {
   int _selectedIndex = 0;
+
+  navigateToPage2() {
+    setState(() {
+      _selectedIndex = 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     List<BottomNavigationBarItem> listBottom = [
@@ -32,11 +39,13 @@ class _BottomNavigationState extends State<BottomNavigation> {
       switch (_selectedIndex) {
         case 0:
           {
-            return const HomeScreen();
+            return HomeScreen(
+              onTap: navigateToPage2,
+            );
           }
         case 1:
           {
-            return const AddCarScreen();
+            return const AddVehicleScreen();
           }
 
         case 2:

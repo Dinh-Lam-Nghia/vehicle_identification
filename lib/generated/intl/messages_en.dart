@@ -22,16 +22,34 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "addVehicle": MessageLookupByLibrary.simpleMessage("Add Vehicle"),
+        "addVehicle": MessageLookupByLibrary.simpleMessage("Add vehicle"),
+        "blackGray": MessageLookupByLibrary.simpleMessage("Black gray"),
+        "car": MessageLookupByLibrary.simpleMessage("Car"),
         "chooseAnotherAccount":
             MessageLookupByLibrary.simpleMessage("CHOOSE ANOTHER ACCOUNT"),
+        "color": MessageLookupByLibrary.simpleMessage("Color"),
         "continueWithThisAccount":
             MessageLookupByLibrary.simpleMessage("CONTINUE WITH THIS ACCOUNT"),
+        "expires": MessageLookupByLibrary.simpleMessage("Expires"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "language": MessageLookupByLibrary.simpleMessage("English"),
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH GOOGLE"),
+        "model": MessageLookupByLibrary.simpleMessage("Model"),
+        "motorbike": MessageLookupByLibrary.simpleMessage("Motorbike"),
         "nameApp": MessageLookupByLibrary.simpleMessage("Campus Car"),
+        "onTapAddVehicle": MessageLookupByLibrary.simpleMessage(
+            "Click here for more vehicle information!"),
+        "phone": MessageLookupByLibrary.simpleMessage("Phone"),
+        "role": MessageLookupByLibrary.simpleMessage("Role"),
+        "roleSubDate":
+            MessageLookupByLibrary.simpleMessage("Subscribe by date"),
+        "roleSubMonth":
+            MessageLookupByLibrary.simpleMessage("Subscribe by month"),
         "setting": MessageLookupByLibrary.simpleMessage("Setting"),
-        "test": MessageLookupByLibrary.simpleMessage("test")
+        "test": MessageLookupByLibrary.simpleMessage("test"),
+        "typeVehicle": MessageLookupByLibrary.simpleMessage("Type vehicle"),
+        "vehicleInfor":
+            MessageLookupByLibrary.simpleMessage("Vehicle information")
       };
 }

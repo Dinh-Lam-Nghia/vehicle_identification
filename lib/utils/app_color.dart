@@ -9,6 +9,7 @@ class AppColor {
   static const Color blue4 = Color(0xff2C6DCA);
   static const Color blue5 = Color(0xff757AFE);
   static const Color blue6 = Color(0xff87ACDF);
+  static const Color red =  Color(0xffff0000);
   static const Color errorColor = Colors.redAccent;
   static const Color successColor = Colors.green;
   List<Color> graphColors = [

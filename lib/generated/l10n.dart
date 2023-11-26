@@ -110,10 +110,10 @@ class S {
     );
   }
 
-  /// `Add Vehicle`
+  /// `Add vehicle`
   String get addVehicle {
     return Intl.message(
-      'Add Vehicle',
+      'Add vehicle',
       name: 'addVehicle',
       desc: '',
       args: [],
@@ -125,6 +125,146 @@ class S {
     return Intl.message(
       'Setting',
       name: 'setting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vehicle information`
+  String get vehicleInfor {
+    return Intl.message(
+      'Vehicle information',
+      name: 'vehicleInfor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone`
+  String get phone {
+    return Intl.message(
+      'Phone',
+      name: 'phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expires`
+  String get expires {
+    return Intl.message(
+      'Expires',
+      name: 'expires',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Role`
+  String get role {
+    return Intl.message(
+      'Role',
+      name: 'role',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Model`
+  String get model {
+    return Intl.message(
+      'Model',
+      name: 'model',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Color`
+  String get color {
+    return Intl.message(
+      'Color',
+      name: 'color',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type vehicle`
+  String get typeVehicle {
+    return Intl.message(
+      'Type vehicle',
+      name: 'typeVehicle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Black gray`
+  String get blackGray {
+    return Intl.message(
+      'Black gray',
+      name: 'blackGray',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subscribe by month`
+  String get roleSubMonth {
+    return Intl.message(
+      'Subscribe by month',
+      name: 'roleSubMonth',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subscribe by date`
+  String get roleSubDate {
+    return Intl.message(
+      'Subscribe by date',
+      name: 'roleSubDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get language {
+    return Intl.message(
+      'English',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Motorbike`
+  String get motorbike {
+    return Intl.message(
+      'Motorbike',
+      name: 'motorbike',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Car`
+  String get car {
+    return Intl.message(
+      'Car',
+      name: 'car',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click here for more vehicle information!`
+  String get onTapAddVehicle {
+    return Intl.message(
+      'Click here for more vehicle information!',
+      name: 'onTapAddVehicle',
       desc: '',
       args: [],
     );

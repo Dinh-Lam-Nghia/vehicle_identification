@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vehicle_identification/utils/app_color.dart';
 import 'package:vehicle_identification/utils/app_icon.dart';
-import 'package:vehicle_identification/widget/app_text.dart';
 
 class AppButtonImage extends StatelessWidget {
   const AppButtonImage(
@@ -29,10 +28,12 @@ class AppButtonImage extends StatelessWidget {
             const SizedBox(
               width: 10,
             ),
-            AppText(
-              text: text,
-              color: AppColor.white,
-              fontSize: 18,
+            Text(
+              text,
+              style: const TextStyle(
+                  color: AppColor.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
             ),
           ],
         ),
