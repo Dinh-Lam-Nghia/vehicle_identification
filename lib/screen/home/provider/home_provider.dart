@@ -25,11 +25,18 @@ class HomeProvider extends ChangeNotifier {
   }
 
   checkExpires() {
-    var dateNow = DateTime.now();
-    int convertDateNow =
-        int.parse('${dateNow.year}${dateNow.month}${dateNow.day}');
     int dateExpires = int.parse(_vehicleInfor.expires!.replaceAll('/', ''));
-    if (convertDateNow < dateExpires) _isCheckExpires = true;
+    if (getDate() < dateExpires) _isCheckExpires = true;
     notifyListeners();
+  }
+
+  getDate() {
+    var dateNow = DateTime.now();
+    int convertDateNow = 0;
+    String day = dateNow.day >= 10 ? dateNow.day.toString() : '0${dateNow.day}';
+    String month =
+        dateNow.month >= 10 ? dateNow.month.toString() : '0${dateNow.month}';
+    convertDateNow = int.parse('${dateNow.year}$month$day');
+    return convertDateNow;
   }
 }
