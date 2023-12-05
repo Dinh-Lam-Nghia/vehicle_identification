@@ -102,7 +102,6 @@ class _LoginScreenState extends State<LoginScreen> {
         print(authException.message);
       },
       codeSent: (String verificationId, int? forceResendingToken) {
-        //show dialog to take input from the user
         showDialog(
             context: context,
             barrierDismissible: false,

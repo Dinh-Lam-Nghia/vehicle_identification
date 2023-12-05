@@ -20,5 +20,7 @@
     "language": "English",
     "motorbike": "Motorbike",
     "car": "Car",
-    "onTapAddVehicle": "Click here for more vehicle information!"
+    "onTapAddVehicle": "Click here for more vehicle information!",
+    "vehicleId": "License plates",
+    "verifyOTP": "Verify OTP"
 }

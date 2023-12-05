@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
-import 'package:vehicle_identification/screen/add_vehicle/add_vehicle_screen.dart';
+import 'package:vehicle_identification/screen/add_vehicle/screen/add_vehicle_screen.dart';
 import 'package:vehicle_identification/screen/home/home_screen.dart';
 import 'package:vehicle_identification/screen/setting/setting_screen.dart';
 import 'package:vehicle_identification/utils/app_color.dart';

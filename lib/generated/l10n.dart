@@ -269,6 +269,26 @@ class S {
       args: [],
     );
   }
+
+  /// `License plates`
+  String get vehicleId {
+    return Intl.message(
+      'License plates',
+      name: 'vehicleId',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify OTP`
+  String get verifyOTP {
+    return Intl.message(
+      'Verify OTP',
+      name: 'verifyOTP',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

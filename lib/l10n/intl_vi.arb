@@ -20,5 +20,7 @@
     "language": "Việt Nam",
     "motorbike": "Xe máy",
     "car": "Xe ô tô",
-    "onTapAddVehicle": "Nhấn vào đây để thêm thông tin xe!"
+    "onTapAddVehicle": "Nhấn vào đây để thêm thông tin xe!",
+    "vehicleId": "Biển số xe",
+    "verifyOTP": "Xác minh OTP"
 }
