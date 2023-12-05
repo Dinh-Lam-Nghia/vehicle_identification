@@ -1,11 +1,11 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
 import 'package:vehicle_identification/screen/add_vehicle/provider/add_vehicle_provider.dart';
 import 'package:vehicle_identification/utils/app_color.dart';
+import 'package:vehicle_identification/widget/app_dropdown.dart';
 import 'package:vehicle_identification/widget/app_input.dart';
-import 'package:vehicle_identification/widget/app_otp.dart';
+import 'package:vehicle_identification/widget/app_toast.dart';
 
 class AddVehicleScreen extends StatefulWidget {
   const AddVehicleScreen({super.key});
@@ -16,7 +16,8 @@ class AddVehicleScreen extends StatefulWidget {
 
 class _AddCarScreenState extends State<AddVehicleScreen> {
   final AddVehicleProvider _provider = AddVehicleProvider();
-  
+  final _formKey = GlobalKey<FormState>();
+
   @override
   void initState() {
     super.initState();
@@ -24,41 +25,24 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
 
   TextEditingController _controller = TextEditingController();
 
-  Future<void> _showMyDialogOTP(AddVehicleProvider p) async {
-    return showDialog<void>(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('AlertDialog Title'),
-          content: AppOTP(
-            onSubmit: (value) {
-              FirebaseAuth auth = FirebaseAuth.instance;
-              var credential = PhoneAuthProvider.credential(
-                  verificationId: p.verificationId, smsCode: value);
-              auth.signInWithCredential(credential).then((result) {
-                p.setVerify();
-                Navigator.pop(context);
-              }).catchError((e) {});
-            },
-            codeVetify: p.smsCodeController.text.trim(),
-          ),
-          actions: <Widget>[
-            ElevatedButton(
-              child: const Text("Resend"),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        );
-      },
-    );
+  void handleVerify(AddVehicleProvider p) {
+    if (p.phoneController.text.isEmpty) {
+      AppToast().showToast(S.of(context).enterPhoneNumber);
+    } else if (p.phoneController.text.length < 12) {
+      AppToast().showToast(S.of(context).invalidFormat);
+    } else {
+      if (!p.isVerify) {
+        p.verifyPhone(context);
+      } else {
+        AppToast().showToast(S.of(context).verifiedPhoneNumber);
+      }
+    }
   }
 
   Widget _iconVerify(AddVehicleProvider p) {
     return IconButton(
         onPressed: () {
-          p.verifyPhone(context);
+          handleVerify(p);
         },
         icon: Icon(
           Icons.verified,
@@ -74,11 +58,6 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
       builder: (context, widgets) {
         return Consumer<AddVehicleProvider>(
             builder: (context, provider, child) {
-          Future.delayed(Duration.zero, () {
-            if (provider.isCodeSent) {
-              _showMyDialogOTP(provider);
-            }
-          });
           return Scaffold(
             backgroundColor: Colors.grey.shade100,
             appBar: AppBar(
@@ -90,36 +69,63 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
                     color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
-            body: SingleChildScrollView(
-              child: Center(
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    AppInput(
-                        controller: _controller,
-                        width: size.width * 0.9,
-                        labelText: S.of(context).model),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    AppInput(
-                        controller: provider.phoneController,
-                        
-                        width: size.width * 0.9,
-                        keyboardType: TextInputType.phone,
-                        onChange: provider.checkPhoneFilled,
-                        labelText: S.of(context).phone,
-                        suffixIcon: _iconVerify(provider)),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    AppInput(
-                        controller: _controller,
-                        width: size.width * 0.9,
-                        labelText: S.of(context).vehicleId),
-                  ],
+            body: Form(
+              key: _formKey,
+              child: SingleChildScrollView(
+                child: Center(
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      AppInput(
+                          controller: _controller,
+                          width: size.width * 0.9,
+                          labelText: S.of(context).model),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      AppInput(
+                          controller: provider.phoneController,
+                          width: size.width * 0.9,
+                          keyboardType: TextInputType.phone,
+                          onChange: provider.checkPhoneFilled,
+                          labelText: S.of(context).phone,
+                          suffixIcon: _iconVerify(provider)),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      AppInput(
+                          controller: _controller,
+                          width: size.width * 0.9,
+                          labelText: S.of(context).vehicleId),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      SizedBox(
+                        width: size.width * 0.8,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              S.of(context).role,
+                              style: const TextStyle(fontSize: 16),
+                            ),
+                            AppDropdown(
+                              listRole: [
+                                S.of(context).roleSubDay,
+                                S.of(context).roleSubMonth
+                              ],
+                              value: provider.roleContent.isEmpty
+                                  ? S.of(context).roleSubDay
+                                  : provider.roleContent,
+                              onChanged: provider.setRole,
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

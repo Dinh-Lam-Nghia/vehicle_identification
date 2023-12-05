@@ -220,11 +220,11 @@ class S {
     );
   }
 
-  /// `Subscribe by date`
-  String get roleSubDate {
+  /// `Subscribe by day`
+  String get roleSubDay {
     return Intl.message(
-      'Subscribe by date',
-      name: 'roleSubDate',
+      'Subscribe by day',
+      name: 'roleSubDay',
       desc: '',
       args: [],
     );
@@ -285,6 +285,36 @@ class S {
     return Intl.message(
       'Verify OTP',
       name: 'verifyOTP',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid format!`
+  String get invalidFormat {
+    return Intl.message(
+      'Invalid format!',
+      name: 'invalidFormat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter phone number!`
+  String get enterPhoneNumber {
+    return Intl.message(
+      'Please enter phone number!',
+      name: 'enterPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number verified!`
+  String get verifiedPhoneNumber {
+    return Intl.message(
+      'Phone number verified!',
+      name: 'verifiedPhoneNumber',
       desc: '',
       args: [],
     );

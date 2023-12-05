@@ -18,7 +18,6 @@ class UserLoginProvider extends ChangeNotifier {
       setUserLocal();
       loginUser();
     }
-
     notifyListeners();
   }
 

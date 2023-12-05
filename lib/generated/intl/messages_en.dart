@@ -30,8 +30,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "color": MessageLookupByLibrary.simpleMessage("Color"),
         "continueWithThisAccount":
             MessageLookupByLibrary.simpleMessage("CONTINUE WITH THIS ACCOUNT"),
+        "enterPhoneNumber":
+            MessageLookupByLibrary.simpleMessage("Please enter phone number!"),
         "expires": MessageLookupByLibrary.simpleMessage("Expires"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "invalidFormat":
+            MessageLookupByLibrary.simpleMessage("Invalid format!"),
         "language": MessageLookupByLibrary.simpleMessage("English"),
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH GOOGLE"),
@@ -42,8 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Click here for more vehicle information!"),
         "phone": MessageLookupByLibrary.simpleMessage("Phone"),
         "role": MessageLookupByLibrary.simpleMessage("Role"),
-        "roleSubDate":
-            MessageLookupByLibrary.simpleMessage("Subscribe by date"),
+        "roleSubDay": MessageLookupByLibrary.simpleMessage("Subscribe by day"),
         "roleSubMonth":
             MessageLookupByLibrary.simpleMessage("Subscribe by month"),
         "setting": MessageLookupByLibrary.simpleMessage("Setting"),
@@ -52,6 +55,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "vehicleId": MessageLookupByLibrary.simpleMessage("License plates"),
         "vehicleInfor":
             MessageLookupByLibrary.simpleMessage("Vehicle information"),
+        "verifiedPhoneNumber":
+            MessageLookupByLibrary.simpleMessage("Phone number verified!"),
         "verifyOTP": MessageLookupByLibrary.simpleMessage("Verify OTP")
       };
 }

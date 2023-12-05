@@ -25,7 +25,7 @@ class AppInput extends StatelessWidget {
       child: TextFormField(
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return '';
+            return labelText;
           }
           return null;
         },

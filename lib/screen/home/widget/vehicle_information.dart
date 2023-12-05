@@ -50,7 +50,7 @@ class VehicleInformation extends StatelessWidget {
                   title: Text(S.of(context).role),
                   subtitle: Text(vehicle.role == 0
                       ? S.of(context).roleSubMonth
-                      : S.of(context).roleSubDate),
+                      : S.of(context).roleSubDay),
                 ),
                 ListTile(
                   leading: const FaIcon(
