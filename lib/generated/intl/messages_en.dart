@@ -49,7 +49,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "setting": MessageLookupByLibrary.simpleMessage("Setting"),
         "test": MessageLookupByLibrary.simpleMessage("test"),
         "typeVehicle": MessageLookupByLibrary.simpleMessage("Type vehicle"),
+        "vehicleId": MessageLookupByLibrary.simpleMessage("License plates"),
         "vehicleInfor":
-            MessageLookupByLibrary.simpleMessage("Vehicle information")
+            MessageLookupByLibrary.simpleMessage("Vehicle information"),
+        "verifyOTP": MessageLookupByLibrary.simpleMessage("Verify OTP")
       };
 }

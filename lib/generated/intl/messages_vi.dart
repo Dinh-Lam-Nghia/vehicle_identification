@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "setting": MessageLookupByLibrary.simpleMessage("Cài đặt"),
         "test": MessageLookupByLibrary.simpleMessage("test"),
         "typeVehicle": MessageLookupByLibrary.simpleMessage("Loại xe"),
-        "vehicleInfor": MessageLookupByLibrary.simpleMessage("Thông tin xe")
+        "vehicleId": MessageLookupByLibrary.simpleMessage("Biển số xe"),
+        "vehicleInfor": MessageLookupByLibrary.simpleMessage("Thông tin xe"),
+        "verifyOTP": MessageLookupByLibrary.simpleMessage("Xác minh OTP")
       };
 }

@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		/Rl0Lx1icqVs9qXDDyzECcWu7s8=
+		+YSaTQMIxcwWAENV8oOrpjqjpdY=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		HgFJ94PlRqlDGn41JThGGGcy6Co=
+		QcSRepu4Mp7UC//ztcPG/FWKOBE=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		5ZX1/i6yWc01m4h3cVq7QzWP470=
+		Ge1J1XfgJyKkLOw//H2dLwpjA30=
 		</data>
 		<key>flutter_assets/assets/fonts/CarterOne-Regular.ttf</key>
 		<data>
@@ -98,11 +98,19 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		5uZkFkmLPhfToU0VhnB+E7ooNJA=
+		OSHPSnXEp0ckuq7l2JyDGJs8lmg=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
 		P7bb/oR3EhwqCIH1M6LyTuBIWYU=
+		</data>
+		<key>flutter_assets/packages/fluttertoast/assets/toastify.css</key>
+		<data>
+		w0yScZgyE5s0j7sPuGOLXy3ISfM=
+		</data>
+		<key>flutter_assets/packages/fluttertoast/assets/toastify.js</key>
+		<data>
+		gPIgba2QIn/qWmLFfVogsD4MxPU=
 		</data>
 		<key>flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf</key>
 		<data>
@@ -131,14 +139,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			52hJSOIapi22Ja0E3VkYRvl+VfaTC1yDMqF9We5eUFY=
+			sI32O6Zz4XUz7w9VN9sA//PVYrOx85/45JVX5sTIJj4=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eZZ66lDiuD2BA/iAvj6Ls7cPvxRWKhorcc8Xbi1JWFQ=
+			FUfJ1QW4fch0aH1JE7i+2/lif9dWo3kLhkPiT6mdvKQ=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -152,7 +160,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uLnXR0fnG8vuz7XEdFIiqsEzfXUq0pOzOl2gPmMIxnU=
+			o/pPcKm4KbEkx3Ge23Yg5YXrZobv7FqHOQNsPLO+xGI=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/fonts/CarterOne-Regular.ttf</key>
@@ -285,7 +293,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			AvXwgILVFE60jtkJ4OCNbFxvCnWo1vKn/bLbvGf7NXk=
+			dhtDM/TKBVtA7mwa4DNJckEJJCyQNgnJEdB2bBlXJKU=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -293,6 +301,20 @@
 			<key>hash2</key>
 			<data>
 			x6NX+tjyECiQtyzbbjyY8U2zoZ7GDbJtE+T+k/dzgI0=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/fluttertoast/assets/toastify.css</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OA6cPd56JZLHb6TFMDSJcQW1dQpoPp1gk3TDCrW7kJY=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/fluttertoast/assets/toastify.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zYIrdfUdie9n3mKKElLvN1sxiImupJ++RP/PCwgqbb0=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf</key>

@@ -46,6 +46,7 @@ dependencies:
   font_awesome_flutter: ^10.6.0
   http: ^1.1.0
   flutter_otp_text_field: ^1.1.1
+  fluttertoast: ^8.2.4
 
 
 
