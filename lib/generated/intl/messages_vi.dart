@@ -30,8 +30,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "color": MessageLookupByLibrary.simpleMessage("Màu sắc"),
         "continueWithThisAccount":
             MessageLookupByLibrary.simpleMessage("TIẾP TỤC VỚI TÀI KHOẢN NÀY"),
+        "enterPhoneNumber": MessageLookupByLibrary.simpleMessage(
+            "Vui lòng nhập số điện thoại!"),
         "expires": MessageLookupByLibrary.simpleMessage("Ngày hết hạn"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
+        "invalidFormat": MessageLookupByLibrary.simpleMessage("Sai định dạng!"),
         "language": MessageLookupByLibrary.simpleMessage("Việt Nam"),
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("ĐĂNG NHẬP VỚI GOOGLE"),
@@ -42,8 +45,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nhấn vào đây để thêm thông tin xe!"),
         "phone": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
         "role": MessageLookupByLibrary.simpleMessage("Quyền"),
-        "roleSubDate":
-            MessageLookupByLibrary.simpleMessage("Đăng ký theo ngày"),
         "roleSubMonth":
             MessageLookupByLibrary.simpleMessage("Đăng ký theo tháng"),
         "setting": MessageLookupByLibrary.simpleMessage("Cài đặt"),
@@ -51,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "typeVehicle": MessageLookupByLibrary.simpleMessage("Loại xe"),
         "vehicleId": MessageLookupByLibrary.simpleMessage("Biển số xe"),
         "vehicleInfor": MessageLookupByLibrary.simpleMessage("Thông tin xe"),
+        "verifiedPhoneNumber": MessageLookupByLibrary.simpleMessage(
+            "Số điện thoại đã được xác minh!"),
         "verifyOTP": MessageLookupByLibrary.simpleMessage("Xác minh OTP")
       };
 }

@@ -22,5 +22,8 @@
     "car": "Xe ô tô",
     "onTapAddVehicle": "Nhấn vào đây để thêm thông tin xe!",
     "vehicleId": "Biển số xe",
-    "verifyOTP": "Xác minh OTP"
+    "verifyOTP": "Xác minh OTP",
+    "invalidFormat": "Sai định dạng!",
+    "enterPhoneNumber": "Vui lòng nhập số điện thoại!",
+    "verifiedPhoneNumber": "Số điện thoại đã được xác minh!"
 }

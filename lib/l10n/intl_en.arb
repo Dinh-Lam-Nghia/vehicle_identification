@@ -16,11 +16,14 @@
     "typeVehicle": "Type vehicle",
     "blackGray": "Black gray",
     "roleSubMonth": "Subscribe by month",
-    "roleSubDate": "Subscribe by date",
+    "roleSubDay": "Subscribe by day",
     "language": "English",
     "motorbike": "Motorbike",
     "car": "Car",
     "onTapAddVehicle": "Click here for more vehicle information!",
     "vehicleId": "License plates",
-    "verifyOTP": "Verify OTP"
+    "verifyOTP": "Verify OTP",
+    "invalidFormat": "Invalid format!",
+    "enterPhoneNumber": "Please enter phone number!",
+    "verifiedPhoneNumber": "Phone number verified!"
 }
