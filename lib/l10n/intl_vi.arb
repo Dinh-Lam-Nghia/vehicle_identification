@@ -25,5 +25,10 @@
     "verifyOTP": "Xác minh OTP",
     "invalidFormat": "Sai định dạng!",
     "enterPhoneNumber": "Vui lòng nhập số điện thoại!",
-    "verifiedPhoneNumber": "Số điện thoại đã được xác minh!"
+    "verifiedPhoneNumber": "Số điện thoại đã được xác minh!",
+    "inputOTP": "Nhập OTP",
+    "cancel": "Thoát",
+    "resend": "Gửi lại",
+    "errorOTP": "Mã xác thực sai!",
+    "pleaseWait": "Vui lòng đợi!"
 }

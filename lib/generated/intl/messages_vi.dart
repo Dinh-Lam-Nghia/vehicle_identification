@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addVehicle": MessageLookupByLibrary.simpleMessage("Thêm xe mới"),
         "blackGray": MessageLookupByLibrary.simpleMessage("Đen xám"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Thoát"),
         "car": MessageLookupByLibrary.simpleMessage("Xe ô tô"),
         "chooseAnotherAccount":
             MessageLookupByLibrary.simpleMessage("CHỌN TÀI KHOẢN KHÁC"),
@@ -32,8 +33,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("TIẾP TỤC VỚI TÀI KHOẢN NÀY"),
         "enterPhoneNumber": MessageLookupByLibrary.simpleMessage(
             "Vui lòng nhập số điện thoại!"),
+        "errorOTP": MessageLookupByLibrary.simpleMessage("Mã xác thực sai!"),
         "expires": MessageLookupByLibrary.simpleMessage("Ngày hết hạn"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
+        "inputOTP": MessageLookupByLibrary.simpleMessage("Nhập OTP"),
         "invalidFormat": MessageLookupByLibrary.simpleMessage("Sai định dạng!"),
         "language": MessageLookupByLibrary.simpleMessage("Việt Nam"),
         "loginWithGoogle":
@@ -44,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "onTapAddVehicle": MessageLookupByLibrary.simpleMessage(
             "Nhấn vào đây để thêm thông tin xe!"),
         "phone": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
+        "pleaseWait": MessageLookupByLibrary.simpleMessage("Vui lòng đợi!"),
+        "resend": MessageLookupByLibrary.simpleMessage("Gửi lại"),
         "role": MessageLookupByLibrary.simpleMessage("Quyền"),
         "roleSubMonth":
             MessageLookupByLibrary.simpleMessage("Đăng ký theo tháng"),

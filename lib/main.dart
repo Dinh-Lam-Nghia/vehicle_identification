@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vehicle_identification/firebase_options.dart';
+import 'package:vehicle_identification/screen/add_vehicle/provider/add_vehicle_provider.dart';
 import 'package:vehicle_identification/screen/splash/splash_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:vehicle_identification/utils/app_provider.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(
             create: (ctx) => AppProvider(),
           ),
+          ChangeNotifierProvider(create: (context) => AddVehicleProvider()),
         ],
         child: Consumer<AppProvider>(
           builder: (ctx, app, _) => MaterialApp(
