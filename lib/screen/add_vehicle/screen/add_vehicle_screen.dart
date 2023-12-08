@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
 import 'package:vehicle_identification/screen/add_vehicle/provider/add_vehicle_provider.dart';
+import 'package:vehicle_identification/screen/login/user/widget/otp_widget.dart';
 import 'package:vehicle_identification/utils/app_color.dart';
 import 'package:vehicle_identification/widget/app_dropdown.dart';
 import 'package:vehicle_identification/widget/app_input.dart';
@@ -32,11 +35,26 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
       AppToast().showToast(S.of(context).invalidFormat);
     } else {
       if (!p.isVerify) {
-        p.verifyPhone(context);
+        p.verifyPhone();
       } else {
         AppToast().showToast(S.of(context).verifiedPhoneNumber);
       }
     }
+  }
+
+  showMyDialogOTP(AddVehicleProvider p) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return OtpWidget(
+          codeVetify: p.smsCodeController.text.trim(),
+          verificationId: p.verificationId,
+          setVerify: p.setVerify,
+          verifyPhone: p.verifyPhone,
+          setSendCode: p.setSentCode,
+        );
+      },
+    );
   }
 
   Widget _iconVerify(AddVehicleProvider p) {
@@ -58,6 +76,14 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
       builder: (context, widgets) {
         return Consumer<AddVehicleProvider>(
             builder: (context, provider, child) {
+          Future.delayed(Duration.zero, () {
+            if (provider.isSentCode) {
+              showMyDialogOTP(provider);
+            }
+            if (provider.verificationFailed) {
+              AppToast().showToast(S.of(context).invalidFormat);
+            }
+          });
           return Scaffold(
             backgroundColor: Colors.grey.shade100,
             appBar: AppBar(

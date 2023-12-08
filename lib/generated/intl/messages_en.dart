@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addVehicle": MessageLookupByLibrary.simpleMessage("Add vehicle"),
         "blackGray": MessageLookupByLibrary.simpleMessage("Black gray"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "car": MessageLookupByLibrary.simpleMessage("Car"),
         "chooseAnotherAccount":
             MessageLookupByLibrary.simpleMessage("CHOOSE ANOTHER ACCOUNT"),
@@ -32,8 +33,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("CONTINUE WITH THIS ACCOUNT"),
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Please enter phone number!"),
+        "errorOTP": MessageLookupByLibrary.simpleMessage("Error OTP"),
         "expires": MessageLookupByLibrary.simpleMessage("Expires"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "inputOTP": MessageLookupByLibrary.simpleMessage("Input OTP"),
         "invalidFormat":
             MessageLookupByLibrary.simpleMessage("Invalid format!"),
         "language": MessageLookupByLibrary.simpleMessage("English"),
@@ -45,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "onTapAddVehicle": MessageLookupByLibrary.simpleMessage(
             "Click here for more vehicle information!"),
         "phone": MessageLookupByLibrary.simpleMessage("Phone"),
+        "pleaseWait": MessageLookupByLibrary.simpleMessage("Please wait!"),
+        "resend": MessageLookupByLibrary.simpleMessage("Resend"),
         "role": MessageLookupByLibrary.simpleMessage("Role"),
         "roleSubDay": MessageLookupByLibrary.simpleMessage("Subscribe by day"),
         "roleSubMonth":

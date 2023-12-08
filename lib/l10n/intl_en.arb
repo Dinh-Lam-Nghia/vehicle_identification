@@ -25,5 +25,10 @@
     "verifyOTP": "Verify OTP",
     "invalidFormat": "Invalid format!",
     "enterPhoneNumber": "Please enter phone number!",
-    "verifiedPhoneNumber": "Phone number verified!"
+    "verifiedPhoneNumber": "Phone number verified!",
+    "inputOTP": "Input OTP",
+    "cancel": "Cancel",
+    "resend": "Resend",
+    "errorOTP": "Error OTP",
+    "pleaseWait": "Please wait!"
 }
