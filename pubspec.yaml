@@ -39,9 +39,6 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   lottie: ^2.6.0
-  firebase_core: ^2.19.0
-  google_sign_in: ^6.1.5
-  firebase_auth: ^4.11.1
   shared_preferences: ^2.2.2
   font_awesome_flutter: ^10.6.0
   http: ^1.1.0
@@ -50,6 +47,9 @@ dependencies:
   flutter_colorpicker: ^1.0.3
   timer_builder: ^2.0.0
   flutter_material_color_picker: ^1.2.0
+  firebase_auth: ^4.10.0
+  firebase_messaging: ^14.6.8
+  google_sign_in: any
 
 
 
