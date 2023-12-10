@@ -221,10 +221,10 @@ class S {
   }
 
   /// `Subscribe by day`
-  String get roleSubDay {
+  String get roleSubDate {
     return Intl.message(
       'Subscribe by day',
-      name: 'roleSubDay',
+      name: 'roleSubDate',
       desc: '',
       args: [],
     );
@@ -365,6 +365,46 @@ class S {
     return Intl.message(
       'Please wait!',
       name: 'pleaseWait',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OK`
+  String get ok {
+    return Intl.message(
+      'OK',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select color`
+  String get selectColor {
+    return Intl.message(
+      'Select color',
+      name: 'selectColor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `en`
+  String get localeDate {
+    return Intl.message(
+      'en',
+      name: 'localeDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please verify phone number!`
+  String get pleaseVerifyPhone {
+    return Intl.message(
+      'Please verify phone number!',
+      name: 'pleaseVerifyPhone',
       desc: '',
       args: [],
     );

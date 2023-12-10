@@ -16,7 +16,6 @@ class HomeProvider extends ChangeNotifier {
 
   getVehicleInfor(String email) async {
     _vehicles = await _vehicleService.getVehicle(email);
-
     if (_vehicles.isNotEmpty) {
       _vehicleInfor = _vehicles[0];
       checkExpires();
@@ -25,7 +24,7 @@ class HomeProvider extends ChangeNotifier {
   }
 
   checkExpires() {
-    int dateExpires = int.parse(_vehicleInfor.expires!.replaceAll('/', ''));
+    int dateExpires = int.parse(_vehicleInfor.expires!.replaceAll('-', ''));
     if (getDate() < dateExpires) _isCheckExpires = true;
     notifyListeners();
   }

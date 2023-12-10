@@ -40,20 +40,25 @@ class MessageLookup extends MessageLookupByLibrary {
         "invalidFormat":
             MessageLookupByLibrary.simpleMessage("Invalid format!"),
         "language": MessageLookupByLibrary.simpleMessage("English"),
+        "localeDate": MessageLookupByLibrary.simpleMessage("en"),
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH GOOGLE"),
         "model": MessageLookupByLibrary.simpleMessage("Model"),
         "motorbike": MessageLookupByLibrary.simpleMessage("Motorbike"),
         "nameApp": MessageLookupByLibrary.simpleMessage("Campus Car"),
+        "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "onTapAddVehicle": MessageLookupByLibrary.simpleMessage(
             "Click here for more vehicle information!"),
         "phone": MessageLookupByLibrary.simpleMessage("Phone"),
+        "pleaseVerifyPhone":
+            MessageLookupByLibrary.simpleMessage("Please verify phone number!"),
         "pleaseWait": MessageLookupByLibrary.simpleMessage("Please wait!"),
         "resend": MessageLookupByLibrary.simpleMessage("Resend"),
         "role": MessageLookupByLibrary.simpleMessage("Role"),
-        "roleSubDay": MessageLookupByLibrary.simpleMessage("Subscribe by day"),
+        "roleSubDate": MessageLookupByLibrary.simpleMessage("Subscribe by day"),
         "roleSubMonth":
             MessageLookupByLibrary.simpleMessage("Subscribe by month"),
+        "selectColor": MessageLookupByLibrary.simpleMessage("Select color"),
         "setting": MessageLookupByLibrary.simpleMessage("Setting"),
         "test": MessageLookupByLibrary.simpleMessage("test"),
         "typeVehicle": MessageLookupByLibrary.simpleMessage("Type vehicle"),

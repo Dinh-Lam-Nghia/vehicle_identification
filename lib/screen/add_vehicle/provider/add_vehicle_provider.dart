@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:vehicle_identification/generated/l10n.dart';
 
 class AddVehicleProvider extends ChangeNotifier {
   final TextEditingController _phoneController = TextEditingController();
@@ -24,10 +24,10 @@ class AddVehicleProvider extends ChangeNotifier {
   bool _verificationFailed = false;
   bool get verificationFailed => _verificationFailed;
 
-  checkPhoneFilled(String value) {
-    _isVerify = false;
-    notifyListeners();
-  }
+  ColorSwatch? _tempMainColor;
+  ColorSwatch? get tempMainColor => _tempMainColor;
+  ColorSwatch? _mainColor = Colors.blue;
+  ColorSwatch? get mainColor => _mainColor;
 
   String _verificationId = '';
   String get verificationId => _verificationId;
@@ -35,7 +35,24 @@ class AddVehicleProvider extends ChangeNotifier {
   int _seconds = 30;
   int get seconds => _seconds;
 
-  void startCountdown() {
+  String _dateRegister = DateTime.now().toString().substring(0, 10);
+  String get dateRegister => _dateRegister;
+
+  bool _isCheckExpires = false;
+  bool get isCheckExpires => _isCheckExpires;
+
+  final TextEditingController _modelVehicleController = TextEditingController();
+  TextEditingController get modelVehicleController => _modelVehicleController;
+
+  final TextEditingController _idVehicleController = TextEditingController();
+  TextEditingController get idVehicleController => _idVehicleController;
+
+  checkPhoneFilled(String value) {
+    _isVerify = false;
+    notifyListeners();
+  }
+
+  startCountdown() {
     Timer.periodic(const Duration(seconds: 1), (timer) {
       if (_seconds > 0) {
         _seconds--;
@@ -61,7 +78,6 @@ class AddVehicleProvider extends ChangeNotifier {
       codeSent: (String verification, int? forceResendingToken) {
         _isSentCode = true;
         _verificationId = verification;
-        // startCountdown();
         notifyListeners();
       },
       codeAutoRetrievalTimeout: (String verificationId) {},
@@ -80,8 +96,52 @@ class AddVehicleProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  setRole(String? value) {
+  setRole(String? value, BuildContext context) {
     _roleContent = value!;
+    if (S.of(context).roleSubMonth == value) {
+      _roleIndex = 1;
+    } else {
+      _roleIndex = 0;
+    }
+    notifyListeners();
+  }
+
+  setMainColor(dynamic color) {
+    _tempMainColor = color;
+    notifyListeners();
+  }
+
+  setColor() {
+    _mainColor = _tempMainColor;
+    notifyListeners();
+  }
+
+  setDate(DateTime? picked) {
+    _dateRegister = picked.toString().substring(0, 10);
+    if (picked != null) {
+      _dateRegister = picked.toString().substring(0, 10);
+    }
+    notifyListeners();
+  }
+
+  checkExpires() {
+    int dateExpires = int.parse(_dateRegister.replaceAll('-', ''));
+    if (getDate() < dateExpires) _isCheckExpires = true;
+    notifyListeners();
+  }
+
+  getDate() {
+    var dateNow = DateTime.now();
+    int convertDateNow = 0;
+    String day = dateNow.day >= 10 ? dateNow.day.toString() : '0${dateNow.day}';
+    String month =
+        dateNow.month >= 10 ? dateNow.month.toString() : '0${dateNow.month}';
+    convertDateNow = int.parse('${dateNow.year}$month$day');
+    return convertDateNow;
+  }
+
+  checkRoleRegister() {
+    
     notifyListeners();
   }
 }
