@@ -16,7 +16,7 @@
     "typeVehicle": "Type vehicle",
     "blackGray": "Black gray",
     "roleSubMonth": "Subscribe by month",
-    "roleSubDay": "Subscribe by day",
+    "roleSubDate": "Subscribe by day",
     "language": "English",
     "motorbike": "Motorbike",
     "car": "Car",
@@ -30,5 +30,9 @@
     "cancel": "Cancel",
     "resend": "Resend",
     "errorOTP": "Error OTP",
-    "pleaseWait": "Please wait!"
+    "pleaseWait": "Please wait!",
+    "ok": "OK",
+    "selectColor": "Select color",
+    "localeDate": "en",
+    "pleaseVerifyPhone": "Please verify phone number!"
 }

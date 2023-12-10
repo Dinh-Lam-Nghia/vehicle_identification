@@ -39,19 +39,26 @@ class MessageLookup extends MessageLookupByLibrary {
         "inputOTP": MessageLookupByLibrary.simpleMessage("Nhập OTP"),
         "invalidFormat": MessageLookupByLibrary.simpleMessage("Sai định dạng!"),
         "language": MessageLookupByLibrary.simpleMessage("Việt Nam"),
+        "localeDate": MessageLookupByLibrary.simpleMessage("vi"),
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("ĐĂNG NHẬP VỚI GOOGLE"),
         "model": MessageLookupByLibrary.simpleMessage("Hãng xe"),
         "motorbike": MessageLookupByLibrary.simpleMessage("Xe máy"),
         "nameApp": MessageLookupByLibrary.simpleMessage("Campus Car"),
+        "ok": MessageLookupByLibrary.simpleMessage("Xác nhận"),
         "onTapAddVehicle": MessageLookupByLibrary.simpleMessage(
             "Nhấn vào đây để thêm thông tin xe!"),
         "phone": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
+        "pleaseVerifyPhone": MessageLookupByLibrary.simpleMessage(
+            "Vui lòng xác minh số điện thoại!"),
         "pleaseWait": MessageLookupByLibrary.simpleMessage("Vui lòng đợi!"),
         "resend": MessageLookupByLibrary.simpleMessage("Gửi lại"),
         "role": MessageLookupByLibrary.simpleMessage("Quyền"),
+        "roleSubDate":
+            MessageLookupByLibrary.simpleMessage("Đăng ký theo ngày"),
         "roleSubMonth":
             MessageLookupByLibrary.simpleMessage("Đăng ký theo tháng"),
+        "selectColor": MessageLookupByLibrary.simpleMessage("Chọn màu sắc"),
         "setting": MessageLookupByLibrary.simpleMessage("Cài đặt"),
         "test": MessageLookupByLibrary.simpleMessage("test"),
         "typeVehicle": MessageLookupByLibrary.simpleMessage("Loại xe"),

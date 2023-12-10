@@ -30,5 +30,9 @@
     "cancel": "Thoát",
     "resend": "Gửi lại",
     "errorOTP": "Mã xác thực sai!",
-    "pleaseWait": "Vui lòng đợi!"
+    "pleaseWait": "Vui lòng đợi!",
+    "ok": "Xác nhận",
+    "selectColor": "Chọn màu sắc",
+    "localeDate": "vi",
+    "pleaseVerifyPhone": "Vui lòng xác minh số điện thoại!"
 }

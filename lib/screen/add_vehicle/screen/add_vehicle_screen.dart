@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
 import 'package:vehicle_identification/screen/add_vehicle/provider/add_vehicle_provider.dart';
-import 'package:vehicle_identification/screen/login/user/widget/otp_widget.dart';
+import 'package:vehicle_identification/screen/add_vehicle/widget/otp_widget.dart';
+import 'package:vehicle_identification/screen/add_vehicle/widget/select_color_widget.dart';
 import 'package:vehicle_identification/utils/app_color.dart';
+import 'package:vehicle_identification/widget/app_button.dart';
 import 'package:vehicle_identification/widget/app_dropdown.dart';
 import 'package:vehicle_identification/widget/app_input.dart';
 import 'package:vehicle_identification/widget/app_toast.dart';
@@ -21,14 +23,7 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
   final AddVehicleProvider _provider = AddVehicleProvider();
   final _formKey = GlobalKey<FormState>();
 
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  TextEditingController _controller = TextEditingController();
-
-  void handleVerify(AddVehicleProvider p) {
+  handleVerify(AddVehicleProvider p) {
     if (p.phoneController.text.isEmpty) {
       AppToast().showToast(S.of(context).enterPhoneNumber);
     } else if (p.phoneController.text.length < 12) {
@@ -40,6 +35,58 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
         AppToast().showToast(S.of(context).verifiedPhoneNumber);
       }
     }
+  }
+
+  Widget iconVerifyPhone(AddVehicleProvider p) {
+    return IconButton(
+        onPressed: () {
+          handleVerify(p);
+        },
+        icon: Icon(
+          Icons.verified,
+          color: p.isVerify ? AppColor.successColor : AppColor.red,
+        ));
+  }
+
+  Widget iconVerifyCar(AddVehicleProvider p) {
+    return IconButton(
+        onPressed: () {
+          handleVerify(p);
+        },
+        icon: Icon(
+          Icons.directions_car,
+          color: p.isVerify ? AppColor.successColor : AppColor.red,
+        ));
+  }
+
+  selectDate(AddVehicleProvider p) async {
+    final DateTime? picked = await showDatePicker(
+        context: context,
+        initialDate: DateTime(
+            DateTime.now().year, DateTime.now().month, DateTime.now().day),
+        firstDate: DateTime(
+            DateTime.now().year, DateTime.now().month, DateTime.now().day),
+        lastDate: p.roleIndex == 0
+            ? DateTime(DateTime.now().year, DateTime.now().month + 1,
+                DateTime.now().day)
+            : DateTime(DateTime.now().year + 1, DateTime.now().month + 6,
+                DateTime.now().day),
+        locale: Locale(
+            S.of(context).localeDate, S.of(context).localeDate.toUpperCase()));
+    p.setDate(picked);
+    p.checkExpires();
+  }
+
+  openColorPicker(AddVehicleProvider p) {
+    showDialog(
+      context: context,
+      builder: (_) {
+        return SelectColorWidget(
+            mainColor: p.mainColor!,
+            setMainColor: p.setMainColor,
+            setColor: p.setColor);
+      },
+    );
   }
 
   showMyDialogOTP(AddVehicleProvider p) {
@@ -55,17 +102,6 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
         );
       },
     );
-  }
-
-  Widget _iconVerify(AddVehicleProvider p) {
-    return IconButton(
-        onPressed: () {
-          handleVerify(p);
-        },
-        icon: Icon(
-          Icons.verified,
-          color: p.isVerify ? AppColor.successColor : AppColor.red,
-        ));
   }
 
   @override
@@ -97,61 +133,131 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
             ),
             body: Form(
               key: _formKey,
-              child: SingleChildScrollView(
-                child: Center(
-                  child: Column(
-                    children: [
-                      const SizedBox(
-                        height: 20,
+              child: Center(
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    AppInput(
+                        controller: provider.modelVehicleController,
+                        width: size.width * 0.9,
+                        labelText: S.of(context).model),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    AppInput(
+                        controller: provider.phoneController,
+                        width: size.width * 0.9,
+                        keyboardType: TextInputType.phone,
+                        onChange: provider.checkPhoneFilled,
+                        labelText: S.of(context).phone,
+                        suffixIcon: iconVerifyPhone(provider)),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    AppInput(
+                        controller: provider.idVehicleController,
+                        width: size.width * 0.9,
+                        onChange: provider.checkPhoneFilled,
+                        labelText: S.of(context).vehicleId,
+                        suffixIcon: iconVerifyCar(provider)),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    SizedBox(
+                      width: size.width * 0.9,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            S.of(context).role,
+                            style: const TextStyle(fontSize: 16),
+                          ),
+                          AppDropdown(
+                            listRole: [
+                              S.of(context).roleSubDate,
+                              S.of(context).roleSubMonth
+                            ],
+                            value: provider.roleContent.isEmpty
+                                ? S.of(context).roleSubDate
+                                : provider.roleContent,
+                            onChanged: provider.setRole,
+                          )
+                        ],
                       ),
-                      AppInput(
-                          controller: _controller,
-                          width: size.width * 0.9,
-                          labelText: S.of(context).model),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      AppInput(
-                          controller: provider.phoneController,
-                          width: size.width * 0.9,
-                          keyboardType: TextInputType.phone,
-                          onChange: provider.checkPhoneFilled,
-                          labelText: S.of(context).phone,
-                          suffixIcon: _iconVerify(provider)),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      AppInput(
-                          controller: _controller,
-                          width: size.width * 0.9,
-                          labelText: S.of(context).vehicleId),
-                      const SizedBox(
-                        height: 15,
-                      ),
-                      SizedBox(
-                        width: size.width * 0.8,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              S.of(context).role,
-                              style: const TextStyle(fontSize: 16),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    SizedBox(
+                      width: size.width * 0.9,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            S.of(context).color,
+                            style: const TextStyle(fontSize: 16),
+                          ),
+                          InkWell(
+                            onTap: () {
+                              openColorPicker(provider);
+                            },
+                            child: Container(
+                              height: 30,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: provider.mainColor),
                             ),
-                            AppDropdown(
-                              listRole: [
-                                S.of(context).roleSubDay,
-                                S.of(context).roleSubMonth
-                              ],
-                              value: provider.roleContent.isEmpty
-                                  ? S.of(context).roleSubDay
-                                  : provider.roleContent,
-                              onChanged: provider.setRole,
-                            )
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
+                          )
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    SizedBox(
+                      width: size.width * 0.9,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            S.of(context).expires,
+                            style: const TextStyle(fontSize: 16),
+                          ),
+                          InkWell(
+                              onTap: () {
+                                selectDate(provider);
+                              },
+                              child: Text(provider.dateRegister,
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: provider.isCheckExpires
+                                          ? AppColor.successColor
+                                          : AppColor.errorColor,
+                                      decoration: TextDecoration.underline,
+                                      decorationColor: provider.isCheckExpires
+                                          ? AppColor.successColor
+                                          : AppColor.errorColor)))
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    AppButton(
+                        width: size.width * 0.9,
+                        text: S.of(context).addVehicle,
+                        onPressed: () {
+                          if (_formKey.currentState!.validate() &&
+                              provider.isVerify) {
+                          } else if (provider.isVerify) {
+                            AppToast()
+                                .showToast(S.of(context).pleaseVerifyPhone);
+                          }
+                        }),
+                  ],
                 ),
               ),
             ),
