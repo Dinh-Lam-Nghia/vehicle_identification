@@ -835,3 +835,4 @@ Temporary Items
 .dart_tool
 build
 pubspec.lock
+.flutter-plugins

@@ -2,9 +2,7 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:vehicle_identification/generated/l10n.dart';
-import 'package:vehicle_identification/widget/app_otp.dart';
-import 'package:vehicle_identification/widget/app_toast.dart';
+
 
 class AddVehicleProvider extends ChangeNotifier {
   final TextEditingController _phoneController = TextEditingController();
