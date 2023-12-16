@@ -122,6 +122,7 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
           });
           return Scaffold(
             backgroundColor: Colors.grey.shade100,
+            resizeToAvoidBottomInset: false,
             appBar: AppBar(
               backgroundColor: AppColor.primary,
               elevation: 0,
@@ -133,131 +134,133 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
             ),
             body: Form(
               key: _formKey,
-              child: Center(
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    AppInput(
-                        controller: provider.modelVehicleController,
-                        width: size.width * 0.9,
-                        labelText: S.of(context).model),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    AppInput(
-                        controller: provider.phoneController,
-                        width: size.width * 0.9,
-                        keyboardType: TextInputType.phone,
-                        onChange: provider.checkPhoneFilled,
-                        labelText: S.of(context).phone,
-                        suffixIcon: iconVerifyPhone(provider)),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    AppInput(
-                        controller: provider.idVehicleController,
-                        width: size.width * 0.9,
-                        onChange: provider.checkPhoneFilled,
-                        labelText: S.of(context).vehicleId,
-                        suffixIcon: iconVerifyCar(provider)),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    SizedBox(
-                      width: size.width * 0.9,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            S.of(context).role,
-                            style: const TextStyle(fontSize: 16),
-                          ),
-                          AppDropdown(
-                            listRole: [
-                              S.of(context).roleSubDate,
-                              S.of(context).roleSubMonth
-                            ],
-                            value: provider.roleContent.isEmpty
-                                ? S.of(context).roleSubDate
-                                : provider.roleContent,
-                            onChanged: provider.setRole,
-                          )
-                        ],
+              child: SingleChildScrollView(
+                child: Center(
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 30,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    SizedBox(
-                      width: size.width * 0.9,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            S.of(context).color,
-                            style: const TextStyle(fontSize: 16),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              openColorPicker(provider);
-                            },
-                            child: Container(
-                              height: 30,
-                              width: 30,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: provider.mainColor),
+                      AppInput(
+                          controller: provider.modelVehicleController,
+                          width: size.width * 0.9,
+                          labelText: S.of(context).model),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      AppInput(
+                          controller: provider.phoneController,
+                          width: size.width * 0.9,
+                          keyboardType: TextInputType.phone,
+                          onChange: provider.checkPhoneFilled,
+                          labelText: S.of(context).phone,
+                          suffixIcon: iconVerifyPhone(provider)),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      AppInput(
+                          controller: provider.idVehicleController,
+                          width: size.width * 0.9,
+                          onChange: provider.checkPhoneFilled,
+                          labelText: S.of(context).vehicleId,
+                          suffixIcon: iconVerifyCar(provider)),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      SizedBox(
+                        width: size.width * 0.9,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              S.of(context).role,
+                              style: const TextStyle(fontSize: 16),
                             ),
-                          )
-                        ],
+                            AppDropdown(
+                              listRole: [
+                                S.of(context).roleSubDate,
+                                S.of(context).roleSubMonth
+                              ],
+                              value: provider.roleContent.isEmpty
+                                  ? S.of(context).roleSubDate
+                                  : provider.roleContent,
+                              onChanged: provider.setRole,
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    SizedBox(
-                      width: size.width * 0.9,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            S.of(context).expires,
-                            style: const TextStyle(fontSize: 16),
-                          ),
-                          InkWell(
-                              onTap: () {
-                                selectDate(provider);
-                              },
-                              child: Text(provider.dateRegister,
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      color: provider.isCheckExpires
-                                          ? AppColor.successColor
-                                          : AppColor.errorColor,
-                                      decoration: TextDecoration.underline,
-                                      decorationColor: provider.isCheckExpires
-                                          ? AppColor.successColor
-                                          : AppColor.errorColor)))
-                        ],
+                      const SizedBox(
+                        height: 30,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    AppButton(
+                      SizedBox(
                         width: size.width * 0.9,
-                        text: S.of(context).addVehicle,
-                        onPressed: () {
-                          if (_formKey.currentState!.validate() &&
-                              provider.isVerify) {
-                          } else if (provider.isVerify) {
-                            AppToast()
-                                .showToast(S.of(context).pleaseVerifyPhone);
-                          }
-                        }),
-                  ],
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              S.of(context).color,
+                              style: const TextStyle(fontSize: 16),
+                            ),
+                            InkWell(
+                              onTap: () {
+                                openColorPicker(provider);
+                              },
+                              child: Container(
+                                height: 30,
+                                width: 30,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: provider.mainColor),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      SizedBox(
+                        width: size.width * 0.9,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              S.of(context).expires,
+                              style: const TextStyle(fontSize: 16),
+                            ),
+                            InkWell(
+                                onTap: () {
+                                  selectDate(provider);
+                                },
+                                child: Text(provider.dateRegister,
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        color: provider.isCheckExpires
+                                            ? AppColor.successColor
+                                            : AppColor.errorColor,
+                                        decoration: TextDecoration.underline,
+                                        decorationColor: provider.isCheckExpires
+                                            ? AppColor.successColor
+                                            : AppColor.errorColor)))
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      AppButton(
+                          width: size.width * 0.9,
+                          text: S.of(context).addVehicle,
+                          onPressed: () {
+                            if (_formKey.currentState!.validate() &&
+                                provider.isVerify) {
+                            } else if (provider.isVerify) {
+                              AppToast()
+                                  .showToast(S.of(context).pleaseVerifyPhone);
+                            }
+                          }),
+                    ],
+                  ),
                 ),
               ),
             ),
