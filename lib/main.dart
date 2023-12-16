@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vehicle_identification/firebase_options.dart';
 import 'package:vehicle_identification/screen/add_vehicle/provider/add_vehicle_provider.dart';
+import 'package:vehicle_identification/screen/add_vehicle/widget/image_widget.dart';
 import 'package:vehicle_identification/screen/splash/splash_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:vehicle_identification/utils/app_provider.dart';

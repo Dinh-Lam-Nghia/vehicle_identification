@@ -39,6 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   backgroundColor: Colors.transparent,
                   elevation: 0,
                 ),
+                floatingActionButton: FloatingActionButton(onPressed: () {}),
                 body: Column(
                   children: [
                     ProfileHeader(
@@ -50,9 +51,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 20,
                     ),
                     value.vehicles.isNotEmpty
-                        ? VehicleInformation(
-                            vehicle: value.vehicleInfor!,
-                            isCheckExpires: value.isCheckExpires)
+                        ? Expanded(
+                            child: SingleChildScrollView(
+                              child: VehicleInformation(
+                                  vehicle: value.vehicleInfor!,
+                                  isCheckExpires: value.isCheckExpires),
+                            ),
+                          )
                         : InkWell(
                             onTap: () {
                               widget.onTap();

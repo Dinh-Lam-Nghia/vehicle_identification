@@ -60,5 +60,11 @@
 		</array>
 	</dict>
 </array>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>Select photo from gallery</string>
+<key>NSCameraUsageDescription</key>
+<string>Take photo from camera</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>Used to capture autio for images</string>
 </dict>
 </plist>
