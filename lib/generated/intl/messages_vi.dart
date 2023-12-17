@@ -32,9 +32,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "chooseAnotherAccount":
             MessageLookupByLibrary.simpleMessage("CHỌN TÀI KHOẢN KHÁC"),
         "color": MessageLookupByLibrary.simpleMessage("Màu sắc"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
+        "confirmDelete": MessageLookupByLibrary.simpleMessage(
+            "Dữ liệu này sẽ mất khi bạn nhấn nút xoá!. Bạn có chắc chắn xoá?"),
         "continueWithThisAccount":
             MessageLookupByLibrary.simpleMessage("TIẾP TỤC VỚI TÀI KHOẢN NÀY"),
         "delete": MessageLookupByLibrary.simpleMessage("Xoá"),
+        "deleted": MessageLookupByLibrary.simpleMessage("Đã xoá!"),
         "enterPhoneNumber": MessageLookupByLibrary.simpleMessage(
             "Vui lòng nhập số điện thoại!"),
         "errorOTP": MessageLookupByLibrary.simpleMessage("Mã xác thực sai!"),
@@ -48,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("ĐĂNG NHẬP VỚI GOOGLE"),
         "logout": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
+        "managementVehicle": MessageLookupByLibrary.simpleMessage("Quản lý xe"),
         "model": MessageLookupByLibrary.simpleMessage("Hãng xe"),
         "motorbike": MessageLookupByLibrary.simpleMessage("Xe máy"),
         "nameApp": MessageLookupByLibrary.simpleMessage("Campus Car"),
@@ -58,8 +63,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "pleaseVerifyPhone": MessageLookupByLibrary.simpleMessage(
             "Vui lòng xác minh số điện thoại!"),
         "pleaseWait": MessageLookupByLibrary.simpleMessage("Vui lòng đợi!"),
-        "privacyPolicy": MessageLookupByLibrary.simpleMessage(
-            "Chính sách về quyền riêng tư"),
+        "privacyPolicy":
+            MessageLookupByLibrary.simpleMessage("Chính sách riêng tư"),
         "resend": MessageLookupByLibrary.simpleMessage("Gửi lại"),
         "role": MessageLookupByLibrary.simpleMessage("Quyền"),
         "roleSubDate":

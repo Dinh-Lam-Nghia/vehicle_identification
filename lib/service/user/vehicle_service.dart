@@ -15,4 +15,9 @@ class VehicleService {
       throw Exception('Failed to load!');
     }
   }
+
+  Future<void> removeVehicle(String vehicleID) async {
+    var url = Uri.parse(AppUrl.removeVehicle);
+    await http.post(url, body: {"vehicle_id": vehicleID});
+  }
 }

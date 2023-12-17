@@ -50,7 +50,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
         case 2:
           {
-            return const SettingScreen();
+            return SettingScreen(
+              onTapAddVehicle: navigateToPage2,
+            );
           }
       }
     }
