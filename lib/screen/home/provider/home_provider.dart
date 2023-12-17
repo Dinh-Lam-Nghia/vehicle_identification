@@ -3,9 +3,6 @@ import 'package:vehicle_identification/model/vehicle.dart';
 import 'package:vehicle_identification/service/user/vehicle_service.dart';
 
 class HomeProvider extends ChangeNotifier {
-  Vehicle _vehicleInfor = Vehicle();
-  Vehicle? get vehicleInfor => _vehicleInfor;
-
   final VehicleService _vehicleService = VehicleService();
 
   List<Vehicle> _vehicles = [];
@@ -14,18 +11,25 @@ class HomeProvider extends ChangeNotifier {
   bool _isCheckExpires = false;
   bool get isCheckExpires => _isCheckExpires;
 
+  int _indexVehicle = 0;
+  int get indexVehicle => _indexVehicle;
+
   getVehicleInfor(String email) async {
     _vehicles = await _vehicleService.getVehicle(email);
     if (_vehicles.isNotEmpty) {
-      _vehicleInfor = _vehicles[0];
       checkExpires();
     }
     notifyListeners();
   }
 
   checkExpires() {
-    int dateExpires = int.parse(_vehicleInfor.expires!.replaceAll('-', ''));
-    if (getDate() < dateExpires) _isCheckExpires = true;
+    int dateExpires =
+        int.parse(_vehicles[_indexVehicle].expires!.replaceAll('-', ''));
+    if (getDate() < dateExpires) {
+      _isCheckExpires = true;
+    } else {
+      _isCheckExpires = false;
+    }
     notifyListeners();
   }
 
@@ -37,5 +41,11 @@ class HomeProvider extends ChangeNotifier {
         dateNow.month >= 10 ? dateNow.month.toString() : '0${dateNow.month}';
     convertDateNow = int.parse('${dateNow.year}$month$day');
     return convertDateNow;
+  }
+
+  setIndexVehicle(int i) {
+    _indexVehicle = i;
+    checkExpires();
+    notifyListeners();
   }
 }

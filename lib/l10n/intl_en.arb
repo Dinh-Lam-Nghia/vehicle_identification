@@ -34,5 +34,7 @@
     "ok": "OK",
     "selectColor": "Select color",
     "localeDate": "en",
-    "pleaseVerifyPhone": "Please verify phone number!"
+    "pleaseVerifyPhone": "Please verify phone number!",
+    "allVehicle": "All vehicle",
+    "licensePlate": "License plate"
 }

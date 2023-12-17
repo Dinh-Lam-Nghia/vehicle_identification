@@ -34,5 +34,7 @@
     "ok": "Xác nhận",
     "selectColor": "Chọn màu sắc",
     "localeDate": "vi",
-    "pleaseVerifyPhone": "Vui lòng xác minh số điện thoại!"
+    "pleaseVerifyPhone": "Vui lòng xác minh số điện thoại!",
+    "allVehicle" : "Tất cả xe",
+    "licensePlate": "Biển số xe"
 }
