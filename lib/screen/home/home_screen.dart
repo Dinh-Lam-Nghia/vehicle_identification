@@ -89,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 floatingActionButton: value.vehicles.length > 1
                     ? FloatingActionButton(
-                        backgroundColor: AppColor.blue4,
+                        backgroundColor: AppColor.lightBlue,
                         onPressed: () {
                           _showMyDialog(size, value);
                         },

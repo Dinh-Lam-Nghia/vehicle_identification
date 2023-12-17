@@ -22,16 +22,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "aboutUS": MessageLookupByLibrary.simpleMessage("About us"),
         "addVehicle": MessageLookupByLibrary.simpleMessage("Add vehicle"),
-        "allVehicle": MessageLookupByLibrary.simpleMessage("All vehicle"),
+        "allVehicle": MessageLookupByLibrary.simpleMessage("All vehicles"),
         "blackGray": MessageLookupByLibrary.simpleMessage("Black gray"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "car": MessageLookupByLibrary.simpleMessage("Car"),
+        "changeLanguage":
+            MessageLookupByLibrary.simpleMessage("Change language"),
         "chooseAnotherAccount":
             MessageLookupByLibrary.simpleMessage("CHOOSE ANOTHER ACCOUNT"),
         "color": MessageLookupByLibrary.simpleMessage("Color"),
         "continueWithThisAccount":
             MessageLookupByLibrary.simpleMessage("CONTINUE WITH THIS ACCOUNT"),
+        "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Please enter phone number!"),
         "errorOTP": MessageLookupByLibrary.simpleMessage("Error OTP"),
@@ -45,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "localeDate": MessageLookupByLibrary.simpleMessage("en"),
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH GOOGLE"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "model": MessageLookupByLibrary.simpleMessage("Model"),
         "motorbike": MessageLookupByLibrary.simpleMessage("Motorbike"),
         "nameApp": MessageLookupByLibrary.simpleMessage("Campus Car"),
@@ -55,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "pleaseVerifyPhone":
             MessageLookupByLibrary.simpleMessage("Please verify phone number!"),
         "pleaseWait": MessageLookupByLibrary.simpleMessage("Please wait!"),
+        "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy policy"),
         "resend": MessageLookupByLibrary.simpleMessage("Resend"),
         "role": MessageLookupByLibrary.simpleMessage("Role"),
         "roleSubDate": MessageLookupByLibrary.simpleMessage("Subscribe by day"),
@@ -69,6 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Vehicle information"),
         "verifiedPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Phone number verified!"),
-        "verifyOTP": MessageLookupByLibrary.simpleMessage("Verify OTP")
+        "verifyOTP": MessageLookupByLibrary.simpleMessage("Verify OTP"),
+        "version": MessageLookupByLibrary.simpleMessage("Version")
       };
 }
