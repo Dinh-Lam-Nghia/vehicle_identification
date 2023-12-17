@@ -549,6 +549,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Upload image`
+  String get uploadImage {
+    return Intl.message(
+      'Upload image',
+      name: 'uploadImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify vehicle`
+  String get verifyVehicle {
+    return Intl.message(
+      'Verify vehicle',
+      name: 'verifyVehicle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please take a camera or select image!`
+  String get cameraOrFile {
+    return Intl.message(
+      'Please take a camera or select image!',
+      name: 'cameraOrFile',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

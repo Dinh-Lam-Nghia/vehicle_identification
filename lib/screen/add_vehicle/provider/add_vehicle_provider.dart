@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
 
 class AddVehicleProvider extends ChangeNotifier {
@@ -9,6 +11,10 @@ class AddVehicleProvider extends ChangeNotifier {
   TextEditingController get phoneController => _phoneController;
   final TextEditingController _smsCodeController = TextEditingController();
   TextEditingController get smsCodeController => _smsCodeController;
+
+  File? _image;
+  File? get image => _image;
+
   bool _isVerify = false;
   bool get isVerify => _isVerify;
 
@@ -141,7 +147,17 @@ class AddVehicleProvider extends ChangeNotifier {
   }
 
   checkRoleRegister() {
-    
+    notifyListeners();
+  }
+
+  Future selectImage(bool isCamera) async {
+    final imagePicker = ImagePicker();
+    final pickedFile = await imagePicker.pickImage(
+        source: isCamera ? ImageSource.camera : ImageSource.gallery);
+    if (pickedFile != null) {
+      _image = File(pickedFile.path);
+    }
+    print(_image);
     notifyListeners();
   }
 }

@@ -48,5 +48,8 @@
     "confirmDelete": "Data will be lost when you press the delete button!. Are you sure?",
     "deleted": "Deleted!",
     "updateVehicle": "Update vehicle",
-    "update": "Update"
+    "update": "Update",
+    "uploadImage": "Upload image",
+    "verifyVehicle": "Verify vehicle",
+    "cameraOrFile": "Please take a camera or select image!"
 }
