@@ -6,7 +6,7 @@
     "continueWithThisAccount": "CONTINUE WITH THIS ACCOUNT",
     "home": "Home",
     "addVehicle": "Add vehicle",
-    "setting": "Setting",
+    "information": "Information",
     "vehicleInfor": "Vehicle information",
     "phone": "Phone",
     "expires": "Expires",
@@ -46,5 +46,7 @@
     "managementVehicle": "Management vehicle",
     "confirm": "Confirm",
     "confirmDelete": "Data will be lost when you press the delete button!. Are you sure?",
-    "deleted": "Deleted!"
+    "deleted": "Deleted!",
+    "updateVehicle": "Update vehicle",
+    "update": "Update"
 }

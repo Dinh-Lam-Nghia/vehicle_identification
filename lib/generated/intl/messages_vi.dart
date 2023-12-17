@@ -72,9 +72,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "roleSubMonth":
             MessageLookupByLibrary.simpleMessage("Đăng ký theo tháng"),
         "selectColor": MessageLookupByLibrary.simpleMessage("Chọn màu sắc"),
-        "setting": MessageLookupByLibrary.simpleMessage("Cài đặt"),
         "test": MessageLookupByLibrary.simpleMessage("test"),
         "typeVehicle": MessageLookupByLibrary.simpleMessage("Loại xe"),
+        "update": MessageLookupByLibrary.simpleMessage("Cập nhật"),
+        "updateVehicle": MessageLookupByLibrary.simpleMessage("Cập nhật xe"),
         "vehicleId": MessageLookupByLibrary.simpleMessage("Biển số xe"),
         "vehicleInfor": MessageLookupByLibrary.simpleMessage("Thông tin xe"),
         "verifiedPhoneNumber": MessageLookupByLibrary.simpleMessage(

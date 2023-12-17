@@ -1,28 +1,45 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
-import 'package:vehicle_identification/screen/add_vehicle/provider/add_vehicle_provider.dart';
+import 'package:vehicle_identification/model/vehicle.dart';
 import 'package:vehicle_identification/screen/add_vehicle/widget/otp_widget.dart';
 import 'package:vehicle_identification/screen/add_vehicle/widget/select_color_widget.dart';
+import 'package:vehicle_identification/screen/management_vehicle/provider/update_vehicle_provider.dart';
 import 'package:vehicle_identification/utils/app_color.dart';
 import 'package:vehicle_identification/widget/app_button.dart';
 import 'package:vehicle_identification/widget/app_dropdown.dart';
 import 'package:vehicle_identification/widget/app_input.dart';
 import 'package:vehicle_identification/widget/app_toast.dart';
 
-class AddVehicleScreen extends StatefulWidget {
-  const AddVehicleScreen({super.key});
-
+class UpdateVehicleScreen extends StatefulWidget {
+  const UpdateVehicleScreen({super.key, required this.vehicle});
+  final Vehicle vehicle;
   @override
-  State<AddVehicleScreen> createState() => _AddCarScreenState();
+  State<UpdateVehicleScreen> createState() => _UpdateVehicleScreenState();
 }
 
-class _AddCarScreenState extends State<AddVehicleScreen> {
-  final AddVehicleProvider _provider = AddVehicleProvider();
-  final _formKey = GlobalKey<FormState>();
+class _UpdateVehicleScreenState extends State<UpdateVehicleScreen> {
+  final UpdateVehicleProvider _provider = UpdateVehicleProvider();
 
-  handleVerify(AddVehicleProvider p) {
+  final _formKey = GlobalKey<FormState>();
+  @override
+  void initState() {
+    _provider.init(widget.vehicle);
+    super.initState();
+  }
+
+  Widget iconVerifyCar(UpdateVehicleProvider p) {
+    return IconButton(
+        onPressed: () {
+          handleVerify(p);
+        },
+        icon: Icon(
+          Icons.directions_car,
+          color: p.isVerify ? AppColor.successColor : AppColor.red,
+        ));
+  }
+
+  handleVerify(UpdateVehicleProvider p) {
     if (p.phoneController.text.isEmpty) {
       AppToast().showToast(S.of(context).enterPhoneNumber);
     } else if (p.phoneController.text.length < 12) {
@@ -36,7 +53,7 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
     }
   }
 
-  Widget iconVerifyPhone(AddVehicleProvider p) {
+  Widget iconVerifyPhone(UpdateVehicleProvider p) {
     return IconButton(
         onPressed: () {
           handleVerify(p);
@@ -47,18 +64,7 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
         ));
   }
 
-  Widget iconVerifyCar(AddVehicleProvider p) {
-    return IconButton(
-        onPressed: () {
-          handleVerify(p);
-        },
-        icon: Icon(
-          Icons.directions_car,
-          color: p.isVerify ? AppColor.successColor : AppColor.red,
-        ));
-  }
-
-  selectDate(AddVehicleProvider p) async {
+  selectDate(UpdateVehicleProvider p) async {
     final DateTime? picked = await showDatePicker(
         context: context,
         initialDate: DateTime(
@@ -76,7 +82,7 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
     p.checkExpires();
   }
 
-  openColorPicker(AddVehicleProvider p) {
+  openColorPicker(UpdateVehicleProvider p) {
     showDialog(
       context: context,
       builder: (_) {
@@ -88,7 +94,7 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
     );
   }
 
-  showMyDialogOTP(AddVehicleProvider p) {
+  showMyDialogOTP(UpdateVehicleProvider p) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -106,19 +112,11 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return ChangeNotifierProvider<AddVehicleProvider>(
+    return ChangeNotifierProvider(
       create: (_) => _provider,
       builder: (context, widgets) {
-        return Consumer<AddVehicleProvider>(
+        return Consumer<UpdateVehicleProvider>(
             builder: (context, provider, child) {
-          Future.delayed(Duration.zero, () {
-            if (provider.isSentCode) {
-              showMyDialogOTP(provider);
-            }
-            if (provider.verificationFailed) {
-              AppToast().showToast(S.of(context).invalidFormat);
-            }
-          });
           return Form(
             key: _formKey,
             child: Scaffold(
@@ -127,8 +125,14 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
               appBar: AppBar(
                 backgroundColor: AppColor.primary,
                 elevation: 0,
+                automaticallyImplyLeading: false,
+                leading: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(Icons.arrow_back_ios)),
                 title: Text(
-                  S.of(context).addVehicle.toUpperCase(),
+                  S.of(context).updateVehicle.toUpperCase(),
                   style: const TextStyle(
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ),
@@ -140,28 +144,12 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
                       height: 30,
                     ),
                     AppInput(
-                        controller: provider.modelVehicleController,
-                        width: size.width * 0.9,
-                        labelText: S.of(context).model),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    AppInput(
                         controller: provider.phoneController,
                         width: size.width * 0.9,
                         keyboardType: TextInputType.phone,
                         onChange: provider.checkPhoneFilled,
                         labelText: S.of(context).phone,
                         suffixIcon: iconVerifyPhone(provider)),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    AppInput(
-                        controller: provider.idVehicleController,
-                        width: size.width * 0.9,
-                        onChange: provider.checkPhoneFilled,
-                        labelText: S.of(context).vehicleId,
-                        suffixIcon: iconVerifyCar(provider)),
                     const SizedBox(
                       height: 30,
                     ),
@@ -248,7 +236,7 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
                     ),
                     AppButton(
                         width: size.width * 0.9,
-                        text: S.of(context).addVehicle,
+                        text: S.of(context).update,
                         onPressed: () {
                           if (_formKey.currentState!.validate() &&
                               provider.isVerify) {
