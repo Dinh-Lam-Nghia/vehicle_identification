@@ -26,6 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "addVehicle": MessageLookupByLibrary.simpleMessage("Add vehicle"),
         "allVehicle": MessageLookupByLibrary.simpleMessage("All vehicles"),
         "blackGray": MessageLookupByLibrary.simpleMessage("Black gray"),
+        "cameraOrFile": MessageLookupByLibrary.simpleMessage(
+            "Please take a camera or select image!"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "car": MessageLookupByLibrary.simpleMessage("Car"),
         "changeLanguage":
@@ -78,12 +80,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "typeVehicle": MessageLookupByLibrary.simpleMessage("Type vehicle"),
         "update": MessageLookupByLibrary.simpleMessage("Update"),
         "updateVehicle": MessageLookupByLibrary.simpleMessage("Update vehicle"),
+        "uploadImage": MessageLookupByLibrary.simpleMessage("Upload image"),
         "vehicleId": MessageLookupByLibrary.simpleMessage("License plates"),
         "vehicleInfor":
             MessageLookupByLibrary.simpleMessage("Vehicle information"),
         "verifiedPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Phone number verified!"),
         "verifyOTP": MessageLookupByLibrary.simpleMessage("Verify OTP"),
+        "verifyVehicle": MessageLookupByLibrary.simpleMessage("Verify vehicle"),
         "version": MessageLookupByLibrary.simpleMessage("Version")
       };
 }

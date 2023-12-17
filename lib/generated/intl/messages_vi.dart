@@ -26,6 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "addVehicle": MessageLookupByLibrary.simpleMessage("Thêm xe mới"),
         "allVehicle": MessageLookupByLibrary.simpleMessage("Tất cả xe"),
         "blackGray": MessageLookupByLibrary.simpleMessage("Đen xám"),
+        "cameraOrFile": MessageLookupByLibrary.simpleMessage(
+            "Vui lòng chụp bằng máy ảnh hoặc mở thư viện!"),
         "cancel": MessageLookupByLibrary.simpleMessage("Thoát"),
         "car": MessageLookupByLibrary.simpleMessage("Xe ô tô"),
         "changeLanguage": MessageLookupByLibrary.simpleMessage("Đổi ngôn ngữ"),
@@ -44,6 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorOTP": MessageLookupByLibrary.simpleMessage("Mã xác thực sai!"),
         "expires": MessageLookupByLibrary.simpleMessage("Ngày hết hạn"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
+        "information": MessageLookupByLibrary.simpleMessage("Thông tin"),
         "inputOTP": MessageLookupByLibrary.simpleMessage("Nhập OTP"),
         "invalidFormat": MessageLookupByLibrary.simpleMessage("Sai định dạng!"),
         "language": MessageLookupByLibrary.simpleMessage("Việt Nam"),
@@ -81,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "verifiedPhoneNumber": MessageLookupByLibrary.simpleMessage(
             "Số điện thoại đã được xác minh!"),
         "verifyOTP": MessageLookupByLibrary.simpleMessage("Xác minh OTP"),
+        "verifyVehicle": MessageLookupByLibrary.simpleMessage("Xác minh xe"),
         "version": MessageLookupByLibrary.simpleMessage("Phiên bản")
       };
 }

@@ -6,7 +6,7 @@
     "continueWithThisAccount": "TIẾP TỤC VỚI TÀI KHOẢN NÀY",
     "home": "Trang chủ",
     "addVehicle": "Thêm xe mới",
-    "infomation": "Thông tin",
+    "information": "Thông tin",
     "vehicleInfor": "Thông tin xe",
     "phone": "Số điện thoại",
     "expires": "Ngày hết hạn",
@@ -48,5 +48,7 @@
     "confirmDelete": "Dữ liệu này sẽ mất khi bạn nhấn nút xoá!. Bạn có chắc chắn xoá?",
     "deleted": "Đã xoá!",
     "updateVehicle": "Cập nhật xe",
-    "update": "Cập nhật"
+    "update": "Cập nhật",
+    "verifyVehicle": "Xác minh xe",
+    "cameraOrFile": "Vui lòng chụp bằng máy ảnh hoặc mở thư viện!"
 }
