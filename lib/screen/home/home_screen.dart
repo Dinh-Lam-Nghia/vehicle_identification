@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
   }
 
-  Future<void> _showMyDialog(Size size, HomeProvider p) {
+  Future<void> _showMyDialog(HomeProvider p) {
     return showDialog<void>(
       context: context,
       barrierDismissible: true,
@@ -40,7 +40,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           content: SizedBox(
             width: double.maxFinite,
-            // height: size.height * 0.3,
             child: ListView.builder(
                 padding: const EdgeInsets.all(8),
                 shrinkWrap: true,
@@ -73,7 +72,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return ChangeNotifierProvider(
         create: (_) => _provider,
         builder: (context, widgets) =>
@@ -91,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ? FloatingActionButton(
                         backgroundColor: AppColor.lightBlue,
                         onPressed: () {
-                          _showMyDialog(size, value);
+                          _showMyDialog(value);
                         },
                         child: const Icon(
                           Icons.car_repair,

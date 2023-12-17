@@ -42,5 +42,9 @@
     "aboutUS": "About us",
     "privacyPolicy": "Privacy policy",
     "version": "Version",
-    "delete": "Delete"
+    "delete": "Delete",
+    "managementVehicle": "Management vehicle",
+    "confirm": "Confirm",
+    "confirmDelete": "Data will be lost when you press the delete button!. Are you sure?",
+    "deleted": "Deleted!"
 }

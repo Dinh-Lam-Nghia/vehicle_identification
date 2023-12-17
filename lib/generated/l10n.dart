@@ -489,6 +489,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Management vehicle`
+  String get managementVehicle {
+    return Intl.message(
+      'Management vehicle',
+      name: 'managementVehicle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message(
+      'Confirm',
+      name: 'confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data will be lost when you press the delete button!. Are you sure?`
+  String get confirmDelete {
+    return Intl.message(
+      'Data will be lost when you press the delete button!. Are you sure?',
+      name: 'confirmDelete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Deleted!`
+  String get deleted {
+    return Intl.message(
+      'Deleted!',
+      name: 'deleted',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

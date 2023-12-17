@@ -33,9 +33,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "chooseAnotherAccount":
             MessageLookupByLibrary.simpleMessage("CHOOSE ANOTHER ACCOUNT"),
         "color": MessageLookupByLibrary.simpleMessage("Color"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "confirmDelete": MessageLookupByLibrary.simpleMessage(
+            "Data will be lost when you press the delete button!. Are you sure?"),
         "continueWithThisAccount":
             MessageLookupByLibrary.simpleMessage("CONTINUE WITH THIS ACCOUNT"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+        "deleted": MessageLookupByLibrary.simpleMessage("Deleted!"),
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Please enter phone number!"),
         "errorOTP": MessageLookupByLibrary.simpleMessage("Error OTP"),
@@ -50,6 +54,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH GOOGLE"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "managementVehicle":
+            MessageLookupByLibrary.simpleMessage("Management vehicle"),
         "model": MessageLookupByLibrary.simpleMessage("Model"),
         "motorbike": MessageLookupByLibrary.simpleMessage("Motorbike"),
         "nameApp": MessageLookupByLibrary.simpleMessage("Campus Car"),

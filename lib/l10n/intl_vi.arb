@@ -40,7 +40,11 @@
     "changeLanguage": "Đổi ngôn ngữ",
     "logout": "Đăng xuất",
     "aboutUS": "Về chúng tôi",
-    "privacyPolicy": "Chính sách về quyền riêng tư",
+    "privacyPolicy": "Chính sách riêng tư",
     "version": "Phiên bản",
-    "delete": "Xoá"
+    "delete": "Xoá",
+    "managementVehicle": "Quản lý xe",
+    "confirm": "Xác nhận",
+    "confirmDelete": "Dữ liệu này sẽ mất khi bạn nhấn nút xoá!. Bạn có chắc chắn xoá?",
+    "deleted": "Đã xoá!"
 }

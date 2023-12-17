@@ -8,7 +8,6 @@ import 'package:vehicle_identification/screen/add_vehicle/provider/add_vehicle_p
 import 'package:vehicle_identification/screen/add_vehicle/widget/otp_widget.dart';
 import 'package:vehicle_identification/screen/add_vehicle/widget/select_color_widget.dart';
 import 'package:vehicle_identification/utils/app_color.dart';
-import 'package:vehicle_identification/widget/app_button.dart';
 import 'package:vehicle_identification/widget/app_dropdown.dart';
 import 'package:vehicle_identification/widget/app_input.dart';
 import 'package:vehicle_identification/widget/app_toast.dart';
