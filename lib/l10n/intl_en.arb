@@ -35,6 +35,12 @@
     "selectColor": "Select color",
     "localeDate": "en",
     "pleaseVerifyPhone": "Please verify phone number!",
-    "allVehicle": "All vehicle",
-    "licensePlate": "License plate"
+    "allVehicle": "All vehicles",
+    "licensePlate": "License plate",
+    "changeLanguage": "Change language",
+    "logout": "Logout",
+    "aboutUS": "About us",
+    "privacyPolicy": "Privacy policy",
+    "version": "Version",
+    "delete": "Delete"
 }

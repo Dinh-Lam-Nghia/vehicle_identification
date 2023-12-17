@@ -410,10 +410,10 @@ class S {
     );
   }
 
-  /// `All vehicle`
+  /// `All vehicles`
   String get allVehicle {
     return Intl.message(
-      'All vehicle',
+      'All vehicles',
       name: 'allVehicle',
       desc: '',
       args: [],
@@ -425,6 +425,66 @@ class S {
     return Intl.message(
       'License plate',
       name: 'licensePlate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change language`
+  String get changeLanguage {
+    return Intl.message(
+      'Change language',
+      name: 'changeLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message(
+      'Logout',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `About us`
+  String get aboutUS {
+    return Intl.message(
+      'About us',
+      name: 'aboutUS',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy policy`
+  String get privacyPolicy {
+    return Intl.message(
+      'Privacy policy',
+      name: 'privacyPolicy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Version`
+  String get version {
+    return Intl.message(
+      'Version',
+      name: 'version',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message(
+      'Delete',
+      name: 'delete',
       desc: '',
       args: [],
     );

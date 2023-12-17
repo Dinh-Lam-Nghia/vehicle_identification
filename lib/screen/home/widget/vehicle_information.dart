@@ -32,16 +32,16 @@ class VehicleInformation extends StatelessWidget {
             children: [
               ...ListTile.divideTiles(color: Colors.grey, tiles: [
                 ListTile(
-                  leading: const Icon(
-                    Icons.phone,
+                  leading: const FaIcon(
+                    FontAwesomeIcons.phone,
                     color: AppColor.primary,
                   ),
                   title: Text(S.of(context).phone),
                   subtitle: Text(vehicle.phone ?? ''),
                 ),
                 ListTile(
-                  leading: const Icon(
-                    Icons.date_range,
+                  leading: const FaIcon(
+                    FontAwesomeIcons.calendarCheck,
                     color: AppColor.primary,
                   ),
                   title: Text(S.of(context).expires),
@@ -52,8 +52,8 @@ class VehicleInformation extends StatelessWidget {
                   ),
                 ),
                 ListTile(
-                  leading: const Icon(
-                    Icons.person,
+                  leading: const FaIcon(
+                    FontAwesomeIcons.user,
                     color: AppColor.primary,
                   ),
                   title: Text(S.of(context).role),
@@ -63,7 +63,7 @@ class VehicleInformation extends StatelessWidget {
                 ),
                 ListTile(
                   leading: const FaIcon(
-                    FontAwesomeIcons.car,
+                    FontAwesomeIcons.tags,
                     color: AppColor.primary,
                   ),
                   title: Text(S.of(context).model),
@@ -71,7 +71,7 @@ class VehicleInformation extends StatelessWidget {
                 ),
                 ListTile(
                   leading: const Icon(
-                    Icons.color_lens,
+                    FontAwesomeIcons.palette,
                     color: AppColor.primary,
                   ),
                   title: Text(S.of(context).color),
