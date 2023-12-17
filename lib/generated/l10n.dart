@@ -409,6 +409,26 @@ class S {
       args: [],
     );
   }
+
+  /// `All vehicle`
+  String get allVehicle {
+    return Intl.message(
+      'All vehicle',
+      name: 'allVehicle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `License plate`
+  String get licensePlate {
+    return Intl.message(
+      'License plate',
+      name: 'licensePlate',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

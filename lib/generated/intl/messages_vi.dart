@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addVehicle": MessageLookupByLibrary.simpleMessage("Thêm xe mới"),
+        "allVehicle": MessageLookupByLibrary.simpleMessage("Tất cả xe"),
         "blackGray": MessageLookupByLibrary.simpleMessage("Đen xám"),
         "cancel": MessageLookupByLibrary.simpleMessage("Thoát"),
         "car": MessageLookupByLibrary.simpleMessage("Xe ô tô"),
@@ -39,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "inputOTP": MessageLookupByLibrary.simpleMessage("Nhập OTP"),
         "invalidFormat": MessageLookupByLibrary.simpleMessage("Sai định dạng!"),
         "language": MessageLookupByLibrary.simpleMessage("Việt Nam"),
+        "licensePlate": MessageLookupByLibrary.simpleMessage("Biển số xe"),
         "localeDate": MessageLookupByLibrary.simpleMessage("vi"),
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("ĐĂNG NHẬP VỚI GOOGLE"),

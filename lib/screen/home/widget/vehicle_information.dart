@@ -32,12 +32,18 @@ class VehicleInformation extends StatelessWidget {
             children: [
               ...ListTile.divideTiles(color: Colors.grey, tiles: [
                 ListTile(
-                  leading: const Icon(Icons.phone),
+                  leading: const Icon(
+                    Icons.phone,
+                    color: AppColor.primary,
+                  ),
                   title: Text(S.of(context).phone),
                   subtitle: Text(vehicle.phone ?? ''),
                 ),
                 ListTile(
-                  leading: const Icon(Icons.date_range),
+                  leading: const Icon(
+                    Icons.date_range,
+                    color: AppColor.primary,
+                  ),
                   title: Text(S.of(context).expires),
                   subtitle: Text(
                     vehicle.expires ?? '',
@@ -46,7 +52,10 @@ class VehicleInformation extends StatelessWidget {
                   ),
                 ),
                 ListTile(
-                  leading: const Icon(Icons.person),
+                  leading: const Icon(
+                    Icons.person,
+                    color: AppColor.primary,
+                  ),
                   title: Text(S.of(context).role),
                   subtitle: Text(vehicle.role == 0
                       ? S.of(context).roleSubMonth
@@ -55,12 +64,16 @@ class VehicleInformation extends StatelessWidget {
                 ListTile(
                   leading: const FaIcon(
                     FontAwesomeIcons.car,
+                    color: AppColor.primary,
                   ),
                   title: Text(S.of(context).model),
                   subtitle: Text(vehicle.model ?? ''),
                 ),
                 ListTile(
-                  leading: const Icon(Icons.color_lens),
+                  leading: const Icon(
+                    Icons.color_lens,
+                    color: AppColor.primary,
+                  ),
                   title: Text(S.of(context).color),
                   subtitle: Container(
                       color: Color(int.parse(vehicle.color ?? '0xff000000')),
@@ -68,7 +81,15 @@ class VehicleInformation extends StatelessWidget {
                       width: 10),
                 ),
                 ListTile(
-                  leading: const Icon(Icons.motorcycle),
+                  leading: vehicle.type == 0
+                      ? const Icon(
+                          FontAwesomeIcons.motorcycle,
+                          color: AppColor.primary,
+                        )
+                      : const FaIcon(
+                          FontAwesomeIcons.car,
+                          color: AppColor.primary,
+                        ),
                   title: Text(S.of(context).typeVehicle),
                   subtitle: Text(vehicle.type == 0
                       ? S.of(context).motorbike

@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addVehicle": MessageLookupByLibrary.simpleMessage("Add vehicle"),
+        "allVehicle": MessageLookupByLibrary.simpleMessage("All vehicle"),
         "blackGray": MessageLookupByLibrary.simpleMessage("Black gray"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "car": MessageLookupByLibrary.simpleMessage("Car"),
@@ -40,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "invalidFormat":
             MessageLookupByLibrary.simpleMessage("Invalid format!"),
         "language": MessageLookupByLibrary.simpleMessage("English"),
+        "licensePlate": MessageLookupByLibrary.simpleMessage("License plate"),
         "localeDate": MessageLookupByLibrary.simpleMessage("en"),
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH GOOGLE"),
