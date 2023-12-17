@@ -120,11 +120,11 @@ class S {
     );
   }
 
-  /// `Setting`
-  String get setting {
+  /// `Information`
+  String get information {
     return Intl.message(
-      'Setting',
-      name: 'setting',
+      'Information',
+      name: 'information',
       desc: '',
       args: [],
     );
@@ -525,6 +525,26 @@ class S {
     return Intl.message(
       'Deleted!',
       name: 'deleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update vehicle`
+  String get updateVehicle {
+    return Intl.message(
+      'Update vehicle',
+      name: 'updateVehicle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update`
+  String get update {
+    return Intl.message(
+      'Update',
+      name: 'update',
       desc: '',
       args: [],
     );

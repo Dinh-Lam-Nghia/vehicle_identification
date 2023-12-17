@@ -1,8 +1,12 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
 import 'package:vehicle_identification/screen/add_vehicle/screen/add_vehicle_screen.dart';
 import 'package:vehicle_identification/screen/home/home_screen.dart';
-import 'package:vehicle_identification/screen/setting/setting_screen.dart';
+import 'package:vehicle_identification/screen/management_vehicle/screen/management_vehicle_screen.dart';
+import 'package:vehicle_identification/screen/information/information_screen.dart';
 import 'package:vehicle_identification/utils/app_color.dart';
 
 class BottomNavigation extends StatefulWidget {
@@ -25,14 +29,30 @@ class _BottomNavigationState extends State<BottomNavigation> {
   Widget build(BuildContext context) {
     List<BottomNavigationBarItem> listBottom = [
       BottomNavigationBarItem(
-        icon: const Icon(Icons.home),
+        icon: const FaIcon(
+          FontAwesomeIcons.home,
+          color: AppColor.blue4,
+        ),
         label: S.of(context).home,
       ),
       BottomNavigationBarItem(
-          icon: const Icon(Icons.time_to_leave),
+          icon: const FaIcon(
+            FontAwesomeIcons.circlePlus,
+            color: AppColor.blue4,
+          ),
           label: S.of(context).addVehicle),
       BottomNavigationBarItem(
-          icon: const Icon(Icons.settings), label: S.of(context).setting),
+          icon: const FaIcon(
+            FontAwesomeIcons.car,
+            color: AppColor.blue4,
+          ),
+          label: S.of(context).managementVehicle),
+      BottomNavigationBarItem(
+          icon: const FaIcon(
+            FontAwesomeIcons.infoCircle,
+            color: AppColor.blue4,
+          ),
+          label: S.of(context).information),
     ];
 
     getPage() {
@@ -47,12 +67,15 @@ class _BottomNavigationState extends State<BottomNavigation> {
           {
             return const AddVehicleScreen();
           }
-
         case 2:
           {
-            return SettingScreen(
-              onTapAddVehicle: navigateToPage2,
+            return ManagementVehicleScreen(
+              onTap: navigateToPage2,
             );
+          }
+        case 3:
+          {
+            return const InformationScreen();
           }
       }
     }
@@ -60,9 +83,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return Scaffold(
       body: getPage(),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: AppColor.white,
+        selectedItemColor: AppColor.primary,
         unselectedItemColor: AppColor.blue3,
-        backgroundColor: AppColor.primary,
         currentIndex: _selectedIndex,
         onTap: (value) {
           setState(() {

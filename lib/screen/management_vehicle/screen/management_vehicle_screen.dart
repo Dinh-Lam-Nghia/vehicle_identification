@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
 import 'package:vehicle_identification/screen/management_vehicle/provider/management_vehicle_provider.dart';
+import 'package:vehicle_identification/screen/management_vehicle/screen/update_vehicle_screen.dart';
 import 'package:vehicle_identification/utils/app_color.dart';
 import 'package:vehicle_identification/widget/app_toast.dart';
 
@@ -121,7 +122,13 @@ class _ManagementVehicleScreenState extends State<ManagementVehicleScreen> {
                                       color: AppColor.primary,
                                     ),
                               onTap: () {
-                                // Navigator.pop(context);
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            UpdateVehicleScreen(
+                                                vehicle:
+                                                    provider.vehicles[index])));
                               },
                               title: Text(provider.vehicles[index].model ?? ''),
                               subtitle: Text(

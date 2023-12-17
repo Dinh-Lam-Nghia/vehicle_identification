@@ -1,28 +1,25 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
-import 'package:vehicle_identification/screen/management_vehicle/screen/management_vehicle_screen.dart';
 import 'package:vehicle_identification/screen/login/user/screen/user_login_screen.dart';
-import 'package:vehicle_identification/screen/setting/about_us_screen.dart';
-import 'package:vehicle_identification/screen/setting/privacy_policy_screen.dart';
+import 'package:vehicle_identification/screen/information/about_us_screen.dart';
+import 'package:vehicle_identification/screen/information/privacy_policy_screen.dart';
 import 'package:vehicle_identification/utils/app_color.dart';
 import 'package:vehicle_identification/utils/app_provider.dart';
 
-class SettingScreen extends StatelessWidget {
-  const SettingScreen({super.key, required this.onTapAddVehicle});
-  final VoidCallback onTapAddVehicle;
+class InformationScreen extends StatelessWidget {
+  const InformationScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     List<Widget> icons = const [
       FaIcon(
-        FontAwesomeIcons.car,
-        color: AppColor.blue4,
-      ),
-      FaIcon(
-        FontAwesomeIcons.circleInfo,
+        FontAwesomeIcons.infoCircle,
         color: AppColor.blue4,
       ),
       FaIcon(
@@ -30,7 +27,6 @@ class SettingScreen extends StatelessWidget {
         color: AppColor.blue4,
       ),
       FaIcon(
-        // ignore: deprecated_member_use
         FontAwesomeIcons.globeAsia,
         color: AppColor.blue4,
       ),
@@ -42,7 +38,6 @@ class SettingScreen extends StatelessWidget {
 
     List<String> getTitles() {
       List<String> titles = [
-        S.of(context).managementVehicle,
         S.of(context).aboutUS,
         S.of(context).privacyPolicy,
         S.of(context).changeLanguage,
@@ -51,25 +46,18 @@ class SettingScreen extends StatelessWidget {
       return titles;
     }
 
-    onTap(int index, VoidCallback onTapAddVehicle) async {
+    onTap(int index) async {
       if (index == 0) {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => ManagementVehicleScreen(
-                      onTap: onTapAddVehicle,
-                    )));
-      } else if (index == 1) {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const AboutUsScreen()));
-      } else if (index == 2) {
+      } else if (index == 1) {
         Navigator.push(
             context,
             MaterialPageRoute(
                 builder: (context) => const PrivacyPolicyScreen()));
-      } else if (index == 3) {
+      } else if (index == 2) {
         context.read<AppProvider>().changeLocale();
-      } else if (index == 4) {
+      } else if (index == 3) {
         Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (context) => const UserLoginScreen()),
@@ -88,7 +76,7 @@ class SettingScreen extends StatelessWidget {
           backgroundColor: AppColor.primary,
           elevation: 0,
           title: Text(
-            S.of(context).setting.toUpperCase(),
+            S.of(context).information.toUpperCase(),
             style: const TextStyle(
                 color: Colors.white, fontWeight: FontWeight.bold),
           ),
@@ -108,7 +96,7 @@ class SettingScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(5)),
                     child: ListTile(
                       onTap: () {
-                        onTap(index, onTapAddVehicle);
+                        onTap(index);
                       },
                       leading: icons[index],
                       title: Text(
@@ -120,9 +108,6 @@ class SettingScreen extends StatelessWidget {
                   ),
                 );
               },
-            ),
-            const SizedBox(
-              height: 15,
             ),
             Text(
               '${S.of(context).version}: 1.0.0',

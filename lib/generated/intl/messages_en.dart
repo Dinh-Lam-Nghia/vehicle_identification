@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorOTP": MessageLookupByLibrary.simpleMessage("Error OTP"),
         "expires": MessageLookupByLibrary.simpleMessage("Expires"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "information": MessageLookupByLibrary.simpleMessage("Information"),
         "inputOTP": MessageLookupByLibrary.simpleMessage("Input OTP"),
         "invalidFormat":
             MessageLookupByLibrary.simpleMessage("Invalid format!"),
@@ -73,9 +74,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "roleSubMonth":
             MessageLookupByLibrary.simpleMessage("Subscribe by month"),
         "selectColor": MessageLookupByLibrary.simpleMessage("Select color"),
-        "setting": MessageLookupByLibrary.simpleMessage("Setting"),
         "test": MessageLookupByLibrary.simpleMessage("test"),
         "typeVehicle": MessageLookupByLibrary.simpleMessage("Type vehicle"),
+        "update": MessageLookupByLibrary.simpleMessage("Update"),
+        "updateVehicle": MessageLookupByLibrary.simpleMessage("Update vehicle"),
         "vehicleId": MessageLookupByLibrary.simpleMessage("License plates"),
         "vehicleInfor":
             MessageLookupByLibrary.simpleMessage("Vehicle information"),
