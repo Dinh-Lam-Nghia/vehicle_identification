@@ -61,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH GOOGLE"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "logs": MessageLookupByLibrary.simpleMessage("Logs"),
         "managementVehicle":
             MessageLookupByLibrary.simpleMessage("Management vehicle"),
         "member": MessageLookupByLibrary.simpleMessage("Member"),

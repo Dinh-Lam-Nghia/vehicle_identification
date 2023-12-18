@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
               useMaterial3: false,
               // fontFamily: 'CarterOne'
             ),
-            home: const AdminHomeScreen(),
+            home: const SplashScreen(),
           ),
         ));
   }

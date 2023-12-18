@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColor {
-  static const Color primary = Color(0xff39A7FF);
+  static const Color primary = Color(0xff4B154B);
   static const Color secondary = Color(0xff131c4a);
   static const Color lightBlue = Color(0xff0072F6);
   static const Color white = Color(0xffffffff);
@@ -15,7 +15,7 @@ class AppColor {
   static const Color gray = Color(0xffF1EAFF);
   static const Color purple = Color(0xff7a54ff);
   static const Color orange = Color(0xffff8f61);
-  
+
   List<Color> graphColors = [
     Colors.purpleAccent,
     Colors.red.shade100,
