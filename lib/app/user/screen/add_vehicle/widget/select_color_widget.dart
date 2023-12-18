@@ -31,14 +31,22 @@ class SelectColorWidget extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: Navigator.of(context).pop,
-            child: Text(S.of(context).cancel),
+            child: Text(S.of(context).cancel,
+                style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black)),
           ),
           TextButton(
             onPressed: () {
               Navigator.of(context).pop();
               setColor.call();
             },
-            child: Text(S.of(context).ok),
+            child: Text(S.of(context).ok,
+                style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black)),
           ),
         ],
       ),

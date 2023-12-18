@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:vehicle_identification/app/user/screen/add_vehicle/widget/image_widget.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
 import 'package:vehicle_identification/app/user/screen/add_vehicle/provider/add_vehicle_provider.dart';
 import 'package:vehicle_identification/app/user/screen/add_vehicle/widget/otp_widget.dart';
@@ -50,7 +51,7 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
   Widget iconVerifyCar(AddVehicleProvider p) {
     return IconButton(
         onPressed: () {
-          handleVerify(p);
+          showDialogImagePicker(p);
         },
         icon: Icon(
           Icons.directions_car,
@@ -99,6 +100,15 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
           verifyPhone: p.verifyPhone,
           setSendCode: p.setSentCode,
         );
+      },
+    );
+  }
+
+  showDialogImagePicker(AddVehicleProvider p) {
+    showDialog(
+      context: context,
+      builder: (_) {
+        return ImageWidget(p: p);
       },
     );
   }

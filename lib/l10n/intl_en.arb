@@ -65,5 +65,8 @@
     "staff": "Staff",
     "visitor": "Visitor",
     "member": "Member",
-    "otherPeople": "Other people"
+    "otherPeople": "Other people",
+    "uploadImage": "Upload image",
+    "verifyVehicle": "Verify vehicle",
+    "cameraOrFile": "Please take a camera or select image!"
 }

@@ -6,7 +6,7 @@
     "continueWithThisAccount": "TIẾP TỤC VỚI TÀI KHOẢN NÀY",
     "home": "Trang chủ",
     "addVehicle": "Thêm xe mới",
-    "infomation": "Thông tin",
+    "information": "Thông tin",
     "vehicleInfor": "Thông tin xe",
     "phone": "Số điện thoại",
     "expires": "Ngày hết hạn",
@@ -66,4 +66,5 @@
     "visitor": "Khách",
     "member": "Thành viên",
     "otherPeople": "Người khác"
+
 }

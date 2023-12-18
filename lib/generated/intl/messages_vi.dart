@@ -47,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorOTP": MessageLookupByLibrary.simpleMessage("Mã xác thực sai!"),
         "expires": MessageLookupByLibrary.simpleMessage("Ngày hết hạn"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
+        "information": MessageLookupByLibrary.simpleMessage("Thông tin"),
         "inputOTP": MessageLookupByLibrary.simpleMessage("Nhập OTP"),
         "inside": MessageLookupByLibrary.simpleMessage("Bên trong"),
         "invalidFormat": MessageLookupByLibrary.simpleMessage("Sai định dạng!"),
