@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:vehicle_identification/app/admin/screen/add_vehicle/screen/add_vehicle_screen.dart';
+import 'package:vehicle_identification/app/admin/screen/all_vehicle/screen/all_vehicle_screen.dart';
+import 'package:vehicle_identification/app/admin/screen/home/screen/admin_home_screen.dart';
+import 'package:vehicle_identification/app/admin/screen/login/screen/admin_login_screen.dart';
+import 'package:vehicle_identification/app/admin/screen/logs/screen/logs_screen.dart';
 import 'package:vehicle_identification/app/utils/app_color.dart';
 import 'package:vehicle_identification/app/utils/app_image.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
@@ -48,7 +53,7 @@ class NavigationItems extends StatelessWidget {
           itemBuilder: (BuildContext context, index) {
             return ListTile(
               onTap: () {
-                onTap(context, listTitle(context), index);
+                onTap(context, index);
               },
               leading: listIcon[index],
               title: Text(
@@ -70,13 +75,23 @@ class NavigationItems extends StatelessWidget {
     );
   }
 
-  void setHornors(BuildContext context) {}
+  void onTap(BuildContext context, int index) {
+    if (index == 0) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (_) => const AdminHomeScreen()));
+    } else if (index == 1) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (_) => const LogsScreen()));
+    } else if (index == 2) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (_) => const AllVehicleScreen()));
+    } else if (index == 3) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (_) => const AddVehicleScreen()));
+    } else {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (_) => const AdminLoginScreen()));
+    }
+  }
 
-  void onTap(BuildContext context, List<String> listTitle, int index) {}
-
-  void coreValue(BuildContext context) {}
-
-  Future logout(BuildContext context) async {}
-
-  void policy(BuildContext context) {}
 }
