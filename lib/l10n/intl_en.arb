@@ -48,5 +48,22 @@
     "confirmDelete": "Data will be lost when you press the delete button!. Are you sure?",
     "deleted": "Deleted!",
     "updateVehicle": "Update vehicle",
-    "update": "Update"
+    "update": "Update",
+    "account": "Account",
+    "password": "Password",
+    "login": "Login",
+    "statistical": "Statistical",
+    "totalVehicles": "All vehicles",
+    "permitExpired": "Permit expired",
+    "totalOut": "Total out",
+    "totalIn": "Total in",
+    "dailyScan": "Daily scan",
+    "vehicleLocation": "Vehicle location",
+    "inside": "Inside",
+    "outside": "Outside",
+    "vehicleOwnerRole": "Vehicle owner role",
+    "staff": "Staff",
+    "visitor": "Visitor",
+    "member": "Member",
+    "otherPeople": "Other people"
 }

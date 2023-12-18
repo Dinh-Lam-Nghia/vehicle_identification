@@ -549,6 +549,176 @@ class S {
       args: [],
     );
   }
+
+  /// `Account`
+  String get account {
+    return Intl.message(
+      'Account',
+      name: 'account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get login {
+    return Intl.message(
+      'Login',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Statistical`
+  String get statistical {
+    return Intl.message(
+      'Statistical',
+      name: 'statistical',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All vehicles`
+  String get totalVehicles {
+    return Intl.message(
+      'All vehicles',
+      name: 'totalVehicles',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Permit expired`
+  String get permitExpired {
+    return Intl.message(
+      'Permit expired',
+      name: 'permitExpired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total out`
+  String get totalOut {
+    return Intl.message(
+      'Total out',
+      name: 'totalOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total in`
+  String get totalIn {
+    return Intl.message(
+      'Total in',
+      name: 'totalIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Daily scan`
+  String get dailyScan {
+    return Intl.message(
+      'Daily scan',
+      name: 'dailyScan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vehicle location`
+  String get vehicleLocation {
+    return Intl.message(
+      'Vehicle location',
+      name: 'vehicleLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Inside`
+  String get inside {
+    return Intl.message(
+      'Inside',
+      name: 'inside',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Outside`
+  String get outside {
+    return Intl.message(
+      'Outside',
+      name: 'outside',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vehicle owner role`
+  String get vehicleOwnerRole {
+    return Intl.message(
+      'Vehicle owner role',
+      name: 'vehicleOwnerRole',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Staff`
+  String get staff {
+    return Intl.message(
+      'Staff',
+      name: 'staff',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Visitor`
+  String get visitor {
+    return Intl.message(
+      'Visitor',
+      name: 'visitor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Member`
+  String get member {
+    return Intl.message(
+      'Member',
+      name: 'member',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Other people`
+  String get otherPeople {
+    return Intl.message(
+      'Other people',
+      name: 'otherPeople',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
