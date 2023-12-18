@@ -68,5 +68,6 @@
     "otherPeople": "Other people",
     "uploadImage": "Upload image",
     "verifyVehicle": "Verify vehicle",
-    "cameraOrFile": "Please take a camera or select image!"
+    "cameraOrFile": "Please take a camera or select image!",
+    "logs": "Logs"
 }

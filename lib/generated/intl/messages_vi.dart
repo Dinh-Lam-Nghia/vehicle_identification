@@ -58,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("ĐĂNG NHẬP VỚI GOOGLE"),
         "logout": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
+        "logs": MessageLookupByLibrary.simpleMessage("Nhật ký"),
         "managementVehicle": MessageLookupByLibrary.simpleMessage("Quản lý xe"),
         "member": MessageLookupByLibrary.simpleMessage("Thành viên"),
         "model": MessageLookupByLibrary.simpleMessage("Hãng xe"),

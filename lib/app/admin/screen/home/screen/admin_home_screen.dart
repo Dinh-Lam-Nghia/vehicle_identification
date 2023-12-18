@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vehicle_identification/app/admin/layout/drawer.dart';
+import 'package:vehicle_identification/app/admin/layout/nav_bar.dart';
 import 'package:vehicle_identification/app/admin/model/chart.dart';
 import 'package:vehicle_identification/app/admin/screen/home/provider/provider.dart';
 import 'package:vehicle_identification/app/admin/screen/home/widget/daily_scan.dart';
@@ -68,20 +70,9 @@ class AdminHome extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        backgroundColor: AppColor.primary,
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: const Icon(Icons.arrow_back_ios)),
-        title: Text(
-          S.of(context).statistical.toUpperCase(),
-          style:
-              const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
+      drawer: const DrawerApp(),
+      appBar: NavBar(
+        title: S.of(context).statistical,
       ),
       body: SingleChildScrollView(
         child: Column(
