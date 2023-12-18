@@ -35,7 +35,7 @@
     "selectColor": "Chọn màu sắc",
     "localeDate": "vi",
     "pleaseVerifyPhone": "Vui lòng xác minh số điện thoại!",
-    "allVehicle" : "Tất cả xe",
+    "allVehicle": "Tất cả xe",
     "licensePlate": "Biển số xe",
     "changeLanguage": "Đổi ngôn ngữ",
     "logout": "Đăng xuất",
@@ -49,6 +49,22 @@
     "deleted": "Đã xoá!",
     "updateVehicle": "Cập nhật xe",
     "update": "Cập nhật",
-    "verifyVehicle": "Xác minh xe",
-    "cameraOrFile": "Vui lòng chụp bằng máy ảnh hoặc mở thư viện!"
+    "account": "Tài khoản",
+    "password": "Mật khẩu",
+    "login": "Đăng nhập",
+    "statistical": "Thống kê",
+    "totalVehicles": "Tất cả xe",
+    "permitExpired": "Hết hạn đăng ký",
+    "totalOut": "Lượt ra",
+    "totalIn": "Lượt vào",
+    "dailyScan": "Lượt quét hàng ngày",
+    "vehicleLocation": "Ví trí xe",
+    "inside": "Bên trong",
+    "outside": "Bên ngoài",
+    "vehicleOwnerRole": "Quyền chủ xe",
+    "staff": "Nhân viên",
+    "visitor": "Khách",
+    "member": "Thành viên",
+    "otherPeople": "Người khác"
+
 }

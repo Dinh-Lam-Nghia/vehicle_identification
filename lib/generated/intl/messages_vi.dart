@@ -23,11 +23,10 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutUS": MessageLookupByLibrary.simpleMessage("Về chúng tôi"),
+        "account": MessageLookupByLibrary.simpleMessage("Tài khoản"),
         "addVehicle": MessageLookupByLibrary.simpleMessage("Thêm xe mới"),
         "allVehicle": MessageLookupByLibrary.simpleMessage("Tất cả xe"),
         "blackGray": MessageLookupByLibrary.simpleMessage("Đen xám"),
-        "cameraOrFile": MessageLookupByLibrary.simpleMessage(
-            "Vui lòng chụp bằng máy ảnh hoặc mở thư viện!"),
         "cancel": MessageLookupByLibrary.simpleMessage("Thoát"),
         "car": MessageLookupByLibrary.simpleMessage("Xe ô tô"),
         "changeLanguage": MessageLookupByLibrary.simpleMessage("Đổi ngôn ngữ"),
@@ -39,6 +38,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Dữ liệu này sẽ mất khi bạn nhấn nút xoá!. Bạn có chắc chắn xoá?"),
         "continueWithThisAccount":
             MessageLookupByLibrary.simpleMessage("TIẾP TỤC VỚI TÀI KHOẢN NÀY"),
+        "dailyScan":
+            MessageLookupByLibrary.simpleMessage("Lượt quét hàng ngày"),
         "delete": MessageLookupByLibrary.simpleMessage("Xoá"),
         "deleted": MessageLookupByLibrary.simpleMessage("Đã xoá!"),
         "enterPhoneNumber": MessageLookupByLibrary.simpleMessage(
@@ -48,20 +49,28 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "information": MessageLookupByLibrary.simpleMessage("Thông tin"),
         "inputOTP": MessageLookupByLibrary.simpleMessage("Nhập OTP"),
+        "inside": MessageLookupByLibrary.simpleMessage("Bên trong"),
         "invalidFormat": MessageLookupByLibrary.simpleMessage("Sai định dạng!"),
         "language": MessageLookupByLibrary.simpleMessage("Việt Nam"),
         "licensePlate": MessageLookupByLibrary.simpleMessage("Biển số xe"),
         "localeDate": MessageLookupByLibrary.simpleMessage("vi"),
+        "login": MessageLookupByLibrary.simpleMessage("Đăng nhập"),
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("ĐĂNG NHẬP VỚI GOOGLE"),
         "logout": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
         "managementVehicle": MessageLookupByLibrary.simpleMessage("Quản lý xe"),
+        "member": MessageLookupByLibrary.simpleMessage("Thành viên"),
         "model": MessageLookupByLibrary.simpleMessage("Hãng xe"),
         "motorbike": MessageLookupByLibrary.simpleMessage("Xe máy"),
         "nameApp": MessageLookupByLibrary.simpleMessage("Campus Car"),
         "ok": MessageLookupByLibrary.simpleMessage("Xác nhận"),
         "onTapAddVehicle": MessageLookupByLibrary.simpleMessage(
             "Nhấn vào đây để thêm thông tin xe!"),
+        "otherPeople": MessageLookupByLibrary.simpleMessage("Người khác"),
+        "outside": MessageLookupByLibrary.simpleMessage("Bên ngoài"),
+        "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
+        "permitExpired":
+            MessageLookupByLibrary.simpleMessage("Hết hạn đăng ký"),
         "phone": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
         "pleaseVerifyPhone": MessageLookupByLibrary.simpleMessage(
             "Vui lòng xác minh số điện thoại!"),
@@ -75,16 +84,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "roleSubMonth":
             MessageLookupByLibrary.simpleMessage("Đăng ký theo tháng"),
         "selectColor": MessageLookupByLibrary.simpleMessage("Chọn màu sắc"),
+        "staff": MessageLookupByLibrary.simpleMessage("Nhân viên"),
+        "statistical": MessageLookupByLibrary.simpleMessage("Thống kê"),
         "test": MessageLookupByLibrary.simpleMessage("test"),
+        "totalIn": MessageLookupByLibrary.simpleMessage("Lượt vào"),
+        "totalOut": MessageLookupByLibrary.simpleMessage("Lượt ra"),
+        "totalVehicles": MessageLookupByLibrary.simpleMessage("Tất cả xe"),
         "typeVehicle": MessageLookupByLibrary.simpleMessage("Loại xe"),
         "update": MessageLookupByLibrary.simpleMessage("Cập nhật"),
         "updateVehicle": MessageLookupByLibrary.simpleMessage("Cập nhật xe"),
         "vehicleId": MessageLookupByLibrary.simpleMessage("Biển số xe"),
         "vehicleInfor": MessageLookupByLibrary.simpleMessage("Thông tin xe"),
+        "vehicleLocation": MessageLookupByLibrary.simpleMessage("Ví trí xe"),
+        "vehicleOwnerRole":
+            MessageLookupByLibrary.simpleMessage("Quyền chủ xe"),
         "verifiedPhoneNumber": MessageLookupByLibrary.simpleMessage(
             "Số điện thoại đã được xác minh!"),
         "verifyOTP": MessageLookupByLibrary.simpleMessage("Xác minh OTP"),
-        "verifyVehicle": MessageLookupByLibrary.simpleMessage("Xác minh xe"),
-        "version": MessageLookupByLibrary.simpleMessage("Phiên bản")
+        "version": MessageLookupByLibrary.simpleMessage("Phiên bản"),
+        "visitor": MessageLookupByLibrary.simpleMessage("Khách")
       };
 }

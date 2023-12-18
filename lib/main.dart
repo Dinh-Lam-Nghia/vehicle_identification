@@ -1,11 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:vehicle_identification/app/admin/screen/home/screen/admin_home_screen.dart';
 import 'package:vehicle_identification/firebase_options.dart';
-import 'package:vehicle_identification/screen/add_vehicle/provider/add_vehicle_provider.dart';
-import 'package:vehicle_identification/screen/splash/splash_screen.dart';
+import 'package:vehicle_identification/app/user/screen/add_vehicle/provider/add_vehicle_provider.dart';
+import 'package:vehicle_identification/app/user/screen/splash/splash_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:vehicle_identification/utils/app_provider.dart';
+import 'package:vehicle_identification/app/utils/app_provider.dart';
 
 import 'generated/l10n.dart';
 
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
               useMaterial3: false,
               // fontFamily: 'CarterOne'
             ),
-            home: const SplashScreen(),
+            home: const AdminHomeScreen(),
           ),
         ));
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vehicle_identification/utils/app_color.dart';
-import 'package:vehicle_identification/utils/app_icon.dart';
+import 'package:vehicle_identification/app/utils/app_color.dart';
+import 'package:vehicle_identification/app/utils/app_icon.dart';
 
 class AppButtonImage extends StatelessWidget {
   const AppButtonImage(

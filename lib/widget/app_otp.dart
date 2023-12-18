@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-import 'package:vehicle_identification/utils/app_color.dart';
+import 'package:vehicle_identification/app/utils/app_color.dart';
 
 class AppOTP extends StatelessWidget {
   const AppOTP(

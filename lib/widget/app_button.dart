@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vehicle_identification/utils/app_color.dart';
+import 'package:vehicle_identification/app/utils/app_color.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton(

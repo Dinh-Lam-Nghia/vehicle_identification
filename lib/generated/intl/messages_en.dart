@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutUS": MessageLookupByLibrary.simpleMessage("About us"),
+        "account": MessageLookupByLibrary.simpleMessage("Account"),
         "addVehicle": MessageLookupByLibrary.simpleMessage("Add vehicle"),
         "allVehicle": MessageLookupByLibrary.simpleMessage("All vehicles"),
         "blackGray": MessageLookupByLibrary.simpleMessage("Black gray"),
@@ -40,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Data will be lost when you press the delete button!. Are you sure?"),
         "continueWithThisAccount":
             MessageLookupByLibrary.simpleMessage("CONTINUE WITH THIS ACCOUNT"),
+        "dailyScan": MessageLookupByLibrary.simpleMessage("Daily scan"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "deleted": MessageLookupByLibrary.simpleMessage("Deleted!"),
         "enterPhoneNumber":
@@ -49,22 +51,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "information": MessageLookupByLibrary.simpleMessage("Information"),
         "inputOTP": MessageLookupByLibrary.simpleMessage("Input OTP"),
+        "inside": MessageLookupByLibrary.simpleMessage("Inside"),
         "invalidFormat":
             MessageLookupByLibrary.simpleMessage("Invalid format!"),
         "language": MessageLookupByLibrary.simpleMessage("English"),
         "licensePlate": MessageLookupByLibrary.simpleMessage("License plate"),
         "localeDate": MessageLookupByLibrary.simpleMessage("en"),
+        "login": MessageLookupByLibrary.simpleMessage("Login"),
         "loginWithGoogle":
             MessageLookupByLibrary.simpleMessage("LOGIN WITH GOOGLE"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "managementVehicle":
             MessageLookupByLibrary.simpleMessage("Management vehicle"),
+        "member": MessageLookupByLibrary.simpleMessage("Member"),
         "model": MessageLookupByLibrary.simpleMessage("Model"),
         "motorbike": MessageLookupByLibrary.simpleMessage("Motorbike"),
         "nameApp": MessageLookupByLibrary.simpleMessage("Campus Car"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "onTapAddVehicle": MessageLookupByLibrary.simpleMessage(
             "Click here for more vehicle information!"),
+        "otherPeople": MessageLookupByLibrary.simpleMessage("Other people"),
+        "outside": MessageLookupByLibrary.simpleMessage("Outside"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "permitExpired": MessageLookupByLibrary.simpleMessage("Permit expired"),
         "phone": MessageLookupByLibrary.simpleMessage("Phone"),
         "pleaseVerifyPhone":
             MessageLookupByLibrary.simpleMessage("Please verify phone number!"),
@@ -76,7 +85,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "roleSubMonth":
             MessageLookupByLibrary.simpleMessage("Subscribe by month"),
         "selectColor": MessageLookupByLibrary.simpleMessage("Select color"),
+        "staff": MessageLookupByLibrary.simpleMessage("Staff"),
+        "statistical": MessageLookupByLibrary.simpleMessage("Statistical"),
         "test": MessageLookupByLibrary.simpleMessage("test"),
+        "totalIn": MessageLookupByLibrary.simpleMessage("Total in"),
+        "totalOut": MessageLookupByLibrary.simpleMessage("Total out"),
+        "totalVehicles": MessageLookupByLibrary.simpleMessage("All vehicles"),
         "typeVehicle": MessageLookupByLibrary.simpleMessage("Type vehicle"),
         "update": MessageLookupByLibrary.simpleMessage("Update"),
         "updateVehicle": MessageLookupByLibrary.simpleMessage("Update vehicle"),
@@ -84,10 +98,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "vehicleId": MessageLookupByLibrary.simpleMessage("License plates"),
         "vehicleInfor":
             MessageLookupByLibrary.simpleMessage("Vehicle information"),
+        "vehicleLocation":
+            MessageLookupByLibrary.simpleMessage("Vehicle location"),
+        "vehicleOwnerRole":
+            MessageLookupByLibrary.simpleMessage("Vehicle owner role"),
         "verifiedPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Phone number verified!"),
         "verifyOTP": MessageLookupByLibrary.simpleMessage("Verify OTP"),
         "verifyVehicle": MessageLookupByLibrary.simpleMessage("Verify vehicle"),
-        "version": MessageLookupByLibrary.simpleMessage("Version")
+        "version": MessageLookupByLibrary.simpleMessage("Version"),
+        "visitor": MessageLookupByLibrary.simpleMessage("Visitor")
       };
 }
