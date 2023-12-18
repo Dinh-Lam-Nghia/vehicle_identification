@@ -3,10 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:vehicle_identification/app/user/screen/add_vehicle/provider/add_vehicle_provider.dart';
+import 'package:vehicle_identification/app/utils/app_color.dart';
+import 'package:vehicle_identification/app/utils/app_gif.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
-import 'package:vehicle_identification/screen/add_vehicle/provider/add_vehicle_provider.dart';
-import 'package:vehicle_identification/utils/app_color.dart';
-import 'package:vehicle_identification/utils/app_gif.dart';
+
 import 'package:vehicle_identification/widget/app_lottie.dart';
 
 class ImageWidget extends StatefulWidget {
