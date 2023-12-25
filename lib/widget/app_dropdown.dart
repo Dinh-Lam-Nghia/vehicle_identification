@@ -5,10 +5,12 @@ class AppDropdown extends StatelessWidget {
       {super.key,
       required this.listRole,
       required this.onChanged,
-      required this.value});
+      required this.value,
+      this.enable = true});
   final List<String> listRole;
   final String value;
   final Function(String?, BuildContext) onChanged;
+  final bool enable;
   @override
   Widget build(BuildContext context) {
     return DropdownButton(
@@ -20,7 +22,9 @@ class AppDropdown extends StatelessWidget {
           );
         }).toList(),
         onChanged: (value) {
-          onChanged(value, context);
+          if (enable) {
+            onChanged(value, context);
+          }
         });
   }
 }

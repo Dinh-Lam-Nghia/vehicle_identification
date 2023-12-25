@@ -69,5 +69,16 @@
     "uploadImage": "Upload image",
     "verifyVehicle": "Verify vehicle",
     "cameraOrFile": "Please take a camera or select image!",
-    "logs": "Logs"
+    "logs": "Logs",
+    "search": "Search",
+    "fullName": "Full name",
+    "time": "Time",
+    "statusIn": "In",
+    "statusOut": "Out",
+    "no": "No.",
+    "status": "Status",
+    "verifyVehicleFail": "Verify vehicle fail!",
+    "addedVehicle": "Register successfully!",
+    "pleaseVerifyInformation": "Please verify information!",
+    "addAgain": "Add continute"
 }

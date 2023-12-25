@@ -24,9 +24,14 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutUS": MessageLookupByLibrary.simpleMessage("Về chúng tôi"),
         "account": MessageLookupByLibrary.simpleMessage("Tài khoản"),
+        "addAgain": MessageLookupByLibrary.simpleMessage("Thêm tiếp"),
         "addVehicle": MessageLookupByLibrary.simpleMessage("Thêm xe mới"),
+        "addedVehicle":
+            MessageLookupByLibrary.simpleMessage("Đăng ký thành công!"),
         "allVehicle": MessageLookupByLibrary.simpleMessage("Tất cả xe"),
         "blackGray": MessageLookupByLibrary.simpleMessage("Đen xám"),
+        "cameraOrFile":
+            MessageLookupByLibrary.simpleMessage("Chọn hoặc sử dụng camera"),
         "cancel": MessageLookupByLibrary.simpleMessage("Thoát"),
         "car": MessageLookupByLibrary.simpleMessage("Xe ô tô"),
         "changeLanguage": MessageLookupByLibrary.simpleMessage("Đổi ngôn ngữ"),
@@ -35,7 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "color": MessageLookupByLibrary.simpleMessage("Màu sắc"),
         "confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
         "confirmDelete": MessageLookupByLibrary.simpleMessage(
-            "Dữ liệu này sẽ mất khi bạn nhấn nút xoá!. Bạn có chắc chắn xoá?"),
+            "Dữ liệu này sẽ mất khi bạn nhấn nút xoá! Bạn có chắc chắn xoá?"),
         "continueWithThisAccount":
             MessageLookupByLibrary.simpleMessage("TIẾP TỤC VỚI TÀI KHOẢN NÀY"),
         "dailyScan":
@@ -46,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Vui lòng nhập số điện thoại!"),
         "errorOTP": MessageLookupByLibrary.simpleMessage("Mã xác thực sai!"),
         "expires": MessageLookupByLibrary.simpleMessage("Ngày hết hạn"),
+        "fullName": MessageLookupByLibrary.simpleMessage("Họ tên"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "information": MessageLookupByLibrary.simpleMessage("Thông tin"),
         "inputOTP": MessageLookupByLibrary.simpleMessage("Nhập OTP"),
@@ -64,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "model": MessageLookupByLibrary.simpleMessage("Hãng xe"),
         "motorbike": MessageLookupByLibrary.simpleMessage("Xe máy"),
         "nameApp": MessageLookupByLibrary.simpleMessage("Campus Car"),
+        "no": MessageLookupByLibrary.simpleMessage("STT"),
         "ok": MessageLookupByLibrary.simpleMessage("Xác nhận"),
         "onTapAddVehicle": MessageLookupByLibrary.simpleMessage(
             "Nhấn vào đây để thêm thông tin xe!"),
@@ -73,6 +80,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "permitExpired":
             MessageLookupByLibrary.simpleMessage("Hết hạn đăng ký"),
         "phone": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
+        "pleaseVerifyInformation": MessageLookupByLibrary.simpleMessage(
+            "Vui lòng xác minh thông tin!"),
         "pleaseVerifyPhone": MessageLookupByLibrary.simpleMessage(
             "Vui lòng xác minh số điện thoại!"),
         "pleaseWait": MessageLookupByLibrary.simpleMessage("Vui lòng đợi!"),
@@ -84,10 +93,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Đăng ký theo ngày"),
         "roleSubMonth":
             MessageLookupByLibrary.simpleMessage("Đăng ký theo tháng"),
+        "search": MessageLookupByLibrary.simpleMessage("Tìm kiếm"),
         "selectColor": MessageLookupByLibrary.simpleMessage("Chọn màu sắc"),
         "staff": MessageLookupByLibrary.simpleMessage("Nhân viên"),
         "statistical": MessageLookupByLibrary.simpleMessage("Thống kê"),
+        "status": MessageLookupByLibrary.simpleMessage("Trạng thái"),
+        "statusIn": MessageLookupByLibrary.simpleMessage("Vào"),
+        "statusOut": MessageLookupByLibrary.simpleMessage("Ra"),
         "test": MessageLookupByLibrary.simpleMessage("test"),
+        "time": MessageLookupByLibrary.simpleMessage("Thời gian"),
         "totalIn": MessageLookupByLibrary.simpleMessage("Lượt vào"),
         "totalOut": MessageLookupByLibrary.simpleMessage("Lượt ra"),
         "totalVehicles": MessageLookupByLibrary.simpleMessage("Tất cả xe"),
@@ -102,6 +116,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "verifiedPhoneNumber": MessageLookupByLibrary.simpleMessage(
             "Số điện thoại đã được xác minh!"),
         "verifyOTP": MessageLookupByLibrary.simpleMessage("Xác minh OTP"),
+        "verifyVehicle": MessageLookupByLibrary.simpleMessage("Xác minh xe"),
+        "verifyVehicleFail":
+            MessageLookupByLibrary.simpleMessage("Lỗi xác thực!"),
         "version": MessageLookupByLibrary.simpleMessage("Phiên bản"),
         "visitor": MessageLookupByLibrary.simpleMessage("Khách")
       };

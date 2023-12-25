@@ -24,7 +24,10 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutUS": MessageLookupByLibrary.simpleMessage("About us"),
         "account": MessageLookupByLibrary.simpleMessage("Account"),
+        "addAgain": MessageLookupByLibrary.simpleMessage("Add continute"),
         "addVehicle": MessageLookupByLibrary.simpleMessage("Add vehicle"),
+        "addedVehicle":
+            MessageLookupByLibrary.simpleMessage("Register successfully!"),
         "allVehicle": MessageLookupByLibrary.simpleMessage("All vehicles"),
         "blackGray": MessageLookupByLibrary.simpleMessage("Black gray"),
         "cameraOrFile": MessageLookupByLibrary.simpleMessage(
@@ -48,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please enter phone number!"),
         "errorOTP": MessageLookupByLibrary.simpleMessage("Error OTP"),
         "expires": MessageLookupByLibrary.simpleMessage("Expires"),
+        "fullName": MessageLookupByLibrary.simpleMessage("Full name"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "information": MessageLookupByLibrary.simpleMessage("Information"),
         "inputOTP": MessageLookupByLibrary.simpleMessage("Input OTP"),
@@ -68,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "model": MessageLookupByLibrary.simpleMessage("Model"),
         "motorbike": MessageLookupByLibrary.simpleMessage("Motorbike"),
         "nameApp": MessageLookupByLibrary.simpleMessage("Campus Car"),
+        "no": MessageLookupByLibrary.simpleMessage("No."),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "onTapAddVehicle": MessageLookupByLibrary.simpleMessage(
             "Click here for more vehicle information!"),
@@ -76,6 +81,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "permitExpired": MessageLookupByLibrary.simpleMessage("Permit expired"),
         "phone": MessageLookupByLibrary.simpleMessage("Phone"),
+        "pleaseVerifyInformation":
+            MessageLookupByLibrary.simpleMessage("Please verify information!"),
         "pleaseVerifyPhone":
             MessageLookupByLibrary.simpleMessage("Please verify phone number!"),
         "pleaseWait": MessageLookupByLibrary.simpleMessage("Please wait!"),
@@ -85,10 +92,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "roleSubDate": MessageLookupByLibrary.simpleMessage("Subscribe by day"),
         "roleSubMonth":
             MessageLookupByLibrary.simpleMessage("Subscribe by month"),
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
         "selectColor": MessageLookupByLibrary.simpleMessage("Select color"),
         "staff": MessageLookupByLibrary.simpleMessage("Staff"),
         "statistical": MessageLookupByLibrary.simpleMessage("Statistical"),
+        "status": MessageLookupByLibrary.simpleMessage("Status"),
+        "statusIn": MessageLookupByLibrary.simpleMessage("In"),
+        "statusOut": MessageLookupByLibrary.simpleMessage("Out"),
         "test": MessageLookupByLibrary.simpleMessage("test"),
+        "time": MessageLookupByLibrary.simpleMessage("Time"),
         "totalIn": MessageLookupByLibrary.simpleMessage("Total in"),
         "totalOut": MessageLookupByLibrary.simpleMessage("Total out"),
         "totalVehicles": MessageLookupByLibrary.simpleMessage("All vehicles"),
@@ -107,6 +119,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Phone number verified!"),
         "verifyOTP": MessageLookupByLibrary.simpleMessage("Verify OTP"),
         "verifyVehicle": MessageLookupByLibrary.simpleMessage("Verify vehicle"),
+        "verifyVehicleFail":
+            MessageLookupByLibrary.simpleMessage("Verify vehicle fail!"),
         "version": MessageLookupByLibrary.simpleMessage("Version"),
         "visitor": MessageLookupByLibrary.simpleMessage("Visitor")
       };

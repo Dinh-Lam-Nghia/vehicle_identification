@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -17,12 +17,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  User? user = FirebaseAuth.instance.currentUser;
   final HomeProvider _provider = HomeProvider();
 
   @override
   void initState() {
-    _provider.getVehicleInfor(user!.email ?? '');
+    _provider.getVehicleInfor();
     super.initState();
   }
 
@@ -100,7 +99,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 body: Column(
                   children: [
                     ProfileHeader(
-                      user: user!,
+                      urlPhoto: value.urlPhoto,
+                      userName: value.userName,
                       vehicleID: isNotEmpty
                           ? value.vehicles[value.indexVehicle].vehicleID ?? ''
                           : '',

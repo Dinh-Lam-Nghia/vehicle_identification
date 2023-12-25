@@ -759,6 +759,116 @@ class S {
       args: [],
     );
   }
+
+  /// `Search`
+  String get search {
+    return Intl.message(
+      'Search',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full name`
+  String get fullName {
+    return Intl.message(
+      'Full name',
+      name: 'fullName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time`
+  String get time {
+    return Intl.message(
+      'Time',
+      name: 'time',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `In`
+  String get statusIn {
+    return Intl.message(
+      'In',
+      name: 'statusIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Out`
+  String get statusOut {
+    return Intl.message(
+      'Out',
+      name: 'statusOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No.`
+  String get no {
+    return Intl.message(
+      'No.',
+      name: 'no',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Status`
+  String get status {
+    return Intl.message(
+      'Status',
+      name: 'status',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify vehicle fail!`
+  String get verifyVehicleFail {
+    return Intl.message(
+      'Verify vehicle fail!',
+      name: 'verifyVehicleFail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register successfully!`
+  String get addedVehicle {
+    return Intl.message(
+      'Register successfully!',
+      name: 'addedVehicle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please verify information!`
+  String get pleaseVerifyInformation {
+    return Intl.message(
+      'Please verify information!',
+      name: 'pleaseVerifyInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add continute`
+  String get addAgain {
+    return Intl.message(
+      'Add continute',
+      name: 'addAgain',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

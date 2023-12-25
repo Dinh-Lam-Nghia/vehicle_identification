@@ -21,6 +21,8 @@ class ImageWidget extends StatefulWidget {
 class _ImageWidgetState extends State<ImageWidget> {
   File? _image;
   bool isChecking = false;
+
+  bool isFail = false;
   Future selectImage(bool isCamera) async {
     final imagePicker = ImagePicker();
     final pickedFile = await imagePicker.pickImage(
@@ -38,86 +40,154 @@ class _ImageWidgetState extends State<ImageWidget> {
     });
   }
 
+  checkFail(bool value) {
+    setState(() {
+      isFail = value;
+    });
+  }
+
+  onVerify() {
+    if (_image != null) {
+      widget.p.verifyVehicle(_image!);
+      check();
+      Future.delayed(const Duration(milliseconds: 2500), () {
+        check();
+        checkFail(widget.p.isFailVerifyVehicle);
+        if (widget.p.isVerifyVehicle) {
+          Navigator.pop(context);
+        }
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Center(
-        child: Text(
-          S.of(context).verifyVehicle.toUpperCase(),
-          style: const TextStyle(fontWeight: FontWeight.bold),
-        ),
-      ),
-      content: !isChecking
-          ? SizedBox(
-              height: _image == null ? 150 : 280,
-              child: Column(
+      contentPadding: EdgeInsets.zero,
+      content: SizedBox(
+        height: isChecking ? 300 : (_image == null ? 200 : 500),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 15,
+            ),
+            Center(
+              child: SizedBox(
+                height: 20,
+                child: Text(
+                  S.of(context).verifyVehicle.toUpperCase(),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 20),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            if (_image == null)
+              Center(
+                child: Text(
+                  S.of(context).cameraOrFile,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(color: AppColor.red),
+                ),
+              )
+            else
+              !isChecking
+                  ? Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                          height: 300,
+                          width: 300,
+                          child: Image.file(
+                            _image!,
+                            fit: BoxFit.fill,
+                          )),
+                    )
+                  : const Center(
+                      child: AppLottie(assetGif: AppGif.carNumberPlate)),
+            isFail
+                ? !isChecking
+                    ? Center(
+                        child: Text(
+                        S.of(context).verifyVehicleFail,
+                        style: const TextStyle(
+                            fontSize: 16, color: AppColor.errorColor),
+                      ))
+                    : Container()
+                : Container(),
+            const SizedBox(
+              height: 15,
+            ),
+            !isChecking
+                ? SizedBox(
+                    height: 50,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            checkFail(false);
+                            selectImage(true);
+                          },
+                          child: const FaIcon(
+                            FontAwesomeIcons.camera,
+                            color: AppColor.primary,
+                            size: 50,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 30,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            checkFail(false);
+                            selectImage(false);
+                          },
+                          child: const FaIcon(
+                            FontAwesomeIcons.folder,
+                            color: AppColor.primary,
+                            size: 50,
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                : Container(),
+            const Spacer(),
+            SizedBox(
+              height: 40,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  _image == null
-                      ? Text(
-                          S.of(context).cameraOrFile,
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(color: AppColor.red),
-                        )
-                      : Image.file(_image!),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          selectImage(true);
-                        },
-                        child: const FaIcon(
-                          FontAwesomeIcons.camera,
-                          color: AppColor.primary,
-                          size: 50,
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 30,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          selectImage(false);
-                        },
-                        child: const FaIcon(
-                          FontAwesomeIcons.folder,
-                          color: AppColor.primary,
-                          size: 50,
-                        ),
-                      ),
-                    ],
-                  ),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text(
+                        S.of(context).cancel,
+                        style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
+                      )),
+                  TextButton(
+                      onPressed: onVerify,
+                      child: Text(
+                        S.of(context).confirm,
+                        style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
+                      ))
                 ],
               ),
-            )
-          : const AppLottie(assetGif: AppGif.carNumberPlate),
-      actions: [
-        TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text(
-              S.of(context).cancel,
-              style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
-            )),
-        TextButton(
-            onPressed: () {
-              check();
-            },
-            child: Text(
-              S.of(context).confirm,
-              style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
-            ))
-      ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

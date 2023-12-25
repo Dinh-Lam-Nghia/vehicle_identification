@@ -75,6 +75,7 @@ class InformationScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: AppColor.primary,
           elevation: 0,
+          centerTitle: true,
           title: Text(
             S.of(context).information.toUpperCase(),
             style: const TextStyle(

@@ -3,20 +3,24 @@ import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:vehicle_identification/app/user/model/vehicle.dart';
+import 'package:vehicle_identification/app/user/service/user/vehicle_service.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
 
 class AddVehicleProvider extends ChangeNotifier {
+  final VehicleService service = VehicleService();
   final TextEditingController _phoneController = TextEditingController();
   TextEditingController get phoneController => _phoneController;
   final TextEditingController _smsCodeController = TextEditingController();
   TextEditingController get smsCodeController => _smsCodeController;
-
-  File? _image;
-  File? get image => _image;
-
   bool _isVerify = false;
   bool get isVerify => _isVerify;
+
+  bool _isVerifyVehicle = false;
+  bool get isVerifyVehicle => _isVerifyVehicle;
+
+  bool _isFailVerifyVehicle = false;
+  bool get isFailVerifyVehicle => _isFailVerifyVehicle;
 
   int _roleIndex = 0;
   int get roleIndex => _roleIndex;
@@ -46,6 +50,9 @@ class AddVehicleProvider extends ChangeNotifier {
 
   bool _isCheckExpires = false;
   bool get isCheckExpires => _isCheckExpires;
+
+  bool _registerSuccesfull = false;
+  bool get registerSuccesfull => _registerSuccesfull;
 
   final TextEditingController _modelVehicleController = TextEditingController();
   TextEditingController get modelVehicleController => _modelVehicleController;
@@ -150,14 +157,56 @@ class AddVehicleProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future selectImage(bool isCamera) async {
-    final imagePicker = ImagePicker();
-    final pickedFile = await imagePicker.pickImage(
-        source: isCamera ? ImageSource.camera : ImageSource.gallery);
-    if (pickedFile != null) {
-      _image = File(pickedFile.path);
+  verifyVehicle(File image) async {
+    _isVerifyVehicle = false;
+    _isFailVerifyVehicle = false;
+    String plateNumber = await service.verifyVehicle(image);
+    if (plateNumber == 'Error') {
+      _isFailVerifyVehicle = true;
     }
-    print(_image);
+    if (_idVehicleController.text == plateNumber) {
+      _isVerifyVehicle = true;
+    } else {
+      _isFailVerifyVehicle = true;
+    }
+    notifyListeners();
+  }
+
+  onChangePlateNumber(String value) {
+    _isVerifyVehicle = false;
+    notifyListeners();
+  }
+
+  addVehicle() async {
+    _registerSuccesfull = false;
+    Color convertedColor = _mainColor![500]!.withAlpha(0xff);
+    String finalColor =
+        convertedColor.toString().replaceAll('Color(', '').replaceAll(')', '');
+
+    Vehicle newVehicle = Vehicle(
+        vehicleID: _idVehicleController.text,
+        role: roleIndex,
+        model: _modelVehicleController.text,
+        color: finalColor,
+        type: 1,
+        expires: _dateRegister);
+    await service.addVehicle(newVehicle, 3);
+    _registerSuccesfull = true;
+    notifyListeners();
+  }
+
+  addContinute() {
+    _registerSuccesfull = false;
+    _isVerify = false;
+    _isVerifyVehicle = false;
+    _mainColor = Colors.blue;
+    _dateRegister = DateTime.now().toString().substring(0, 10);
+    _roleIndex = 0;
+    _modelVehicleController.text = '';
+    _idVehicleController.text = '';
+    _phoneController.text = '';
+    _isCheckExpires = false;
+    checkExpires();
     notifyListeners();
   }
 }

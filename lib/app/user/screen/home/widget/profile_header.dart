@@ -1,26 +1,34 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:vehicle_identification/app/utils/app_gif.dart';
+import 'package:vehicle_identification/app/utils/app_image.dart';
 import 'package:vehicle_identification/widget/app_lottie.dart';
 
 class ProfileHeader extends StatelessWidget {
   const ProfileHeader(
       {super.key,
-      required this.user,
       required this.vehicleID,
-      required this.isCheckExpires});
-  final User user;
+      required this.isCheckExpires,
+      required this.urlPhoto,
+      required this.userName});
   final String vehicleID;
   final bool isCheckExpires;
+  final String userName;
+  final String urlPhoto;
   @override
   Widget build(BuildContext context) {
+    ImageProvider avatar() {
+      if (urlPhoto.isNotEmpty) {
+        return NetworkImage(urlPhoto);
+      }
+      return const AssetImage(AppImage.imgAvatar);
+    }
+
     return Stack(
       children: <Widget>[
         Ink(
           height: 200,
           decoration: BoxDecoration(
-            image: DecorationImage(
-                image: NetworkImage(user.photoURL ?? ''), fit: BoxFit.cover),
+            image: DecorationImage(image: avatar(), fit: BoxFit.cover),
           ),
         ),
         Container(
@@ -39,7 +47,7 @@ class ProfileHeader extends StatelessWidget {
               ),
               const SizedBox(height: 5.0),
               Text(
-                user.displayName ?? '',
+                userName,
                 style: const TextStyle(fontSize: 20, color: Colors.black),
               ),
               const SizedBox(height: 5.0),

@@ -60,24 +60,27 @@ class _OtpWidgetState extends State<OtpWidget> {
         S.of(context).inputOTP.toUpperCase(),
         style: const TextStyle(fontWeight: FontWeight.bold),
       )),
-      content: AppOTP(
-        onSubmit: (value) {
-          FirebaseAuth auth = FirebaseAuth.instance;
-          var credential = PhoneAuthProvider.credential(
-              verificationId: widget.verificationId, smsCode: value);
-          auth.signInWithCredential(credential).then((result) {
-            _isError = false;
-            widget.setVerify.call();
-            Navigator.pop(context);
-          }).catchError((e) {
-            setState(() {
-              _isError = true;
+      content: SizedBox(
+        width: double.maxFinite,
+        child: AppOTP(
+          onSubmit: (value) {
+            FirebaseAuth auth = FirebaseAuth.instance;
+            var credential = PhoneAuthProvider.credential(
+                verificationId: widget.verificationId, smsCode: value);
+            auth.signInWithCredential(credential).then((result) {
+              _isError = false;
+              widget.setVerify.call();
+              Navigator.pop(context);
+            }).catchError((e) {
+              setState(() {
+                _isError = true;
+              });
+              AppToast().showToast(S.of(context).errorOTP);
             });
-            AppToast().showToast(S.of(context).errorOTP);
-          });
-        },
-        codeVetify: widget.codeVetify,
-        isError: _isError,
+          },
+          codeVetify: widget.codeVetify,
+          isError: _isError,
+        ),
       ),
       actions: <Widget>[
         TextButton(

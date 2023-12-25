@@ -45,7 +45,7 @@
     "delete": "Xoá",
     "managementVehicle": "Quản lý xe",
     "confirm": "Xác nhận",
-    "confirmDelete": "Dữ liệu này sẽ mất khi bạn nhấn nút xoá!. Bạn có chắc chắn xoá?",
+    "confirmDelete": "Dữ liệu này sẽ mất khi bạn nhấn nút xoá! Bạn có chắc chắn xoá?",
     "deleted": "Đã xoá!",
     "updateVehicle": "Cập nhật xe",
     "update": "Cập nhật",
@@ -66,5 +66,18 @@
     "visitor": "Khách",
     "member": "Thành viên",
     "otherPeople": "Người khác",
-    "logs": "Nhật ký"
+    "logs": "Nhật ký",
+    "search": "Tìm kiếm",
+    "fullName": "Họ tên",
+    "time": "Thời gian",
+    "statusIn": "Vào",
+    "statusOut": "Ra",
+    "no": "STT",
+    "status": "Trạng thái",
+    "verifyVehicle": "Xác minh xe",
+    "cameraOrFile": "Chọn hoặc sử dụng camera",
+    "verifyVehicleFail": "Lỗi xác thực!",
+    "addedVehicle": "Đăng ký thành công!",
+    "pleaseVerifyInformation": "Vui lòng xác minh thông tin!",
+    "addAgain": "Thêm tiếp"
 }

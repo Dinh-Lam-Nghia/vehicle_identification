@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vehicle_identification/app/user/model/vehicle.dart';
 import 'package:vehicle_identification/app/user/service/user/vehicle_service.dart';
 
@@ -14,8 +15,21 @@ class HomeProvider extends ChangeNotifier {
   int _indexVehicle = 0;
   int get indexVehicle => _indexVehicle;
 
-  getVehicleInfor(String email) async {
-    _vehicles = await _vehicleService.getVehicle(email);
+  String _userEmail = '';
+  String get userEmail => _userEmail;
+
+  String _userName = '';
+  String get userName => _userName;
+
+  String _urlPhoto = '';
+  String get urlPhoto => _urlPhoto;
+
+  getVehicleInfor() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    _userEmail = prefs.getString('email') ?? '';
+    _userName = prefs.getString('userName') ?? '';
+    _urlPhoto = prefs.getString('photoURL') ?? '';
+    _vehicles = await _vehicleService.getVehicle(_userEmail);
     if (_vehicles.isNotEmpty) {
       checkExpires();
     }

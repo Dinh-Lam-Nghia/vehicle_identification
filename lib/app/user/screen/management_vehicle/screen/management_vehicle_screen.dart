@@ -87,11 +87,7 @@ class _ManagementVehicleScreenState extends State<ManagementVehicleScreen> {
               backgroundColor: AppColor.primary,
               elevation: 0,
               automaticallyImplyLeading: false,
-              leading: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: const Icon(Icons.arrow_back_ios)),
+              centerTitle: true,
               title: Text(
                 S.of(context).managementVehicle.toUpperCase(),
                 style: const TextStyle(

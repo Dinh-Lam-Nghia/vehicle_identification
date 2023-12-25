@@ -9,6 +9,7 @@ class AppInput extends StatelessWidget {
       this.keyboardType,
       required this.width,
       this.onChange,
+      this.enable = true,
       this.suffixIcon});
   final TextEditingController controller;
   final bool? isObscure;
@@ -17,7 +18,7 @@ class AppInput extends StatelessWidget {
   final double? width;
   final Function(String)? onChange;
   final Widget? suffixIcon;
-
+  final bool enable;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -32,6 +33,7 @@ class AppInput extends StatelessWidget {
         obscureText: isObscure ?? false,
         controller: controller,
         onChanged: onChange,
+        enabled: enable,
         keyboardType: keyboardType ?? TextInputType.text,
         decoration: InputDecoration(
           suffixIcon: suffixIcon,
