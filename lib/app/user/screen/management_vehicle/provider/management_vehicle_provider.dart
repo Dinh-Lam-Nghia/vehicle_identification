@@ -12,9 +12,6 @@ class ManagementVehicleProvider extends ChangeNotifier {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     String email = prefs.getString('email') ?? '';
     _vehicles = await _vehicleService.getVehicle(email);
-    if (_vehicles.isNotEmpty) {
-      // checkExpires();
-    }
     notifyListeners();
   }
 

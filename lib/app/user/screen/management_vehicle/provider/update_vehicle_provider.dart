@@ -2,11 +2,13 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:vehicle_identification/app/user/service/user/vehicle_service.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
 import 'package:vehicle_identification/app/user/model/vehicle.dart';
 
-
 class UpdateVehicleProvider extends ChangeNotifier {
+  final VehicleService _vehicleService = VehicleService();
+
   TextEditingController _phoneController = TextEditingController();
   TextEditingController get phoneController => _phoneController;
   final TextEditingController _smsCodeController = TextEditingController();
@@ -41,12 +43,16 @@ class UpdateVehicleProvider extends ChangeNotifier {
   bool _isCheckExpires = false;
   bool get isCheckExpires => _isCheckExpires;
 
+  String _phoneInit = '';
+
   init(Vehicle vehicle) {
     _phoneController = TextEditingController(text: vehicle.phone);
     _dateRegister = vehicle.expires ?? '';
     MaterialColor convertColor =
         createMaterialColor(Color(int.parse('${vehicle.color}')));
     _mainColor = convertColor;
+    _phoneInit = vehicle.phone ?? '';
+    _roleIndex = vehicle.role ?? 0;
     checkExpires();
     notifyListeners();
   }
@@ -74,7 +80,11 @@ class UpdateVehicleProvider extends ChangeNotifier {
   }
 
   checkPhoneFilled(String value) {
-    _isVerify = false;
+    if (_phoneInit != value) {
+      _isVerify = false;
+    } else {
+      _isVerify = true;
+    }
     notifyListeners();
   }
 
@@ -164,5 +174,19 @@ class UpdateVehicleProvider extends ChangeNotifier {
         dateNow.month >= 10 ? dateNow.month.toString() : '0${dateNow.month}';
     convertDateNow = int.parse('${dateNow.year}$month$day');
     return convertDateNow;
+  }
+
+  updateVehicle(String vehicleID) async {
+    Color convertedColor = _mainColor![500]!.withAlpha(0xff);
+    String finalColor =
+        convertedColor.toString().replaceAll('Color(', '').replaceAll(')', '');
+    Vehicle vehicle = Vehicle(
+        phone: _phoneController.text,
+        role: _roleIndex,
+        color: finalColor,
+        expires: _dateRegister,
+        vehicleID: vehicleID);
+    await _vehicleService.updateVehicle(vehicle);
+    notifyListeners();
   }
 }

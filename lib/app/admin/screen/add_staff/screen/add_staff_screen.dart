@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vehicle_identification/app/admin/layout/drawer.dart';
 import 'package:vehicle_identification/app/admin/layout/nav_bar.dart';
-import 'package:vehicle_identification/app/user/screen/add_vehicle/provider/add_vehicle_provider.dart';
-import 'package:vehicle_identification/app/user/screen/add_vehicle/widget/image_widget.dart';
-import 'package:vehicle_identification/app/user/screen/add_vehicle/widget/otp_widget.dart';
+import 'package:vehicle_identification/app/admin/screen/add_staff/provider/provider.dart';
+
 import 'package:vehicle_identification/app/utils/app_color.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
 import 'package:vehicle_identification/widget/app_button.dart';
@@ -13,55 +12,46 @@ import 'package:vehicle_identification/widget/app_input.dart';
 import 'package:vehicle_identification/widget/app_responsive.dart';
 import 'package:vehicle_identification/widget/app_toast.dart';
 
-class AddVehicleScreen extends StatefulWidget {
-  const AddVehicleScreen({super.key});
+class AddStaffScreen extends StatefulWidget {
+  const AddStaffScreen({super.key});
 
   @override
-  State<AddVehicleScreen> createState() => _AddVehicleScreenState();
+  State<AddStaffScreen> createState() => _AddStaffScreenState();
 }
 
-class _AddVehicleScreenState extends State<AddVehicleScreen> {
+class _AddStaffScreenState extends State<AddStaffScreen> {
+  final AddStaffProvider _provider = AddStaffProvider();
   @override
   Widget build(BuildContext context) {
-    return const ResponsiveContainer(
-      large: AddVehicle(
+    return ResponsiveContainer(
+      large: AddStaff(
         isSmall: false,
+        provider: _provider,
       ),
-      small: AddVehicle(
+      small: AddStaff(
         isSmall: true,
+        provider: _provider,
       ),
-      medium: AddVehicle(
+      medium: AddStaff(
         isSmall: false,
+        provider: _provider,
       ),
     );
   }
 }
 
-class AddVehicle extends StatefulWidget {
-  const AddVehicle({super.key, required this.isSmall});
+class AddStaff extends StatefulWidget {
+  const AddStaff({super.key, required this.isSmall, required this.provider});
   final bool isSmall;
+  final AddStaffProvider provider;
   @override
-  State<AddVehicle> createState() => _AddVehicleState();
+  State<AddStaff> createState() => _AddStaffState();
 }
 
-class _AddVehicleState extends State<AddVehicle> {
-  final AddVehicleProvider _provider = AddVehicleProvider();
+class _AddStaffState extends State<AddStaff> {
   final _formKey = GlobalKey<FormState>();
-  handleVerify(AddVehicleProvider p) {
-    if (p.phoneController.text.isEmpty) {
-      AppToast().showToast(S.of(context).enterPhoneNumber);
-    } else if (p.phoneController.text.length < 12) {
-      AppToast().showToast(S.of(context).invalidFormat);
-    } else {
-      if (!p.isVerify) {
-        p.verifyPhone();
-      } else {
-        AppToast().showToast(S.of(context).verifiedPhoneNumber);
-      }
-    }
-  }
 
-  selectDate(AddVehicleProvider p) async {
+  selectDate(AddStaffProvider p) async {
     final DateTime? picked = await showDatePicker(
         context: context,
         initialDate: DateTime(
@@ -79,46 +69,13 @@ class _AddVehicleState extends State<AddVehicle> {
     p.checkExpires();
   }
 
-  showMyDialogOTP(AddVehicleProvider p) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return OtpWidget(
-          codeVetify: p.smsCodeController.text.trim(),
-          verificationId: p.verificationId,
-          setVerify: p.setVerify,
-          verifyPhone: p.verifyPhone,
-          setSendCode: p.setSentCode,
-        );
-      },
-    );
-  }
-
-  showDialogImagePicker(AddVehicleProvider p) {
-    showDialog(
-      context: context,
-      builder: (_) {
-        return ImageWidget(p: p);
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return ChangeNotifierProvider<AddVehicleProvider>(
-      create: (_) => _provider,
+    return ChangeNotifierProvider<AddStaffProvider>(
+      create: (_) => widget.provider,
       builder: (context, widgets) {
-        return Consumer<AddVehicleProvider>(
-            builder: (context, provider, child) {
-          Future.delayed(Duration.zero, () {
-            if (provider.isSentCode) {
-              showMyDialogOTP(provider);
-            }
-            if (provider.verificationFailed) {
-              AppToast().showToast(S.of(context).invalidFormat);
-            }
-          });
+        return Consumer<AddStaffProvider>(builder: (context, provider, child) {
           return Form(
             key: _formKey,
             child: Scaffold(
@@ -126,7 +83,7 @@ class _AddVehicleState extends State<AddVehicle> {
               resizeToAvoidBottomInset: false,
               drawer: const DrawerApp(),
               appBar: NavBar(
-                title: S.of(context).addVehicle,
+                title: S.of(context).addStaff,
               ),
               body: Center(
                 child: Column(
@@ -135,10 +92,21 @@ class _AddVehicleState extends State<AddVehicle> {
                       height: 30,
                     ),
                     AppInput(
+                        controller: provider.fullNameController,
+                        width: widget.isSmall
+                            ? size.width * 0.9
+                            : size.width * 0.5,
+                        enable: !provider.registerSuccesfull,
+                        labelText: S.of(context).fullName),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    AppInput(
                         controller: provider.modelVehicleController,
                         width: widget.isSmall
                             ? size.width * 0.9
                             : size.width * 0.5,
+                        enable: !provider.registerSuccesfull,
                         labelText: S.of(context).model),
                     const SizedBox(
                       height: 30,
@@ -148,7 +116,7 @@ class _AddVehicleState extends State<AddVehicle> {
                       width:
                           widget.isSmall ? size.width * 0.9 : size.width * 0.5,
                       keyboardType: TextInputType.phone,
-                      onChange: provider.checkPhoneFilled,
+                      enable: !provider.registerSuccesfull,
                       labelText: S.of(context).phone,
                     ),
                     const SizedBox(
@@ -158,8 +126,8 @@ class _AddVehicleState extends State<AddVehicle> {
                       controller: provider.idVehicleController,
                       width:
                           widget.isSmall ? size.width * 0.9 : size.width * 0.5,
-                      onChange: provider.checkPhoneFilled,
                       labelText: S.of(context).vehicleId,
+                      enable: !provider.registerSuccesfull,
                     ),
                     const SizedBox(
                       height: 30,
@@ -183,6 +151,7 @@ class _AddVehicleState extends State<AddVehicle> {
                                 ? S.of(context).roleSubDate
                                 : provider.roleContent,
                             onChanged: provider.setRole,
+                            enable: !provider.registerSuccesfull,
                           )
                         ],
                       ),
@@ -202,7 +171,7 @@ class _AddVehicleState extends State<AddVehicle> {
                           ),
                           InkWell(
                               onTap: () {
-                                selectDate(provider);
+                                selectDate(widget.provider);
                               },
                               child: Text(provider.dateRegister,
                                   style: TextStyle(
@@ -224,13 +193,21 @@ class _AddVehicleState extends State<AddVehicle> {
                         width: widget.isSmall
                             ? size.width * 0.9
                             : size.width * 0.5,
-                        text: S.of(context).addVehicle,
+                        text: !provider.registerSuccesfull
+                            ? S.of(context).addStaff
+                            : S.of(context).addAgain,
                         onPressed: () {
-                          if (_formKey.currentState!.validate() &&
-                              provider.isVerify) {
-                          } else if (provider.isVerify) {
-                            AppToast()
-                                .showToast(S.of(context).pleaseVerifyPhone);
+                          if (!provider.registerSuccesfull) {
+                            if (_formKey.currentState!.validate() &&
+                                provider.isCheckExpires) {
+                              provider.addStaff();
+                              AppToast().showToast(S.of(context).addSuccess);
+                            } else if (!provider.isCheckExpires) {
+                              AppToast()
+                                  .showToast(S.of(context).pleaseSelectDate);
+                            }
+                          } else {
+                            provider.addContinute();
                           }
                         }),
                   ],

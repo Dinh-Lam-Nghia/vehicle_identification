@@ -25,6 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "aboutUS": MessageLookupByLibrary.simpleMessage("About us"),
         "account": MessageLookupByLibrary.simpleMessage("Account"),
         "addAgain": MessageLookupByLibrary.simpleMessage("Add continute"),
+        "addStaff": MessageLookupByLibrary.simpleMessage("Add staff"),
+        "addSuccess": MessageLookupByLibrary.simpleMessage("Add success"),
         "addVehicle": MessageLookupByLibrary.simpleMessage("Add vehicle"),
         "addedVehicle":
             MessageLookupByLibrary.simpleMessage("Register successfully!"),
@@ -47,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dailyScan": MessageLookupByLibrary.simpleMessage("Daily scan"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "deleted": MessageLookupByLibrary.simpleMessage("Deleted!"),
+        "detailStaff": MessageLookupByLibrary.simpleMessage("Detail staff"),
         "enterPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Please enter phone number!"),
         "errorOTP": MessageLookupByLibrary.simpleMessage("Error OTP"),
@@ -73,6 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "motorbike": MessageLookupByLibrary.simpleMessage("Motorbike"),
         "nameApp": MessageLookupByLibrary.simpleMessage("Campus Car"),
         "no": MessageLookupByLibrary.simpleMessage("No."),
+        "noData": MessageLookupByLibrary.simpleMessage("No data!"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "onTapAddVehicle": MessageLookupByLibrary.simpleMessage(
             "Click here for more vehicle information!"),
@@ -81,6 +85,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "permitExpired": MessageLookupByLibrary.simpleMessage("Permit expired"),
         "phone": MessageLookupByLibrary.simpleMessage("Phone"),
+        "pleaseSelectDate":
+            MessageLookupByLibrary.simpleMessage("Please select date!"),
         "pleaseVerifyInformation":
             MessageLookupByLibrary.simpleMessage("Please verify information!"),
         "pleaseVerifyPhone":
@@ -95,6 +101,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "selectColor": MessageLookupByLibrary.simpleMessage("Select color"),
         "staff": MessageLookupByLibrary.simpleMessage("Staff"),
+        "staffMananement":
+            MessageLookupByLibrary.simpleMessage("Staff management"),
         "statistical": MessageLookupByLibrary.simpleMessage("Statistical"),
         "status": MessageLookupByLibrary.simpleMessage("Status"),
         "statusIn": MessageLookupByLibrary.simpleMessage("In"),
@@ -106,7 +114,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "totalVehicles": MessageLookupByLibrary.simpleMessage("All vehicles"),
         "typeVehicle": MessageLookupByLibrary.simpleMessage("Type vehicle"),
         "update": MessageLookupByLibrary.simpleMessage("Update"),
+        "updateStaff": MessageLookupByLibrary.simpleMessage("Update staff"),
+        "updateSuccess": MessageLookupByLibrary.simpleMessage("Update success"),
         "updateVehicle": MessageLookupByLibrary.simpleMessage("Update vehicle"),
+        "updatedVehicle":
+            MessageLookupByLibrary.simpleMessage("Updated vehicle!"),
         "uploadImage": MessageLookupByLibrary.simpleMessage("Upload image"),
         "vehicleId": MessageLookupByLibrary.simpleMessage("License plates"),
         "vehicleInfor":
