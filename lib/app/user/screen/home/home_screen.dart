@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -122,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               widget.onTap();
                             },
                             child: Text(
-                              S.of(context).onTapAddVehicle,
+                              S.of(context).addStaff,
                               style: const TextStyle(
                                   fontSize: 15,
                                   color: AppColor.primary,

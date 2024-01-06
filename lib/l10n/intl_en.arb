@@ -80,5 +80,14 @@
     "verifyVehicleFail": "Verify vehicle fail!",
     "addedVehicle": "Register successfully!",
     "pleaseVerifyInformation": "Please verify information!",
-    "addAgain": "Add continute"
+    "addAgain": "Add continute",
+    "updatedVehicle": "Updated vehicle!",
+    "staffMananement": "Staff management",
+    "noData": "No data!",
+    "addStaff": "Add staff",
+    "pleaseSelectDate": "Please select date!",
+    "addSuccess": "Add success",
+    "updateStaff": "Update staff",
+    "updateSuccess": "Update success",
+    "detailStaff": "Detail staff"
 }

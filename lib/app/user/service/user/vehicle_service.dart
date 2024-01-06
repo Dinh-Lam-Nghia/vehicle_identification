@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
+import 'package:vehicle_identification/app/admin/model/logs.dart';
 import 'package:vehicle_identification/app/user/model/vehicle.dart';
 import 'package:vehicle_identification/app/utils/app_url.dart';
 
@@ -49,8 +50,43 @@ class VehicleService {
       "vehicle_color": vehicle.color,
       "vehicle_type": vehicle.type.toString(),
       "user_id": userID.toString(),
-      "expires": vehicle.expires
+      "expires": vehicle.expires,
+      "phone": vehicle.phone
     };
     await http.post(url, body: params);
+  }
+
+  Future<void> updateVehicle(Vehicle vehicle) async {
+    var url = Uri.parse(AppUrl.updateVehicle);
+    final params = {
+      "vehicle_id": vehicle.vehicleID,
+      "role": vehicle.role.toString(),
+      "vehicle_color": vehicle.color,
+      "expires": vehicle.expires,
+      "phone": vehicle.phone
+    };
+    await http.post(url, body: params);
+  }
+
+  Future<List<Vehicle>> getAllVehicle() async {
+    var url = Uri.parse(AppUrl.getAllVehicle);
+    var res = await http.post(url);
+    if (res.statusCode == 200) {
+      List<dynamic> body = jsonDecode(res.body);
+      return body.map((e) => Vehicle.fromJson(e)).toList();
+    } else {
+      throw Exception('Failed to load!');
+    }
+  }
+
+  Future<List<Logs>> getLogs() async {
+    var url = Uri.parse(AppUrl.getLogs);
+    var res = await http.post(url);
+    if (res.statusCode == 200) {
+      List<dynamic> body = jsonDecode(res.body);
+      return body.map((e) => Logs.fromJson(e)).toList();
+    } else {
+      throw Exception('Failed to load!');
+    }
   }
 }

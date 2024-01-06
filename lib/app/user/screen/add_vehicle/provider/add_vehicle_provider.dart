@@ -164,7 +164,7 @@ class AddVehicleProvider extends ChangeNotifier {
     if (plateNumber == 'Error') {
       _isFailVerifyVehicle = true;
     }
-    if (_idVehicleController.text == plateNumber) {
+    if (_idVehicleController.text.toUpperCase() == plateNumber.toUpperCase()) {
       _isVerifyVehicle = true;
     } else {
       _isFailVerifyVehicle = true;
@@ -189,6 +189,7 @@ class AddVehicleProvider extends ChangeNotifier {
         model: _modelVehicleController.text,
         color: finalColor,
         type: 1,
+        phone: _phoneController.text,
         expires: _dateRegister);
     await service.addVehicle(newVehicle, 3);
     _registerSuccesfull = true;

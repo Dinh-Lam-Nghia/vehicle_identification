@@ -869,6 +869,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Updated vehicle!`
+  String get updatedVehicle {
+    return Intl.message(
+      'Updated vehicle!',
+      name: 'updatedVehicle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Staff management`
+  String get staffMananement {
+    return Intl.message(
+      'Staff management',
+      name: 'staffMananement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No data!`
+  String get noData {
+    return Intl.message(
+      'No data!',
+      name: 'noData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add staff`
+  String get addStaff {
+    return Intl.message(
+      'Add staff',
+      name: 'addStaff',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select date!`
+  String get pleaseSelectDate {
+    return Intl.message(
+      'Please select date!',
+      name: 'pleaseSelectDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add success`
+  String get addSuccess {
+    return Intl.message(
+      'Add success',
+      name: 'addSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update staff`
+  String get updateStaff {
+    return Intl.message(
+      'Update staff',
+      name: 'updateStaff',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update success`
+  String get updateSuccess {
+    return Intl.message(
+      'Update success',
+      name: 'updateSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Detail staff`
+  String get detailStaff {
+    return Intl.message(
+      'Detail staff',
+      name: 'detailStaff',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

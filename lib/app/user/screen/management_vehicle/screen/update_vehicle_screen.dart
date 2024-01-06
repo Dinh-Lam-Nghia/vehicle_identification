@@ -168,9 +168,9 @@ class _UpdateVehicleScreenState extends State<UpdateVehicleScreen> {
                               S.of(context).roleSubDate,
                               S.of(context).roleSubMonth
                             ],
-                            value: provider.roleContent.isEmpty
-                                ? S.of(context).roleSubDate
-                                : provider.roleContent,
+                            value: provider.roleIndex == 1
+                                ? S.of(context).roleSubMonth
+                                : S.of(context).roleSubDate,
                             onChanged: provider.setRole,
                           )
                         ],
@@ -239,9 +239,10 @@ class _UpdateVehicleScreenState extends State<UpdateVehicleScreen> {
                         width: size.width * 0.9,
                         text: S.of(context).update,
                         onPressed: () {
-                          if (_formKey.currentState!.validate() &&
-                              provider.isVerify) {
-                          } else if (provider.isVerify) {
+                          if (provider.isVerify) {
+                            provider.updateVehicle(widget.vehicle.id ?? '');
+                            AppToast().showToast(S.of(context).updatedVehicle);
+                          } else if (!provider.isVerify) {
                             AppToast()
                                 .showToast(S.of(context).pleaseVerifyPhone);
                           }

@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vehicle_identification/app/admin/screen/home/screen/admin_home_screen.dart';
@@ -8,6 +10,7 @@ import 'package:vehicle_identification/generated/l10n.dart';
 import 'package:vehicle_identification/widget/app_button.dart';
 import 'package:vehicle_identification/widget/app_input.dart';
 import 'package:vehicle_identification/widget/app_responsive.dart';
+import 'package:vehicle_identification/widget/app_toast.dart';
 
 class AdminLoginScreen extends StatefulWidget {
   const AdminLoginScreen({super.key});
@@ -51,7 +54,6 @@ class AdminLogin extends StatelessWidget {
       return isSmall ? size.width * 0.9 : size.width * 0.4;
     }
 
-    final TextEditingController _controller = TextEditingController();
     Size size = MediaQuery.of(context).size;
     return ChangeNotifierProvider<AdminLoginProvider>(
       create: ((context) => provider),
@@ -86,15 +88,16 @@ class AdminLogin extends StatelessWidget {
                         height: 20,
                       ),
                       AppInput(
-                          controller: _controller,
+                          controller: p.emailController,
                           labelText: S.of(context).account,
                           width: width(size)),
                       const SizedBox(
                         height: 20,
                       ),
                       AppInput(
-                          controller: _controller,
+                          controller: p.passwordController,
                           labelText: S.of(context).password,
+                          isObscure: true,
                           width: width(size)),
                       const SizedBox(
                         height: 20,
@@ -102,11 +105,16 @@ class AdminLogin extends StatelessWidget {
                       AppButton(
                           width: width(size),
                           text: S.of(context).login.toUpperCase(),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) => const AdminHomeScreen()));
+                          onPressed: () async {
+                            await p.login();
+                            if (p.isLogin) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) => const AdminHomeScreen()));
+                            } else {
+                              AppToast().showToast('Failed to login');
+                            }
                           })
                     ],
                   ),

@@ -79,5 +79,14 @@
     "verifyVehicleFail": "Lỗi xác thực!",
     "addedVehicle": "Đăng ký thành công!",
     "pleaseVerifyInformation": "Vui lòng xác minh thông tin!",
-    "addAgain": "Thêm tiếp"
+    "addAgain": "Thêm tiếp",
+    "updatedVehicle": "Đã cập nhật!",
+    "staffMananement": "Quản lý nhân viên",
+    "noData": "Không có dữ liệu!",
+    "addStaff": "Thêm nhân viên",
+    "pleaseSelectDate": "Vui lòng chọn ngày!",
+    "addSuccess": "Thêm thành công!",
+    "updateStaff": "Cập nhật nhân viên",
+    "updateSuccess": "Cập nhật thành công!",
+    "detailStaff": "Chi tiết nhân viên"
 }
