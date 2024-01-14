@@ -959,6 +959,116 @@ class S {
       args: [],
     );
   }
+
+  /// `Send notification`
+  String get sendNotification {
+    return Intl.message(
+      'Send notification',
+      name: 'sendNotification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Email`
+  String get sendEmail {
+    return Intl.message(
+      'Send Email',
+      name: 'sendEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send SMS`
+  String get sendSMS {
+    return Intl.message(
+      'Send SMS',
+      name: 'sendSMS',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send a warning notification about the upcoming vehicle registration expiration date to `
+  String get contentSend {
+    return Intl.message(
+      'Send a warning notification about the upcoming vehicle registration expiration date to ',
+      name: 'contentSend',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sent!`
+  String get sent {
+    return Intl.message(
+      'Sent!',
+      name: 'sent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request`
+  String get managementRequest {
+    return Intl.message(
+      'Request',
+      name: 'managementRequest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to accept this registration?`
+  String get accpeptRegister {
+    return Intl.message(
+      'Do you want to accept this registration?',
+      name: 'accpeptRegister',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `And send a message notify to `
+  String get sendSMSto {
+    return Intl.message(
+      'And send a message notify to ',
+      name: 'sendSMSto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure to cancel this subscription?`
+  String get cancelRegister {
+    return Intl.message(
+      'Are you sure to cancel this subscription?',
+      name: 'cancelRegister',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your vehicle registration request has been approved!`
+  String get approvedRequest {
+    return Intl.message(
+      'Your vehicle registration request has been approved!',
+      name: 'approvedRequest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your request was cancelled, please contact us!`
+  String get cancleRequest {
+    return Intl.message(
+      'Your request was cancelled, please contact us!',
+      name: 'cancleRequest',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

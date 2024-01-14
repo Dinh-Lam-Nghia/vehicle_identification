@@ -30,6 +30,7 @@ class HomeProvider extends ChangeNotifier {
     _userName = prefs.getString('userName') ?? '';
     _urlPhoto = prefs.getString('photoURL') ?? '';
     _vehicles = await _vehicleService.getVehicle(_userEmail);
+    _vehicles.removeWhere((element) => element.active == 2);
     if (_vehicles.isNotEmpty) {
       checkExpires();
     }

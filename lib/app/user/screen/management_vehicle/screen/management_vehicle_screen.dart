@@ -104,19 +104,18 @@ class _ManagementVehicleScreenState extends State<ManagementVehicleScreen> {
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
                           decoration: BoxDecoration(
-                              color: AppColor.gray,
+                              color: provider.vehicles[index].active == 0
+                                  ? AppColor.white
+                                  : AppColor.errorColor,
                               borderRadius: BorderRadius.circular(5)),
                           child: ListTile(
                               style: ListTileStyle.drawer,
-                              leading: provider.vehicles[index].type == 0
-                                  ? const Icon(
-                                      FontAwesomeIcons.motorcycle,
-                                      color: AppColor.primary,
-                                    )
-                                  : const FaIcon(
-                                      FontAwesomeIcons.car,
-                                      color: AppColor.primary,
-                                    ),
+                              leading: FaIcon(
+                                FontAwesomeIcons.car,
+                                color: provider.vehicles[index].active != 0
+                                    ? AppColor.white
+                                    : AppColor.primary,
+                              ),
                               onTap: () {
                                 Navigator.push(
                                     context,
@@ -126,9 +125,22 @@ class _ManagementVehicleScreenState extends State<ManagementVehicleScreen> {
                                                 vehicle:
                                                     provider.vehicles[index])));
                               },
-                              title: Text(provider.vehicles[index].model ?? ''),
+                              title: Text(
+                                provider.vehicles[index].model ?? '',
+                                style: TextStyle(
+                                  color: provider.vehicles[index].active != 0
+                                      ? AppColor.white
+                                      : AppColor.primary,
+                                ),
+                              ),
                               subtitle: Text(
-                                  provider.vehicles[index].vehicleID ?? ''),
+                                provider.vehicles[index].vehicleID ?? '',
+                                style: TextStyle(
+                                  color: provider.vehicles[index].active != 0
+                                      ? AppColor.white
+                                      : AppColor.primary,
+                                ),
+                              ),
                               trailing: IconButton(
                                   onPressed: () {
                                     _showDialog(
@@ -136,9 +148,11 @@ class _ManagementVehicleScreenState extends State<ManagementVehicleScreen> {
                                         provider.vehicles[index].vehicleID ??
                                             '');
                                   },
-                                  icon: const Icon(
+                                  icon: Icon(
                                     Icons.delete,
-                                    color: AppColor.red,
+                                    color: provider.vehicles[index].active != 0
+                                        ? AppColor.white
+                                        : AppColor.errorColor,
                                   ))),
                         ),
                       );

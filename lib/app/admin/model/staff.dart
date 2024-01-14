@@ -20,11 +20,11 @@ class Staff {
     return {
       'id': id,
       'phone': phone,
-      'plate_number': plateNumber,
+      'vehicle_id': plateNumber,
       'expires': expires,
       'role': role,
       'name': name,
-      'model': model,
+      'vehicle_model': model,
     };
   }
 
@@ -32,11 +32,11 @@ class Staff {
     return Staff(
       id: json['id'],
       phone: json['phone'],
-      plateNumber: json['plate_number'],
+      plateNumber: json['vehicle_id'],
       expires: json['expires'],
       role: json['role'],
       name: json['name'],
-      model: json['model'],
+      model: json['vehicle_model'],
     );
   }
 }

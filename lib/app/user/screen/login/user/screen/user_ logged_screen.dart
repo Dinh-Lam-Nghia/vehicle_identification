@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:vehicle_identification/app/user/screen/login/user/screen/user_login_screen.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
 import 'package:vehicle_identification/app/user/screen/bottom_natigation.dart';
 import 'package:vehicle_identification/app/utils/app_color.dart';
@@ -71,7 +72,13 @@ class UserLoggedScreen extends StatelessWidget {
                   final GoogleSignIn googleSignIn = GoogleSignIn();
                   await googleSignIn.disconnect();
                   await FirebaseAuth.instance.signOut();
-                  Navigator.pop(context);
+
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const UserLoginScreen()),
+                    (Route<dynamic> route) => false,
+                  );
                 }),
           ],
         ),

@@ -16,7 +16,6 @@ class UserLoginProvider extends ChangeNotifier {
     _user = await Authentication.signInWithGoogle();
     if (_user != null) {
       setUserLocal();
-      loginUser();
     }
     notifyListeners();
   }
@@ -26,11 +25,8 @@ class UserLoginProvider extends ChangeNotifier {
     await prefs.setString('email', _user!.email ?? '');
     await prefs.setString('userName', _user!.displayName ?? '');
     await prefs.setString('photoURL', _user!.photoURL ?? '');
-    notifyListeners();
-  }
-
-  loginUser() async {
-    _isNewUser = await _userService.loginUser(_user!);
+    _isNewUser = await _userService.loginUser(
+        _user!.email ?? '', _user!.displayName ?? '', _user!.photoURL ?? '');
     notifyListeners();
   }
 }

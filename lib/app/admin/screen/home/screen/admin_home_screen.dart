@@ -54,7 +54,7 @@ class _AdminHomeState extends State<AdminHome> {
     List<Chart> chartTmp = [
       Chart(
           title: S.of(context).totalVehicles,
-          result: p.vehicles.length,
+          result: p.vehicles.length + p.staffs.length,
           color: AppColor.purple),
       Chart(
           title: S.of(context).permitExpired,
@@ -90,7 +90,7 @@ class _AdminHomeState extends State<AdminHome> {
     return ChangeNotifierProvider<AdminHomeProvider>(
       create: ((context) => widget.provider),
       builder: (context, child) {
-        return Consumer<AdminHomeProvider>(builder: (context, p, widget) {
+        return Consumer<AdminHomeProvider>(builder: (context, p, widgets) {
           return Scaffold(
             backgroundColor: Colors.grey.shade100,
             resizeToAvoidBottomInset: false,
@@ -130,11 +130,10 @@ class _AdminHomeState extends State<AdminHome> {
                   const SizedBox(
                     height: 20,
                   ),
-                  const VehicleLocation(),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const VehicleOwnerRole()
+                  VehicleOwnerRole(
+                    countStaff: p.staffs.length,
+                    countVisitor: p.vehicles.length,
+                  )
                 ],
               ),
             ),

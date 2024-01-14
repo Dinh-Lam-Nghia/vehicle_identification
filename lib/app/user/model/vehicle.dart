@@ -7,6 +7,7 @@ class Vehicle {
   String? vehicleID;
   int? type;
   String? phone;
+  int? active;
 
   Vehicle(
       {this.id,
@@ -16,7 +17,8 @@ class Vehicle {
       this.color,
       this.vehicleID,
       this.type,
-      this.phone});
+      this.phone,
+      this.active});
 
   Map<String, String> toJson() {
     return {
@@ -27,7 +29,8 @@ class Vehicle {
       'color': color ?? '',
       'vehicleID': vehicleID ?? '',
       'type': type.toString(),
-      'phone': phone.toString()
+      'phone': phone.toString(),
+      'active': active.toString()
     };
   }
 
@@ -41,6 +44,7 @@ class Vehicle {
       vehicleID: json['vehicle_id'].toString(),
       type: int.parse(json['vehicle_type'].toString()),
       phone: json['phone'].toString(),
+      active: int.parse(json['active'].toString()),
     );
   }
 }

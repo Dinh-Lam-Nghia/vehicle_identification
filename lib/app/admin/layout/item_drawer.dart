@@ -4,6 +4,7 @@ import 'package:vehicle_identification/app/admin/screen/all_vehicle/screen/all_v
 import 'package:vehicle_identification/app/admin/screen/home/screen/admin_home_screen.dart';
 import 'package:vehicle_identification/app/admin/screen/login/screen/admin_login_screen.dart';
 import 'package:vehicle_identification/app/admin/screen/logs/screen/logs_screen.dart';
+import 'package:vehicle_identification/app/admin/screen/request/screen/request_screen.dart';
 import 'package:vehicle_identification/app/admin/screen/staff_management/screen/staff_management_screen.dart';
 import 'package:vehicle_identification/app/utils/app_color.dart';
 import 'package:vehicle_identification/app/utils/app_image.dart';
@@ -19,8 +20,9 @@ class NavigationItems extends StatelessWidget {
         S.of(context).statistical,
         S.of(context).logs,
         S.of(context).allVehicle,
+        S.of(context).managementRequest,
         S.of(context).staffMananement,
-        S.of(context).addVehicle,
+        S.of(context).addStaff,
         S.of(context).logout
       ];
     }
@@ -29,6 +31,7 @@ class NavigationItems extends StatelessWidget {
       Icon(Icons.add_chart, color: AppColor.white),
       Icon(Icons.history, color: AppColor.white),
       Icon(Icons.car_crash, color: AppColor.white),
+      Icon(Icons.app_registration, color: AppColor.white),
       Icon(Icons.manage_accounts, color: AppColor.white),
       Icon(Icons.plus_one, color: AppColor.white),
       Icon(Icons.logout, color: AppColor.white)
@@ -89,9 +92,12 @@ class NavigationItems extends StatelessWidget {
       Navigator.push(
           context, MaterialPageRoute(builder: (_) => const AllVehicleScreen()));
     } else if (index == 3) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (_) => const RequestScreen()));
+    } else if (index == 4) {
       Navigator.push(context,
           MaterialPageRoute(builder: (_) => const StaffManagementScreen()));
-    } else if (index == 4) {
+    } else if (index == 5) {
       Navigator.push(
           context, MaterialPageRoute(builder: (_) => const AddStaffScreen()));
     } else {

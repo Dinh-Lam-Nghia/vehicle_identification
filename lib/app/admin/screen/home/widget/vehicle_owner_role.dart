@@ -3,16 +3,16 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
 
 class VehicleOwnerRole extends StatelessWidget {
-  const VehicleOwnerRole({super.key});
-
+  const VehicleOwnerRole(
+      {super.key, required this.countStaff, required this.countVisitor});
+  final int countStaff;
+  final int countVisitor;
   @override
   Widget build(BuildContext context) {
     List<ChartData> chartData(BuildContext context) {
       return [
-        ChartData(S.of(context).staff, 25),
-        ChartData(S.of(context).visitor, 38),
-        ChartData(S.of(context).member, 34),
-        ChartData(S.of(context).otherPeople, 52)
+        ChartData(S.of(context).staff, countStaff),
+        ChartData(S.of(context).visitor, countVisitor),
       ];
     }
 
@@ -45,6 +45,6 @@ class VehicleOwnerRole extends StatelessWidget {
 class ChartData {
   ChartData(this.x, this.y, [this.color]);
   final String x;
-  final double y;
+  final int y;
   final Color? color;
 }

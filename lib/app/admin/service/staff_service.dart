@@ -1,3 +1,4 @@
+import 'package:vehicle_identification/app/admin/model/log_table.dart';
 import 'package:vehicle_identification/app/admin/model/staff.dart';
 import 'package:vehicle_identification/app/utils/app_url.dart';
 import 'dart:async';
@@ -46,5 +47,43 @@ class StaffService {
       'model': staff.model
     };
     await http.post(url, body: body);
+  }
+
+  Future<List<Staff>> getStaffs() async {
+    var url = Uri.parse(AppUrl.getStaff);
+    var res = await http.post(url);
+    if (res.statusCode == 200) {
+      List<dynamic> body = jsonDecode(res.body);
+      return body.map((e) => Staff.fromJson(e)).toList();
+    } else {
+      throw Exception('Failed to load!');
+    }
+  }
+
+  Future<List<LogsTable>> getLogTable(int role) async {
+    var url = Uri.parse(AppUrl.getLogTable);
+    var res = await http.post(url, body: {'role': role.toString()});
+    if (res.statusCode == 200) {
+      List<dynamic> body = jsonDecode(res.body);
+      return body.map((e) => LogsTable.fromJson(e)).toList();
+    } else {
+      throw Exception('Failed to load!');
+    }
+  }
+
+  Future<List<LogsTable>> getAllVehicleAdmin(int role) async {
+    var url = Uri.parse(AppUrl.getAllVehicleAdmin);
+    var res = await http.post(url, body: {'role': role.toString()});
+    if (res.statusCode == 200) {
+      List<dynamic> body = jsonDecode(res.body);
+      return body.map((e) => LogsTable.fromJson(e)).toList();
+    } else {
+      throw Exception('Failed to load!');
+    }
+  }
+
+  Future<void> sendSMS(String phone, String content) async {
+    var url = Uri.parse(AppUrl.sendSMS);
+    await http.post(url, body: {'phone': phone, 'content': content});
   }
 }

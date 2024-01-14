@@ -80,21 +80,6 @@ class VehicleInformation extends StatelessWidget {
                       height: 5,
                       width: 10),
                 ),
-                ListTile(
-                  leading: vehicle.type == 0
-                      ? const Icon(
-                          FontAwesomeIcons.motorcycle,
-                          color: AppColor.primary,
-                        )
-                      : const FaIcon(
-                          FontAwesomeIcons.car,
-                          color: AppColor.primary,
-                        ),
-                  title: Text(S.of(context).typeVehicle),
-                  subtitle: Text(vehicle.type == 0
-                      ? S.of(context).motorbike
-                      : S.of(context).car),
-                ),
               ]),
             ],
           )

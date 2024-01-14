@@ -88,5 +88,16 @@
     "addSuccess": "Thêm thành công!",
     "updateStaff": "Cập nhật nhân viên",
     "updateSuccess": "Cập nhật thành công!",
-    "detailStaff": "Chi tiết nhân viên"
+    "detailStaff": "Chi tiết nhân viên",
+    "sendNotification": "Gửi thông báo",
+    "sendEmail": "Gửi email",
+    "sendSMS": "Gửi tin nhắn",
+    "contentSend": "Gửi thông báo cảnh báo sắp hết hạn đăng ký xe tới ",
+    "sent": "Đã gửi!",
+    "managementRequest": "Yêu cầu",
+    "accpeptRegister": "Bạn có muốn chấp nhận đăng ký này?",
+    "sendSMSto": "Và gửi tin nhắn để thông báo tới ",
+    "cancelRegister": "Bạn có chắc chắn huỷ đăng ký này?",
+    "approvedRequest": "Yêu cầu đăng ký xe của bạn đã được duyệt!",
+    "cancleRequest": "Yêu cầu của bạn bị huỷ, \nvui lòng liên hệ với chúng tôi!"
 }

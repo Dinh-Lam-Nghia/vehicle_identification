@@ -14,6 +14,7 @@ class AboutUsScreen extends StatelessWidget {
         backgroundColor: AppColor.primary,
         elevation: 0,
         automaticallyImplyLeading: false,
+        centerTitle: true,
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);

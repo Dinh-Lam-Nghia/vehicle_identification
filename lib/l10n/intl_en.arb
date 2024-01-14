@@ -89,5 +89,16 @@
     "addSuccess": "Add success",
     "updateStaff": "Update staff",
     "updateSuccess": "Update success",
-    "detailStaff": "Detail staff"
+    "detailStaff": "Detail staff",
+    "sendNotification": "Send notification",
+    "sendEmail": "Send Email",
+    "sendSMS": "Send SMS",
+    "contentSend": "Send a warning notification about the upcoming vehicle registration expiration date to ",
+    "sent": "Sent!",
+    "managementRequest": "Request",
+    "accpeptRegister": "Do you want to accept this registration?",
+    "sendSMSto": "And send a message notify to ",
+    "cancelRegister": "Are you sure to cancel this subscription?",
+    "approvedRequest": "Your vehicle registration request has been approved!",
+    "cancleRequest": "Your request was cancelled, please contact us!"
 }

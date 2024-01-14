@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutUS": MessageLookupByLibrary.simpleMessage("Về chúng tôi"),
         "account": MessageLookupByLibrary.simpleMessage("Tài khoản"),
+        "accpeptRegister": MessageLookupByLibrary.simpleMessage(
+            "Bạn có muốn chấp nhận đăng ký này?"),
         "addAgain": MessageLookupByLibrary.simpleMessage("Thêm tiếp"),
         "addStaff": MessageLookupByLibrary.simpleMessage("Thêm nhân viên"),
         "addSuccess": MessageLookupByLibrary.simpleMessage("Thêm thành công!"),
@@ -31,10 +33,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "addedVehicle":
             MessageLookupByLibrary.simpleMessage("Đăng ký thành công!"),
         "allVehicle": MessageLookupByLibrary.simpleMessage("Tất cả xe"),
+        "approvedRequest": MessageLookupByLibrary.simpleMessage(
+            "Yêu cầu đăng ký xe của bạn đã được duyệt!"),
         "blackGray": MessageLookupByLibrary.simpleMessage("Đen xám"),
         "cameraOrFile":
             MessageLookupByLibrary.simpleMessage("Chọn hoặc sử dụng camera"),
         "cancel": MessageLookupByLibrary.simpleMessage("Thoát"),
+        "cancelRegister": MessageLookupByLibrary.simpleMessage(
+            "Bạn có chắc chắn huỷ đăng ký này?"),
+        "cancleRequest": MessageLookupByLibrary.simpleMessage(
+            "Yêu cầu của bạn bị huỷ, \nvui lòng liên hệ với chúng tôi!"),
         "car": MessageLookupByLibrary.simpleMessage("Xe ô tô"),
         "changeLanguage": MessageLookupByLibrary.simpleMessage("Đổi ngôn ngữ"),
         "chooseAnotherAccount":
@@ -43,6 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
         "confirmDelete": MessageLookupByLibrary.simpleMessage(
             "Dữ liệu này sẽ mất khi bạn nhấn nút xoá! Bạn có chắc chắn xoá?"),
+        "contentSend": MessageLookupByLibrary.simpleMessage(
+            "Gửi thông báo cảnh báo sắp hết hạn đăng ký xe tới "),
         "continueWithThisAccount":
             MessageLookupByLibrary.simpleMessage("TIẾP TỤC VỚI TÀI KHOẢN NÀY"),
         "dailyScan":
@@ -69,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ĐĂNG NHẬP VỚI GOOGLE"),
         "logout": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
         "logs": MessageLookupByLibrary.simpleMessage("Nhật ký"),
+        "managementRequest": MessageLookupByLibrary.simpleMessage("Yêu cầu"),
         "managementVehicle": MessageLookupByLibrary.simpleMessage("Quản lý xe"),
         "member": MessageLookupByLibrary.simpleMessage("Thành viên"),
         "model": MessageLookupByLibrary.simpleMessage("Hãng xe"),
@@ -102,6 +113,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Đăng ký theo tháng"),
         "search": MessageLookupByLibrary.simpleMessage("Tìm kiếm"),
         "selectColor": MessageLookupByLibrary.simpleMessage("Chọn màu sắc"),
+        "sendEmail": MessageLookupByLibrary.simpleMessage("Gửi email"),
+        "sendNotification":
+            MessageLookupByLibrary.simpleMessage("Gửi thông báo"),
+        "sendSMS": MessageLookupByLibrary.simpleMessage("Gửi tin nhắn"),
+        "sendSMSto": MessageLookupByLibrary.simpleMessage(
+            "Và gửi tin nhắn để thông báo tới "),
+        "sent": MessageLookupByLibrary.simpleMessage("Đã gửi!"),
         "staff": MessageLookupByLibrary.simpleMessage("Nhân viên"),
         "staffMananement":
             MessageLookupByLibrary.simpleMessage("Quản lý nhân viên"),

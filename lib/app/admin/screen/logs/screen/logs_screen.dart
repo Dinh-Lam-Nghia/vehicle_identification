@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:vehicle_identification/app/admin/layout/drawer.dart';
 import 'package:vehicle_identification/app/admin/layout/nav_bar.dart';
+import 'package:vehicle_identification/app/admin/model/log_table.dart';
+import 'package:vehicle_identification/app/admin/screen/logs/provider/log_provider.dart';
 import 'package:vehicle_identification/app/utils/app_color.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
 import 'package:vehicle_identification/widget/app_input.dart';
@@ -14,414 +17,278 @@ class LogsScreen extends StatefulWidget {
 }
 
 class _LogsScreenState extends State<LogsScreen> {
-  final TextEditingController _controller = TextEditingController();
-
+  final LogProvider _provider = LogProvider();
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    return const ResponsiveContainer(
+    return ResponsiveContainer(
       large: Logs(
         isSmall: false,
+        provider: _provider,
+        width: width,
       ),
       small: Logs(
         isSmall: true,
+        provider: _provider,
+        width: width,
       ),
       medium: Logs(
         isSmall: false,
+        provider: _provider,
+        width: width,
       ),
     );
   }
 }
 
 class Logs extends StatefulWidget {
-  const Logs({super.key, required this.isSmall});
+  const Logs(
+      {super.key,
+      required this.isSmall,
+      required this.provider,
+      required this.width});
   final bool isSmall;
-
+  final LogProvider provider;
+  final double width;
   @override
   State<Logs> createState() => _LogsState();
 }
 
 class _LogsState extends State<Logs> {
   @override
-  Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    TextEditingController _controller = TextEditingController();
+  void initState() {
+    widget.provider.init();
+    super.initState();
+  }
 
-    return Scaffold(
-      backgroundColor: Colors.grey.shade100,
-      resizeToAvoidBottomInset: false,
-      drawer: const DrawerApp(),
-      appBar: NavBar(
-        title: S.of(context).logs,
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            crossAxisAlignment: widget.isSmall
-                ? CrossAxisAlignment.center
-                : CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  AppInput(
-                      controller: _controller,
-                      labelText: S.of(context).search,
-                      width: widget.isSmall ? width * 0.8 : width * 0.3),
-                  IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.download,
-                        color: AppColor.primary,
-                      ))
-                ],
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider<LogProvider>(
+      create: ((context) => widget.provider),
+      builder: (context, child) {
+        return Consumer<LogProvider>(builder: (context, p, widgets) {
+          return Scaffold(
+            backgroundColor: Colors.grey.shade100,
+            resizeToAvoidBottomInset: false,
+            drawer: const DrawerApp(),
+            appBar: NavBar(
+              title: S.of(context).logs,
+            ),
+            body: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  crossAxisAlignment: widget.isSmall
+                      ? CrossAxisAlignment.center
+                      : CrossAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: SizedBox(
+                        width: widget.width * 0.85,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            AppInput(
+                                controller: p.searchController,
+                                labelText: S.of(context).search,
+                                onChange: p.onSearch,
+                                width: widget.isSmall
+                                    ? widget.width * 0.6
+                                    : widget.width * 0.3),
+                            IconButton(
+                                onPressed: () {
+                                  p.exportExcel(context);
+                                },
+                                icon: const Icon(
+                                  Icons.download,
+                                  color: AppColor.primary,
+                                ))
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Center(
+                      child: SizedBox(
+                        width: widget.width * 0.85,
+                        child: LogTableWidget(
+                          logs: p.logsTable,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              const DataTableExample()
-            ],
-          ),
-        ),
-      ),
+            ),
+          );
+        });
+      },
     );
   }
 }
 
-class MyDataSource extends DataTableSource {
-  static const List<int> _displayIndexToRawIndex = <int>[0, 3, 4, 5, 6];
-
-  late List<List<Comparable<Object>>> sortedData;
-  void setData(List<List<Comparable<Object>>> rawData, int sortColumn,
-      bool sortAscending) {
-    sortedData = rawData.toList()
-      ..sort((List<Comparable<Object>> a, List<Comparable<Object>> b) {
-        final Comparable<Object> cellA = a[_displayIndexToRawIndex[sortColumn]];
-        final Comparable<Object> cellB = b[_displayIndexToRawIndex[sortColumn]];
-        return cellA.compareTo(cellB) * (sortAscending ? 1 : -1);
-      });
-    notifyListeners();
-  }
+class LogTableWidget extends StatefulWidget {
+  const LogTableWidget({super.key, required this.logs});
+  final List<LogsTable> logs;
 
   @override
-  int get rowCount => sortedData.length;
+  State<LogTableWidget> createState() => _LogTableWidgetState();
+}
 
-  static DataCell cellFor(Object data) {
-    String value;
-    if (data is DateTime) {
-      value =
-          '${data.year}-${data.month.toString().padLeft(2, '0')}-${data.day.toString().padLeft(2, '0')}';
-    } else {
-      value = data.toString();
-    }
-    return DataCell(Text(value));
+class _LogTableWidgetState extends State<LogTableWidget> {
+  int _rowsPerPage = PaginatedDataTable.defaultRowsPerPage;
+  int _sortColumnIndex = 0;
+  bool _sortAscending = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return PaginatedDataTable(
+      sortColumnIndex: _sortColumnIndex,
+      sortAscending: _sortAscending,
+      columnSpacing: 100,
+      rowsPerPage: _rowsPerPage,
+      onRowsPerPageChanged: (newRowsPerPage) {
+        setState(() {
+          _rowsPerPage =
+              newRowsPerPage ?? PaginatedDataTable.defaultRowsPerPage;
+        });
+      },
+      columns: <DataColumn>[
+        DataColumn(
+          label: Text(S.of(context).no),
+        ),
+        DataColumn(
+          label: Text(S.of(context).fullName),
+          onSort: (columnIndex, ascending) {
+            setState(() {
+              _sortColumnIndex = columnIndex;
+              _sortAscending = ascending;
+              widget.logs.sort((a, b) {
+                if (_sortAscending) {
+                  return a.name!.compareTo(b.name!);
+                } else {
+                  return b.name!.compareTo(a.name!);
+                }
+              });
+            });
+          },
+        ),
+        DataColumn(
+          label: Text(S.of(context).phone),
+          onSort: (columnIndex, ascending) {
+            setState(() {
+              _sortColumnIndex = columnIndex;
+              _sortAscending = ascending;
+              widget.logs.sort((a, b) {
+                if (_sortAscending) {
+                  return a.phone!.compareTo(b.phone!);
+                } else {
+                  return b.phone!.compareTo(a.phone!);
+                }
+              });
+            });
+          },
+        ),
+        DataColumn(
+          label: Text(S.of(context).licensePlate),
+          onSort: (columnIndex, ascending) {
+            setState(() {
+              _sortColumnIndex = columnIndex;
+              _sortAscending = ascending;
+              widget.logs.sort((a, b) {
+                if (_sortAscending) {
+                  return a.vehicleID!.compareTo(b.vehicleID!);
+                } else {
+                  return b.vehicleID!.compareTo(a.vehicleID!);
+                }
+              });
+            });
+          },
+        ),
+        DataColumn(
+          label: Text(S.of(context).model),
+          onSort: (columnIndex, ascending) {
+            setState(() {
+              _sortColumnIndex = columnIndex;
+              _sortAscending = ascending;
+              widget.logs.sort((a, b) {
+                if (_sortAscending) {
+                  return a.model!.compareTo(b.model!);
+                } else {
+                  return b.model!.compareTo(a.model!);
+                }
+              });
+            });
+          },
+        ),
+        DataColumn(
+          label: Text(S.of(context).time),
+          onSort: (columnIndex, ascending) {
+            setState(() {
+              _sortColumnIndex = columnIndex;
+              _sortAscending = ascending;
+              widget.logs.sort((a, b) {
+                if (_sortAscending) {
+                  return a.time!.compareTo(b.time!);
+                } else {
+                  return b.time!.compareTo(a.time!);
+                }
+              });
+            });
+          },
+        ),
+        DataColumn(
+          label: Text(S.of(context).status),
+          onSort: (columnIndex, ascending) {
+            setState(() {
+              _sortColumnIndex = columnIndex;
+              _sortAscending = ascending;
+              widget.logs.sort((a, b) {
+                if (_sortAscending) {
+                  return a.time!.compareTo(b.time!);
+                } else {
+                  return b.time!.compareTo(a.time!);
+                }
+              });
+            });
+          },
+        ),
+      ],
+      source: UserDataTableSource(widget.logs, context),
+    );
   }
+}
+
+class UserDataTableSource extends DataTableSource {
+  final List<LogsTable> logs;
+  final BuildContext context;
+  UserDataTableSource(this.logs, this.context);
 
   @override
   DataRow? getRow(int index) {
-    return DataRow.byIndex(
-      index: sortedData[index][0] as int,
-      cells: <DataCell>[
-        cellFor(
-            'S${sortedData[index][1]}E${sortedData[index][2].toString().padLeft(2, '0')}'),
-        cellFor(sortedData[index][3].toString()),
-        cellFor(sortedData[index][4].toString()),
-        cellFor(sortedData[index][5].toString()),
-        cellFor(sortedData[index][6].toString()),
-        cellFor(sortedData[index][7].toString()),
-        cellFor(sortedData[index][8].toString()),
-      ],
-    );
+    if (index >= logs.length) {
+      return null;
+    }
+    final log = logs[index];
+    return DataRow(cells: [
+      DataCell(Text('${index + 1}')),
+      DataCell(Text(log.name ?? '')),
+      DataCell(Text(log.phone ?? '')),
+      DataCell(Text(log.vehicleID ?? '')),
+      DataCell(Text(log.model ?? '')),
+      DataCell(Text(log.time ?? '')),
+      DataCell(Text(
+          log.status == 0 ? S.of(context).statusOut : S.of(context).statusIn)),
+    ]);
   }
 
+  @override
+  int get rowCount => logs.length;
   @override
   bool get isRowCountApproximate => false;
 
   @override
   int get selectedRowCount => 0;
 }
-
-class DataTableExample extends StatefulWidget {
-  const DataTableExample({super.key});
-
-  @override
-  State<DataTableExample> createState() => _DataTableExampleState();
-}
-
-class _DataTableExampleState extends State<DataTableExample> {
-  final MyDataSource dataSource = MyDataSource()..setData(episodes, 0, true);
-
-  int _columnIndex = 0;
-  bool _columnAscending = true;
-
-  void _sort(int columnIndex, bool ascending) {
-    setState(() {
-      _columnIndex = columnIndex;
-      _columnAscending = ascending;
-      dataSource.setData(episodes, _columnIndex, _columnAscending);
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return PaginatedDataTable(
-      sortColumnIndex: _columnIndex,
-      sortAscending: _columnAscending,
-      columns: <DataColumn>[
-        DataColumn(
-          label: Text(S.of(context).no),
-          onSort: _sort,
-        ),
-        DataColumn(
-          label: Text(S.of(context).fullName),
-          onSort: _sort,
-        ),
-        DataColumn(
-          label: Text(S.of(context).phone),
-          onSort: _sort,
-        ),
-        DataColumn(
-          label: Text(S.of(context).licensePlate),
-          onSort: _sort,
-        ),
-        DataColumn(
-          label: Text(S.of(context).model),
-          onSort: _sort,
-        ),
-        DataColumn(
-          label: Text(S.of(context).time),
-          onSort: _sort,
-        ),
-        DataColumn(
-          label: Text(S.of(context).status),
-          onSort: _sort,
-        ),
-      ],
-      source: dataSource,
-    );
-  }
-}
-
-final List<List<Comparable<Object>>> episodes = <List<Comparable<Object>>>[
-  <Comparable<Object>>[
-    1,
-    1,
-    1,
-    'Nguyễn Văn A',
-    '0346056590',
-    '30Z0779',
-    'Honda',
-    DateTime(2022, 5, 5),
-    'Ra',
-  ],
-  <Comparable<Object>>[
-    2,
-    1,
-    2,
-    'Nguyễn Văn B',
-    '0948264927',
-    '30A55577',
-    'Yamaha',
-    DateTime(2022, 5, 12),
-    'Vào',
-  ],
-  <Comparable<Object>>[
-    3,
-    1,
-    3,
-    'Nguyễn Văn C',
-    '0821642318',
-    '29N63133',
-    'Kia',
-    DateTime(2022, 5, 19),
-    'Vào',
-  ],
-  <Comparable<Object>>[
-    4,
-    1,
-    4,
-    'Nguyễn Văn D',
-    '0973752659',
-    '29LD4189',
-    'BMW',
-    DateTime(2022, 5, 26),
-    'Ra',
-  ],
-  <Comparable<Object>>[
-    5,
-    1,
-    5,
-    'Nguyễn Văn E',
-    '0984536712',
-    '68A00045',
-    'Lexus',
-    DateTime(2022, 6, 2),
-    'Ra',
-  ],
-  <Comparable<Object>>[
-    6,
-    1,
-    6,
-    'Trần Văn A',
-    '0868347502',
-    '68C0963',
-    'Mazda',
-    DateTime(2022, 6, 9),
-    'Vào',
-  ],
-  <Comparable<Object>>[
-    7,
-    1,
-    7,
-    'Trần Văn B',
-    '0964869345',
-    '99A33333',
-    'Land Rover',
-    DateTime(2022, 6, 16),
-    'Vào',
-  ],
-  <Comparable<Object>>[
-    8,
-    1,
-    8,
-    'Trần Văn C',
-    '0985634564',
-    '43A27208',
-    'Hyundai',
-    DateTime(2022, 6, 23),
-    'Vào',
-  ],
-  <Comparable<Object>>[
-    9,
-    1,
-    9,
-    'Trần Văn D',
-    '0978945673',
-    '37A99999',
-    'Toyota',
-    DateTime(2022, 6, 30),
-    'Ra',
-  ],
-  <Comparable<Object>>[
-    10,
-    2,
-    10,
-    'Trần Văn E',
-    '0971846356',
-    '43A99999',
-    'BMW',
-    DateTime(2022, 7, 7),
-    'Ra',
-  ],
-  <Comparable<Object>>[
-    11,
-    2,
-    1,
-    'Phan Đình A',
-    '0868234065',
-    '34A34567',
-    'Honda',
-    DateTime(2023, 6, 15),
-    'Ra',
-  ],
-  <Comparable<Object>>[
-    12,
-    2,
-    2,
-    'Phan Đình B',
-    '0968125374',
-    '77K134049',
-    'Yamaha',
-    DateTime(2023, 6, 22),
-    'Vào',
-  ],
-  <Comparable<Object>>[
-    13,
-    2,
-    3,
-    'Phan Đình C',
-    '0982367932',
-    '77H58836',
-    'Kia',
-    DateTime(2023, 6, 29),
-    'Vào',
-  ],
-  <Comparable<Object>>[
-    14,
-    2,
-    4,
-    'Phan Đình D',
-    '0988642318',
-    '77K177777',
-    'BMW',
-    DateTime(2023, 7, 6),
-    'Ra',
-  ],
-  <Comparable<Object>>[
-    15,
-    2,
-    5,
-    'Phan Đình E',
-    '0782138346',
-    '89K98989',
-    'Lexus',
-    DateTime(2023, 7, 13),
-    'Vào',
-  ],
-  <Comparable<Object>>[
-    16,
-    2,
-    6,
-    'Thái Văn A',
-    '0989831246',
-    '30F22222',
-    'Mazda',
-    DateTime(2023, 7, 20),
-    'Ra',
-  ],
-  <Comparable<Object>>[
-    17,
-    2,
-    7,
-    'Thái Văn B',
-    '0986243054',
-    '30E15349',
-    'Land Rover',
-    DateTime(2023, 7, 22),
-    'Ra',
-  ],
-  <Comparable<Object>>[
-    18,
-    2,
-    8,
-    'Thái Văn C',
-    '0987654321',
-    '51A01088',
-    'Hyundai',
-    DateTime(2023, 7, 27),
-    'Vào',
-  ],
-  <Comparable<Object>>[
-    19,
-    2,
-    9,
-    'Thái Văn D',
-    '0984591236',
-    '22L82881',
-    'Toyota',
-    DateTime(2023, 8, 3),
-    'Ra',
-  ],
-  <Comparable<Object>>[
-    20,
-    2,
-    10,
-    'Thái Văn E',
-    '0847688347',
-    '29C199999',
-    'Honda',
-    DateTime(2023, 8, 10),
-    'Vào',
-  ],
-];

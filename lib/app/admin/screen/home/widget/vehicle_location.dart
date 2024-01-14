@@ -3,14 +3,16 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
 
 class VehicleLocation extends StatelessWidget {
-  const VehicleLocation({super.key});
-
+  const VehicleLocation(
+      {super.key, required this.countInside, required this.countOutside});
+  final int countInside;
+  final int countOutside;
   @override
   Widget build(BuildContext context) {
     List<ChartData> data(BuildContext context) {
       List<ChartData> tmp = [
-        ChartData(S.of(context).inside, 25),
-        ChartData(S.of(context).outside, 38),
+        ChartData(S.of(context).inside, countInside),
+        ChartData(S.of(context).outside, countOutside),
       ];
       return tmp;
     }

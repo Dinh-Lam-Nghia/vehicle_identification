@@ -54,6 +54,7 @@ dependencies:
   responsive_builder: ^0.7.0
   syncfusion_flutter_charts: ^24.1.41
   data_table_2: ^2.5.9
+  excel: ^4.0.2
 
 
 

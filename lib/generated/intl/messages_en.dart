@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "aboutUS": MessageLookupByLibrary.simpleMessage("About us"),
         "account": MessageLookupByLibrary.simpleMessage("Account"),
+        "accpeptRegister": MessageLookupByLibrary.simpleMessage(
+            "Do you want to accept this registration?"),
         "addAgain": MessageLookupByLibrary.simpleMessage("Add continute"),
         "addStaff": MessageLookupByLibrary.simpleMessage("Add staff"),
         "addSuccess": MessageLookupByLibrary.simpleMessage("Add success"),
@@ -31,10 +33,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "addedVehicle":
             MessageLookupByLibrary.simpleMessage("Register successfully!"),
         "allVehicle": MessageLookupByLibrary.simpleMessage("All vehicles"),
+        "approvedRequest": MessageLookupByLibrary.simpleMessage(
+            "Your vehicle registration request has been approved!"),
         "blackGray": MessageLookupByLibrary.simpleMessage("Black gray"),
         "cameraOrFile": MessageLookupByLibrary.simpleMessage(
             "Please take a camera or select image!"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "cancelRegister": MessageLookupByLibrary.simpleMessage(
+            "Are you sure to cancel this subscription?"),
+        "cancleRequest": MessageLookupByLibrary.simpleMessage(
+            "Your request was cancelled, please contact us!"),
         "car": MessageLookupByLibrary.simpleMessage("Car"),
         "changeLanguage":
             MessageLookupByLibrary.simpleMessage("Change language"),
@@ -44,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "confirmDelete": MessageLookupByLibrary.simpleMessage(
             "Data will be lost when you press the delete button!. Are you sure?"),
+        "contentSend": MessageLookupByLibrary.simpleMessage(
+            "Send a warning notification about the upcoming vehicle registration expiration date to "),
         "continueWithThisAccount":
             MessageLookupByLibrary.simpleMessage("CONTINUE WITH THIS ACCOUNT"),
         "dailyScan": MessageLookupByLibrary.simpleMessage("Daily scan"),
@@ -69,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("LOGIN WITH GOOGLE"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "logs": MessageLookupByLibrary.simpleMessage("Logs"),
+        "managementRequest": MessageLookupByLibrary.simpleMessage("Request"),
         "managementVehicle":
             MessageLookupByLibrary.simpleMessage("Management vehicle"),
         "member": MessageLookupByLibrary.simpleMessage("Member"),
@@ -100,6 +111,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Subscribe by month"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "selectColor": MessageLookupByLibrary.simpleMessage("Select color"),
+        "sendEmail": MessageLookupByLibrary.simpleMessage("Send Email"),
+        "sendNotification":
+            MessageLookupByLibrary.simpleMessage("Send notification"),
+        "sendSMS": MessageLookupByLibrary.simpleMessage("Send SMS"),
+        "sendSMSto": MessageLookupByLibrary.simpleMessage(
+            "And send a message notify to "),
+        "sent": MessageLookupByLibrary.simpleMessage("Sent!"),
         "staff": MessageLookupByLibrary.simpleMessage("Staff"),
         "staffMananement":
             MessageLookupByLibrary.simpleMessage("Staff management"),

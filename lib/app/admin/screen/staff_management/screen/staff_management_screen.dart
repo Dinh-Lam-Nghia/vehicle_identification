@@ -162,6 +162,9 @@ class _StaffManagementState extends State<StaffManagement> {
               body: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
                   if (p.staffs.isNotEmpty)
                     Column(
                       children: _items(p, size),

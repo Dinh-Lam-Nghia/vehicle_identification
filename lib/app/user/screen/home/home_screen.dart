@@ -45,15 +45,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
                     style: ListTileStyle.drawer,
-                    leading: p.vehicles[index].type == 0
-                        ? const Icon(
-                            FontAwesomeIcons.motorcycle,
-                            color: AppColor.primary,
-                          )
-                        : const FaIcon(
-                            FontAwesomeIcons.car,
-                            color: AppColor.primary,
-                          ),
+                    leading: const FaIcon(
+                      FontAwesomeIcons.car,
+                      color: AppColor.primary,
+                    ),
                     onTap: () {
                       p.setIndexVehicle(index);
                       Navigator.pop(context);
@@ -121,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               widget.onTap();
                             },
                             child: Text(
-                              S.of(context).addStaff,
+                              S.of(context).addVehicle,
                               style: const TextStyle(
                                   fontSize: 15,
                                   color: AppColor.primary,
