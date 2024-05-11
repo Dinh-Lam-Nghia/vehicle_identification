@@ -42,6 +42,7 @@ class VehicleService {
   }
 
   Future<void> addVehicle(Vehicle vehicle, int userID) async {
+    print('hieppx $userID');
     var url = Uri.parse(AppUrl.addVehicle);
     final params = {
       "vehicle_id": vehicle.vehicleID,

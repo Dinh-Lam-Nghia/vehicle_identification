@@ -833,7 +833,7 @@ class S {
   /// `Verify vehicle fail!`
   String get verifyVehicleFail {
     return Intl.message(
-      'Verify vehicle fail!',
+      'Verify vehicle fail! \nThe vehicle may be previously registered',
       name: 'verifyVehicleFail',
       desc: '',
       args: [],

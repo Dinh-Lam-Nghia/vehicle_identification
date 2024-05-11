@@ -1,9 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:vehicle_identification/app/admin/screen/all_vehicle/screen/all_vehicle_screen.dart';
-import 'package:vehicle_identification/app/admin/screen/home/screen/admin_home_screen.dart';
-import 'package:vehicle_identification/app/admin/screen/request/screen/request_screen.dart';
 import 'package:vehicle_identification/firebase_options.dart';
 import 'package:vehicle_identification/app/user/screen/add_vehicle/provider/add_vehicle_provider.dart';
 import 'package:vehicle_identification/app/user/screen/splash/splash_screen.dart';

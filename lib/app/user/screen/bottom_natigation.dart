@@ -10,8 +10,8 @@ import 'package:vehicle_identification/app/user/screen/information/information_s
 import 'package:vehicle_identification/app/utils/app_color.dart';
 
 class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({super.key});
-
+  const BottomNavigation({super.key, required this.email_user});
+  final String email_user;
   @override
   State<BottomNavigation> createState() => _BottomNavigationState();
 }
@@ -23,6 +23,10 @@ class _BottomNavigationState extends State<BottomNavigation> {
     setState(() {
       _selectedIndex = 1;
     });
+  }
+
+  get_email() {
+    return widget.email_user;
   }
 
   @override
@@ -65,7 +69,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
           }
         case 1:
           {
-            return const AddVehicleScreen();
+            return AddVehicleScreen(email_user: get_email().toString());
           }
         case 2:
           {

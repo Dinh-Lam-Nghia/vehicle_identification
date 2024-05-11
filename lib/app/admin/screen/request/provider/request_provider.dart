@@ -18,14 +18,14 @@ class RequestProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  removeRequest(String vehicleID) async {
-    await _requestService.removeRequest(vehicleID);
+  removeRequest(String id) async {
+    await _requestService.removeRequest(id);
     notifyListeners();
   }
 
-  accpectRequest(String vehicleID) async {
-    await _requestService.accpectRequest(vehicleID);
-    _vehicles.removeWhere((e) => e.vehicleID == vehicleID);
+  accpectRequest(String id) async {
+    await _requestService.accpectRequest(id);
+    _vehicles.removeWhere((e) => e.vehicleID == id);
     notifyListeners();
   }
 

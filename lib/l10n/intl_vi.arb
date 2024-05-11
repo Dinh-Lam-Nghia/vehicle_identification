@@ -76,7 +76,7 @@
     "status": "Trạng thái",
     "verifyVehicle": "Xác minh xe",
     "cameraOrFile": "Chọn hoặc sử dụng camera",
-    "verifyVehicleFail": "Lỗi xác thực!",
+    "verifyVehicleFail": "Lỗi xác thực! \nCó thể xe đã được đăng ký",
     "addedVehicle": "Đăng ký thành công!",
     "pleaseVerifyInformation": "Vui lòng xác minh thông tin!",
     "addAgain": "Thêm tiếp",

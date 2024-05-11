@@ -2,7 +2,7 @@ class Logs {
   int? id;
   int? status;
   String? time;
-  int? vehicleID;
+  String? vehicleID;
   Logs(
       {required this.id,
       required this.status,

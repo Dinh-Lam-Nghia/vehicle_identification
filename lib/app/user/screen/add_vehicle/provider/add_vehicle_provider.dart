@@ -3,11 +3,15 @@ import 'dart:io';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vehicle_identification/app/user/model/user.dart';
 import 'package:vehicle_identification/app/user/model/vehicle.dart';
+import 'package:vehicle_identification/app/user/service/user/user_sevice.dart';
 import 'package:vehicle_identification/app/user/service/user/vehicle_service.dart';
 import 'package:vehicle_identification/generated/l10n.dart';
 
 class AddVehicleProvider extends ChangeNotifier {
+  final UserService userService = UserService();
   final VehicleService service = VehicleService();
   final TextEditingController _phoneController = TextEditingController();
   TextEditingController get phoneController => _phoneController;
@@ -59,6 +63,26 @@ class AddVehicleProvider extends ChangeNotifier {
 
   final TextEditingController _idVehicleController = TextEditingController();
   TextEditingController get idVehicleController => _idVehicleController;
+
+  List<UserProfile> _user = [];
+  List<UserProfile> get user => _user;
+
+  getOnlyOneUser(String email) async {
+    _user = await userService.getOnlyOneUser(email);
+    print(
+        "nghia : ${_user[0].id}, ${_user[0].name}, ${_user[0].email}, ${_user[0].photo}, ");
+    notifyListeners();
+  }
+
+  List<Vehicle> _vehicles = [];
+  List<Vehicle> get vehicles => _vehicles;
+  final VehicleService _vehicleService = VehicleService();
+  getVehicleInfor() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    String email = prefs.getString('email') ?? '';
+    _vehicles = await _vehicleService.getVehicle(email);
+    notifyListeners();
+  }
 
   checkPhoneFilled(String value) {
     _isVerify = false;
@@ -157,19 +181,36 @@ class AddVehicleProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  verifyVehicle(File image) async {
+  Future<bool> check_registered_vehicle(String plateNumber) async {
+    for (var item in _vehicles) {
+      if (item.vehicleID?.toUpperCase() == plateNumber.toUpperCase()) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  Future<bool> verifyVehicle(File image) async {
+    ////////////////////////////////////////////
     _isVerifyVehicle = false;
     _isFailVerifyVehicle = false;
     String plateNumber = await service.verifyVehicle(image);
-    if (plateNumber == 'Error') {
+    if (await check_registered_vehicle(plateNumber)) {
+      // print("nghia : ${await check_registered_vehicle(plateNumber)}");
       _isFailVerifyVehicle = true;
-    }
-    if (_idVehicleController.text.toUpperCase() == plateNumber.toUpperCase()) {
+    } 
+    else if (plateNumber == 'Error') {
+      _isFailVerifyVehicle = true;
+    } 
+    else if (_idVehicleController.text.toUpperCase() ==
+        plateNumber.toUpperCase()) {
       _isVerifyVehicle = true;
-    } else {
+    } 
+    else {
       _isFailVerifyVehicle = true;
     }
     notifyListeners();
+    return _isVerifyVehicle;
   }
 
   onChangePlateNumber(String value) {
@@ -179,10 +220,10 @@ class AddVehicleProvider extends ChangeNotifier {
 
   addVehicle() async {
     _registerSuccesfull = false;
-    Color convertedColor = _mainColor![500]!.withAlpha(0xff);
+    Color convertedColor = _mainColor!.withAlpha(0xff);
     String finalColor =
         convertedColor.toString().replaceAll('Color(', '').replaceAll(')', '');
-
+    print("Color : ${finalColor}");
     Vehicle newVehicle = Vehicle(
         vehicleID: _idVehicleController.text,
         role: roleIndex,
@@ -191,7 +232,7 @@ class AddVehicleProvider extends ChangeNotifier {
         type: 1,
         phone: _phoneController.text,
         expires: _dateRegister);
-    await service.addVehicle(newVehicle, 3);
+    await service.addVehicle(newVehicle, int.parse("${_user[0].id}"));
     _registerSuccesfull = true;
     notifyListeners();
   }

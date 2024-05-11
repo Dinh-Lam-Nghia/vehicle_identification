@@ -16,14 +16,14 @@ class RequestService {
     }
   }
 
-  Future<void> removeRequest(String vehicleID) async {
+  Future<void> removeRequest(String id) async {
     var url = Uri.parse(AppUrl.removeRequest);
-    await http.post(url, body: {"vehicle_id": vehicleID.toString()});
+    await http.post(url, body: {"id": id.toString()});
   }
 
-  Future<void> accpectRequest(String vehicleID) async {
+  Future<void> accpectRequest(String id) async {
     var url = Uri.parse(AppUrl.accpectRequest);
-    await http.post(url, body: {"vehicle_id": vehicleID.toString()});
+    await http.post(url, body: {"id": id.toString()});
   }
 
   Future<void> sendSMS(String phone, String content) async {

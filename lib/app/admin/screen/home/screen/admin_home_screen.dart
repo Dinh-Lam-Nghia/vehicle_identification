@@ -50,6 +50,19 @@ class AdminHome extends StatefulWidget {
 }
 
 class _AdminHomeState extends State<AdminHome> {
+  @override
+  void initState() {
+    widget.provider.init();
+    super.initState();
+  }
+
+  int crossAxisCount() {
+    if (widget.isSmall) {
+      return 2;
+    }
+    return 4;
+  }
+
   List<Chart> chartList(AdminHomeProvider p) {
     List<Chart> chartTmp = [
       Chart(
@@ -70,19 +83,6 @@ class _AdminHomeState extends State<AdminHome> {
           color: AppColor.orange)
     ];
     return chartTmp;
-  }
-
-  int crossAxisCount() {
-    if (widget.isSmall) {
-      return 2;
-    }
-    return 4;
-  }
-
-  @override
-  void initState() {
-    widget.provider.init();
-    super.initState();
   }
 
   @override

@@ -58,7 +58,8 @@ class UserLoggedScreen extends StatelessWidget {
                   Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const BottomNavigation()),
+                        builder: (context) => BottomNavigation(
+                            email_user: user.email.toString())),
                     (Route<dynamic> route) => false,
                   );
                 }),

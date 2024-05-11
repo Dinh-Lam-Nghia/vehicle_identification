@@ -13,7 +13,8 @@ import 'package:vehicle_identification/widget/app_input.dart';
 import 'package:vehicle_identification/widget/app_toast.dart';
 
 class AddVehicleScreen extends StatefulWidget {
-  const AddVehicleScreen({super.key});
+  const AddVehicleScreen({super.key, required this.email_user});
+  final String email_user;
 
   @override
   State<AddVehicleScreen> createState() => _AddCarScreenState();
@@ -21,6 +22,7 @@ class AddVehicleScreen extends StatefulWidget {
 
 class _AddCarScreenState extends State<AddVehicleScreen> {
   final AddVehicleProvider _provider = AddVehicleProvider();
+
   final _formKey = GlobalKey<FormState>();
 
   handleVerify(AddVehicleProvider p) {
@@ -112,6 +114,13 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
         return ImageWidget(p: p);
       },
     );
+  }
+
+  @override
+  void initState() {
+    _provider.getOnlyOneUser(widget.email_user);
+    _provider.getVehicleInfor();
+    super.initState();
   }
 
   @override
