@@ -16,7 +16,7 @@ class AppOTP extends StatelessWidget {
     return OtpTextField(
       numberOfFields: 6,
       borderColor: AppColor.primary,
-      fieldWidth: 38,
+      fieldWidth: 35,
       showFieldAsBox: true,
       enabledBorderColor: isError ? AppColor.errorColor : Colors.grey,
       onCodeChanged: (String code) {},
@@ -24,4 +24,3 @@ class AppOTP extends StatelessWidget {
     );
   }
 }
-   

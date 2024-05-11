@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -46,17 +48,16 @@ class _ImageWidgetState extends State<ImageWidget> {
     });
   }
 
-  onVerify() {
+  onVerify() async {
     if (_image != null) {
-      widget.p.verifyVehicle(_image!);
+      // widget.p.verifyVehicle(_image!);
       check();
-      Future.delayed(const Duration(milliseconds: 2500), () {
-        check();
-        checkFail(widget.p.isFailVerifyVehicle);
-        if (widget.p.isVerifyVehicle) {
-          Navigator.pop(context);
-        }
-      });
+      await Future.delayed(const Duration(milliseconds: 500), () {});
+      if (await widget.p.verifyVehicle(_image!)) {
+        Navigator.pop(context);
+      }
+      checkFail(widget.p.isFailVerifyVehicle);
+      check();
     }
   }
 
@@ -65,7 +66,7 @@ class _ImageWidgetState extends State<ImageWidget> {
     return AlertDialog(
       contentPadding: EdgeInsets.zero,
       content: SizedBox(
-        height: isChecking ? 300 : (_image == null ? 200 : 500),
+        height: isChecking ? 350 : (_image == null ? 200 : 500),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,

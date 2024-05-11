@@ -18,6 +18,6 @@ class UserProfile {
         id: json['id'].toString(),
         name: json['name'].toString(),
         email: json['email'].toString(),
-        photo: json['photo'].toString());
+        photo: json['url_photo'].toString());
   }
 }

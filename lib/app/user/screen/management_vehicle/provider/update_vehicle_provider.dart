@@ -177,7 +177,7 @@ class UpdateVehicleProvider extends ChangeNotifier {
   }
 
   updateVehicle(String vehicleID) async {
-    Color convertedColor = _mainColor![500]!.withAlpha(0xff);
+    Color convertedColor = _mainColor!.withAlpha(0xff);
     String finalColor =
         convertedColor.toString().replaceAll('Color(', '').replaceAll(')', '');
     Vehicle vehicle = Vehicle(

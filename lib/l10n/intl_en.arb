@@ -77,7 +77,7 @@
     "statusOut": "Out",
     "no": "No.",
     "status": "Status",
-    "verifyVehicleFail": "Verify vehicle fail!",
+    "verifyVehicleFail": "Verify vehicle fail! \nThe vehicle may be previously registered",
     "addedVehicle": "Register successfully!",
     "pleaseVerifyInformation": "Please verify information!",
     "addAgain": "Add continute",

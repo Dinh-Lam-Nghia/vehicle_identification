@@ -15,6 +15,7 @@ class NavigationItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     List<String> listTitle(BuildContext context) {
       return [
         S.of(context).statistical,
@@ -53,21 +54,24 @@ class NavigationItems extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Image.asset(AppImage.imgCarHome),
         ),
-        ListView.builder(
-          shrinkWrap: true,
-          itemCount: listTitle(context).length,
-          itemBuilder: (BuildContext context, index) {
-            return ListTile(
-              onTap: () {
-                onTap(context, index);
-              },
-              leading: listIcon[index],
-              title: Text(
-                listTitle(context)[index],
-                style: const TextStyle(fontSize: 16, color: AppColor.white),
-              ),
-            );
-          },
+        SizedBox(
+          height: size.height * 0.5,
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemCount: listTitle(context).length,
+            itemBuilder: (BuildContext context, index) {
+              return ListTile(
+                onTap: () {
+                  onTap(context, index);
+                },
+                leading: listIcon[index],
+                title: Text(
+                  listTitle(context)[index],
+                  style: const TextStyle(fontSize: 16, color: AppColor.white),
+                ),
+              );
+            },
+          ),
         ),
         const Spacer(),
         Text(
@@ -75,7 +79,7 @@ class NavigationItems extends StatelessWidget {
           style: const TextStyle(fontSize: 14, color: AppColor.white),
         ),
         const SizedBox(
-          height: 40,
+          height: 20,
         ),
       ],
     );
