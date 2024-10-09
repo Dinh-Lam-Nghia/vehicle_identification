@@ -52,7 +52,7 @@ class _ImageWidgetState extends State<ImageWidget> {
     if (_image != null) {
       // widget.p.verifyVehicle(_image!);
       check();
-      await Future.delayed(const Duration(milliseconds: 500), () {});
+      await Future.delayed(const Duration(milliseconds: 1000), () {});
       if (await widget.p.verifyVehicle(_image!)) {
         Navigator.pop(context);
       }

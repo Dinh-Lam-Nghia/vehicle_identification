@@ -195,18 +195,16 @@ class AddVehicleProvider extends ChangeNotifier {
     _isVerifyVehicle = false;
     _isFailVerifyVehicle = false;
     String plateNumber = await service.verifyVehicle(image);
+    print("nghia " + plateNumber);
     if (await check_registered_vehicle(plateNumber)) {
       // print("nghia : ${await check_registered_vehicle(plateNumber)}");
       _isFailVerifyVehicle = true;
-    } 
-    else if (plateNumber == 'Error') {
+    } else if (plateNumber == 'Error') {
       _isFailVerifyVehicle = true;
-    } 
-    else if (_idVehicleController.text.toUpperCase() ==
+    } else if (_idVehicleController.text.toUpperCase() ==
         plateNumber.toUpperCase()) {
       _isVerifyVehicle = true;
-    } 
-    else {
+    } else {
       _isFailVerifyVehicle = true;
     }
     notifyListeners();
