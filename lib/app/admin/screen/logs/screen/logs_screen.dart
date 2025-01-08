@@ -71,8 +71,16 @@ class _LogsState extends State<Logs> {
             backgroundColor: Colors.grey.shade100,
             resizeToAvoidBottomInset: false,
             drawer: const DrawerApp(),
-            appBar: NavBar(
-              title: S.of(context).logs,
+            appBar: PreferredSize(
+              preferredSize: const Size.fromHeight(kToolbarHeight), // Chiều cao AppBar chuẩn
+              child: InkWell(
+                onTap: () {
+                  widget.provider.init();
+                },
+                child: NavBar(
+                  title: S.of(context).logs,
+                ),
+              ),
             ),
             body: SingleChildScrollView(
               child: Padding(

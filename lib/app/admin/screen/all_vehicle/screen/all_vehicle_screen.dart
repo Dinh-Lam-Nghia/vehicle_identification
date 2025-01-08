@@ -333,7 +333,7 @@ class TableSource extends DataTableSource {
                     ? AppColor.successColor
                     : AppColor.errorColor),
           ), onTap: () {
-        onTap(log);
+        provider.checkExpires(log.expries ?? '')?onTap:onTap(log);
       }),
       DataCell(Text(
         log.color ?? '',

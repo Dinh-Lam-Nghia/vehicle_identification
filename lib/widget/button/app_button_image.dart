@@ -24,10 +24,10 @@ class AppButtonImage extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(AppIcon.icGoogle),
-            const SizedBox(
-              width: 10,
-            ),
+            // Image.asset(AppIcon.icGoogle),
+            // const SizedBox(
+            //   width: 10,
+            // ),
             Text(
               text,
               style: const TextStyle(

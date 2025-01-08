@@ -28,8 +28,9 @@ class _AddCarScreenState extends State<AddVehicleScreen> {
   handleVerify(AddVehicleProvider p) {
     if (p.phoneController.text.isEmpty) {
       AppToast().showToast(S.of(context).enterPhoneNumber);
-    } else if (p.phoneController.text.length < 12) {
-      AppToast().showToast(S.of(context).invalidFormat);
+    // } else if (p.phoneController.text.length < 12) {
+    //   print("Nghiax:${p.phoneController.text} - ${p.phoneController.text.length}");
+    //   AppToast().showToast(S.of(context).invalidFormat);
     } else {
       if (!p.isVerify) {
         p.verifyPhone();
