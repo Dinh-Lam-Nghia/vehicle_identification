@@ -2,7 +2,7 @@
   "project_info": {
     "project_number": "1073745768330",
     "project_id": "campuscar-fa0ef",
-    "storage_bucket": "campuscar-fa0ef.appspot.com"
+    "storage_bucket": "campuscar-fa0ef.firebasestorage.app"
   },
   "client": [
     {
@@ -13,6 +13,30 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "1073745768330-4irp1d5vvcvmqs9e6broinbgn8481g61.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vehicle_identification",
+            "certificate_hash": "7a8d62c8b798bbd37272de86d607c5bc59bab421"
+          }
+        },
+        {
+          "client_id": "1073745768330-5ibljnc8pg362sftcbd1fkco45bba933.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vehicle_identification",
+            "certificate_hash": "57574721656daf6cdc84d31d220608a6cab69f5e"
+          }
+        },
+        {
+          "client_id": "1073745768330-ia2pmspqr0r92o8vhbl9vatg4gcvm3um.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vehicle_identification",
+            "certificate_hash": "0f8512ce54d1d6ce99d2c92f6742ba81bffafbd4"
+          }
+        },
         {
           "client_id": "1073745768330-j943tqn96ciuol7fssa5ouuc8ot5h9pv.apps.googleusercontent.com",
           "client_type": 3

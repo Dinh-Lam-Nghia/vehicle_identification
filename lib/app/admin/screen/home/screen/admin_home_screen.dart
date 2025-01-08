@@ -5,7 +5,6 @@ import 'package:vehicle_identification/app/admin/layout/nav_bar.dart';
 import 'package:vehicle_identification/app/admin/model/chart.dart';
 import 'package:vehicle_identification/app/admin/screen/home/provider/provider.dart';
 import 'package:vehicle_identification/app/admin/screen/home/widget/daily_scan.dart';
-import 'package:vehicle_identification/app/admin/screen/home/widget/vehicle_location.dart';
 import 'package:vehicle_identification/app/admin/screen/home/widget/vehicle_owner_role.dart';
 import 'package:vehicle_identification/app/utils/app_color.dart';
 import 'package:vehicle_identification/generated/l10n.dart';

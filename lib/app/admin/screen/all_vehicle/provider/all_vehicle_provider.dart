@@ -105,8 +105,9 @@ class AllVehicleProvider extends ChangeNotifier {
   }
 
   sendSms(LogsTable item) async {
+    print(item.phone);
     String content =
-        'Dear ${item.name}! \nYour vehicle registration expires on ${item.expries}. Please extend your registration date again!';
+        'Chào bạn ${item.name}! \nĐăng ký xe của bạn hết hạn vào ${item.expries}. Vui lòng gia hạn ngày đăng ký một lần nữa!';
     await _staffService.sendSMS(item.phone ?? '', content);
     notifyListeners();
   }

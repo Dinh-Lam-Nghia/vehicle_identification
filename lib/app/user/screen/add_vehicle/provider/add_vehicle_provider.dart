@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print, non_constant_identifier_names, prefer_interpolation_to_compose_strings
+
 import 'dart:async';
 import 'dart:io';
 
@@ -103,12 +105,17 @@ class AddVehicleProvider extends ChangeNotifier {
   verifyPhone() {
     _verificationFailed = false;
     _isSentCode = false;
+
+    // FirebaseAuth.instance.useAuthEmulator('10.0.2.2', 9099); 
+
     FirebaseAuth auth = FirebaseAuth.instance;
+    auth.setLanguageCode("en");
     auth.verifyPhoneNumber(
       phoneNumber: _phoneController.text.trim(),
-      timeout: const Duration(seconds: 30),
+      timeout: const Duration(seconds: 60),
       verificationCompleted: (AuthCredential authCredential) {},
       verificationFailed: (authException) {
+        print("authException $authException");
         _verificationFailed = true;
         notifyListeners();
       },
@@ -182,7 +189,9 @@ class AddVehicleProvider extends ChangeNotifier {
   }
 
   Future<bool> check_registered_vehicle(String plateNumber) async {
+    print("plateNumber1: $plateNumber");
     for (var item in _vehicles) {
+      print("plateNumber ${item.vehicleID?.toUpperCase()}");
       if (item.vehicleID?.toUpperCase() == plateNumber.toUpperCase()) {
         return true;
       }
@@ -195,9 +204,10 @@ class AddVehicleProvider extends ChangeNotifier {
     _isVerifyVehicle = false;
     _isFailVerifyVehicle = false;
     String plateNumber = await service.verifyVehicle(image);
-    print("nghia " + plateNumber);
+    print("nghia_BSX: " + _idVehicleController.text.toUpperCase());
+    print("nghia_BSX_IMG: " + plateNumber.toUpperCase());
     if (await check_registered_vehicle(plateNumber)) {
-      // print("nghia : ${await check_registered_vehicle(plateNumber)}");
+      print("nghia : ${await check_registered_vehicle(plateNumber)}");
       _isFailVerifyVehicle = true;
     } else if (plateNumber == 'Error') {
       _isFailVerifyVehicle = true;
